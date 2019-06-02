@@ -3,6 +3,7 @@
 #### Configure the author name and email address to be used with your commits.
 
 git config --global user.name "Sam Smith"
+
 git config --global user.email sam@example.com
 
 #### Create a new local repository
