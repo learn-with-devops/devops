@@ -14,8 +14,8 @@ git init
 
  1. Create a working copy of a local repository:
 
- git clone /path/to/repository
+           git clone /path/to/repository
 
  2. For a remote server, use:	
  
- git clone username@host:/path/to/repository
+           git clone username@host:/path/to/repository
