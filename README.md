@@ -19,3 +19,7 @@
  2. For a remote server, use:	
  
            git clone username@host:/path/to/repository
+           
+ ### Git Flow Diagram with commands
+ 
+ ![image](https://github.com/learn-with-devops/devops/blob/master/images/Untitled%20Diagram.png)
