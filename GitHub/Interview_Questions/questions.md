@@ -6,13 +6,13 @@
 6) What language is used in GIT? ...
 7) What is the function of 'GIT PUSH' in GIT? ...
 8) Why GIT better than Subversion?
-What is “Staging Area” or “Index” in GIT?
-What is GIT stash?
-What is GIT stash drop?
-How will you know in GIT if a branch has been already merged into master?
-What is the function of git clone?
-What is the function of ‘git config’?
-What does commit object contain?
-How can you create a repository in Git?
-What is ‘head’ in git and how many heads can be created in a repository?
-What is the purpose of branching in GIT?
+- What is “Staging Area” or “Index” in GIT?
+- What is GIT stash?
+- What is GIT stash drop?
+- How will you know in GIT if a branch has been already merged into master?
+- What is the function of git clone?
+- What is the function of ‘git config’?
+- What does commit object contain?
+- How can you create a repository in Git?
+- What is ‘head’ in git and how many heads can be created in a repository?
+- What is the purpose of branching in GIT?
