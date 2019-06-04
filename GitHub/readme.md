@@ -166,5 +166,9 @@
 
 			# Check what the changes between the files you've committed and the live repo
 			$ git diff --stat origin/master
+			
+			# Check the diff b/w two branches
+			$ git diff stage master   ( for local branches)
+			$ git diff origin/stage origin/master  ( for remote branches)
 
 
