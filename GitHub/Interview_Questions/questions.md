@@ -16,3 +16,19 @@
 - How can you create a repository in Git?
 - What is ‘head’ in git and how many heads can be created in a repository?
 - What is the purpose of branching in GIT?
+
+
+
+-  Diff b/w svn &GitHub version control system ??
+-  Cvcs Vs Dvcs ??
+-  Git Merge Vs Git Rebase ??
+-  Git full Vs Git Fetch ??
+-  GitHub end to end Flow  ??
+-  Git Stash ??
+-  What are the functionality of git webhooks ?
+-  What are the Git Conflict and How to resolve that ??
+-  SVN to GitHub Migration ??
+-  What is the Feature branch ??
+-  How to revert the changes from staging to working directroy ??
+-  How to revert the changes from local index to working directory && local index to staging area ??
+-  what is the use of .git file ??
