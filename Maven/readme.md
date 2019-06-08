@@ -20,3 +20,12 @@
   
      https://github.com/sebsto/webapp
   
+  
+  
+  - Tomact Administartion
+  
+        <role rolename="admin"/>
+        <role rolename="admin-gui"/>
+        <role rolename="manager"/>
+        <role rolename="manger-gui"/>
+        <user username="anand" password="anand" roles="admin,admin-gui,manager,manager-gui"/>
