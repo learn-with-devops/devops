@@ -1,6 +1,6 @@
 
 
-- Export Java path 
+- Export Maven path 
 
       export PATH=/opt/apache-maven-3.6.1/bin:$PATH
 
@@ -20,7 +20,9 @@
 
          https://github.com/sebsto/webapp
 
-  
+- Tomcat Softlink Installation
+
+        ln -s /opt/apache-tomcat-7.0.94/bin/shutdown.sh /usr/bin/tomcatdown
   
 - Tomact Administartion
   
