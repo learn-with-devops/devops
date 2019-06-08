@@ -172,5 +172,28 @@
 			# Check the diff b/w two branches
 			$ git diff stage master   ( for local branches)
 			$ git diff origin/stage origin/master  ( for remote branches)
+			
+			
+
+## Switching remote URLs from HTTPS to SSH
+
+   Open Git Bash.
+
+   Change the current working directory to your local project.
+
+   List your existing remotes in order to get the name of the remote you want to change.
+
+	$ git remote -v
+	> origin  https://github.com/USERNAME/REPOSITORY.git (fetch)
+	> origin  https://github.com/USERNAME/REPOSITORY.git (push)
+	Change your remote's URL from HTTPS to SSH with the git remote set-url command.
+
+	$ git remote set-url origin git@github.com:USERNAME/REPOSITORY.git
+	Verify that the remote URL has changed.
+
+	$ git remote -v
+	# Verify new remote URL
+	> origin  git@github.com:USERNAME/REPOSITORY.git (fetch)
+	> origin  git@github.com:USERNAME/REPOSITORY.git (push)
 
 
