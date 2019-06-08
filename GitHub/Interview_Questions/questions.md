@@ -32,3 +32,4 @@
 -  How to revert the changes from staging to working directroy ??
 -  How to revert the changes from local index to working directory && local index to staging area ??
 -  what is the use of .git file ??
+-  Setup the ssh connection to local PC to GitHub.
