@@ -25,6 +25,8 @@
          
       3.  Execute Jar file with required dependencies.
       
+         https://start.spring.io/
+         
          https://github.com/khoubyari/spring-boot-rest-example
          
          java -jar jarfilename.jar
