@@ -22,6 +22,8 @@
 
          https://github.com/sebsto/webapp
          
+         java -jar warfilename.war
+         
          
       3.  Execute Jar file with required dependencies.
       
