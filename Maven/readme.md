@@ -13,12 +13,22 @@
       1. For Creating the JAR and execute unit test case , Intigration test case and generate a test case report with the following file.
 
          https://github.com/LableOrg/java-maven-junit-helloworld
+         
+         java -cp target/java-maven-junit-helloworld-2.0-SNAPSHOT.jar com.example.javamavenjunithelloworld.HelloApp
 
 
       2.  Craete WAR file and deploy into the destination server with tomcat
 
 
          https://github.com/sebsto/webapp
+         
+         
+      3.  Execute Jar file with required dependencies.
+      
+         https://github.com/khoubyari/spring-boot-rest-example
+         
+         java -jar jarfilename.jar
+         
 
 - Tomcat Softlink Installation
 
