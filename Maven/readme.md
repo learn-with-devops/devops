@@ -3,6 +3,13 @@
 
 ![image](https://github.com/learn-with-devops/devops/blob/master/Maven/images/maven-life-cycle-splessons.png)
 
+## Execute maven commands with the below format..
+
+      mvn clean
+      
+      mvn validate compile test package verify install build
+      
+
 - Export Maven path 
 
       export PATH=/opt/apache-maven-3.6.1/bin:$PATH
