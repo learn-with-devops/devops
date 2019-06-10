@@ -1,7 +1,7 @@
 
 # Maven Life cycle Phases
 
-[!image](https://github.com/learn-with-devops/devops/blob/master/Maven/images/maven-life-cycle-splessons.png)
+![image](https://github.com/learn-with-devops/devops/blob/master/Maven/images/maven-life-cycle-splessons.png)
 
 - Export Maven path 
 
