@@ -1,0 +1,23 @@
+# Search Required Docker Image from DockerHub.
+docker search jenkins
+
+# Download the Docker Image
+docker pull jenkins:latest
+
+# List Out the docker Images
+docker images
+
+# See Complete Information of Docker Image
+docker inspect jenkins
+
+# Create a Folder for SharedPath
+mkdir -p /opt/jenkins
+
+# Give 777 Permission
+chmod 777 /opt/jenkins
+
+# Create a Docker Container from Docker Image with Specified Ports and Volume
+docker run -t -d -p 8080:8080 -v /opt/jenkins:/var/jenkins_home --name jenkins_deployment jenkins
+
+# List out the Docker Containers
+docker ps
