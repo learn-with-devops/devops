@@ -29,6 +29,20 @@
       source ~/.bash_profile
 
 
+## Mavenn Report Generation
+
+      ## Generate a report
+      mvn verify
+      ## Install APache
+      yum install httpd -y
+      ## Copy the reports to Apapche
+      cp -pr target/site/jacoco-both /var/www/html/
+      ## Start the Apache
+      service httpd start
+      ## View the Result ( Open 80 port)
+      <IP ADdress>:80/jococo-both
+      
+
 ## Execute maven commands with the below format..
 
       mvn clean
