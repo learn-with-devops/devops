@@ -35,19 +35,7 @@
       source ~/.bash_profile
 
 
-## Mavenn Report Generation
 
-      ## Generate a report
-      mvn verify
-      ## Install APache
-      yum install httpd -y
-      ## Copy the reports to Apapche
-      cp -pr target/site/jacoco-both /var/www/html/
-      ## Start the Apache
-      service httpd start
-      ## View the Result ( Open 80 port)
-      <IP ADdress>:80/jococo-both
-      
 
 ## Execute maven commands with the below format..
 
@@ -69,6 +57,21 @@
       1. For Creating the JAR and execute unit test case , Intigration test case and generate a test case report with the following file.
 
          https://github.com/LableOrg/java-maven-junit-helloworld
+         
+      ## Mavenn Report Generation
+      -----------------------------------
+
+            ## Generate a report
+            mvn verify
+            ## Install APache
+            yum install httpd -y
+            ## Copy the reports to Apapche
+            cp -pr target/site/jacoco-both /var/www/html/
+            ## Start the Apache
+            service httpd start
+            ## View the Result ( Open 80 port)
+            <IP ADdress>:80/jococo-both
+
          
          java -cp target/java-maven-junit-helloworld-2.0-SNAPSHOT.jar com.example.javamavenjunithelloworld.HelloApp
 
