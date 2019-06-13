@@ -3,6 +3,32 @@
 
 ![image](https://github.com/learn-with-devops/devops/blob/master/Maven/images/maven-life-cycle-splessons.png)
 
+
+
+# Maven Installation
+
+      ##  Pre requsites Installation
+
+      sudo yum install java-1.8* wget unzip git tree -y
+
+      ## Download the Maven Latest Package 
+      cd /opt/
+      wget http://apachemirror.wuchna.com/maven/maven-3/3.6.1/binaries/apache-maven-3.6.1-bin.zip
+
+      ## Extract the Package
+      unzip apache-maven-3.6.1-bin.zip
+
+      ## Remove the Unwanted Zip file
+      rm -rf apache-maven-3.6.1-bin.zip
+
+      ## Export the PATH
+            - vi ~/.bash_profile  { Open this file and paste below path }
+            - export PATH=/opt/apache-maven-3.6.1/bin:$PATH
+
+      ## Execute below command for better effect of Bash_Profile
+      source ~/.bash_profile
+
+
 ## Execute maven commands with the below format..
 
       mvn clean
