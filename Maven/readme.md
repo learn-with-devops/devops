@@ -72,7 +72,11 @@
 
          https://github.com/sebsto/webapp
          
-         java -jar warfilename.war
+         # Copy the WAR file to tocat WebApps and restart the server
+         
+         -- Deploy Jenkins with War file Directly
+         
+         java -jar jenkins.war
          
          
       3.  Execute Jar file with required dependencies.
