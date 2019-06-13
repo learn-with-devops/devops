@@ -1,0 +1,100 @@
+    1  cd /opt/
+    2  mkdir Java-All-Programs
+    3  cd Java-All-Programs/
+    4  ls -ltr
+    5  yum install git -y
+    6  clear
+    7  git clone https://github.com/LableOrg/java-maven-junit-helloworld.git
+    8  clear
+    9  ls
+   10  mvn cd java-maven-junit-helloworld/
+   11  ls -ltr
+   12  cd java-maven-junit-helloworld/
+   13  ls -ltr
+   14  yum install tree -y
+   15  clear
+   16  ls -ltr
+   17  tree src/
+   18  mlsls
+   19  ls
+   20  mvn validate
+   21  cd /opt/apache-maven-3.6.1/
+   22  cd bin/
+   23  pwd
+   24  vi ~/.bash_profile
+   25  source ~/.bash_profile
+   26  clear
+   27  ls
+   28  pwd
+   29  ls -ltr
+   30  cd /
+   31  ls -ltr
+   32  cd /opt/
+   33  ls -ltr
+   34  cd
+   35  '
+   36  cd
+   37  '
+   38  q
+   39  clear
+   40  yum install java-1.8*
+   41  java -version
+   42  cd /opt/
+   43  ls
+   44  yum install wget unzip -y
+   45  clear
+   46  wget http://apachemirror.wuchna.com/maven/maven-3/3.6.1/binaries/apache-maven-3.6.1-bin.zip
+   47  ls -ltr
+   48  unzip apache-maven-3.6.1-bin.zip
+   49  ls -ltr
+   50  rm -rf apache-maven-3.6.1-bin.zip
+   51  ls -ltr
+   52  cd apache-maven-3.6.1/
+   53  ls -ltr
+   54  cd bin/
+   55  ls -ltr
+   56  pwd
+   57  ./mvn --version
+   58  pwd
+   59  export PATH=/opt/apache-maven-3.6.1/bin:$PATH
+   60  cd
+   61  mvn --version
+   62  vi ~/.bash_profile
+   63  clear
+   64  cd /
+   65  cd
+   66  ls -ltr
+   67  ls -la
+   68  cd /
+   69  ls -la
+   70  cd
+   71  ls -la
+   72  clear
+   73  cd
+   74  mvn --version
+   75  clear
+   76  cd /opt/Java-All-Programs/java-maven-junit-helloworld/
+   77  ls
+   78  mvn validate
+   79  ls
+   80  cd
+   81  ls -la
+   82  tree .m2/
+   83  cd /opt/Java-All-Programs/java-maven-junit-helloworld/
+   84  ls
+   85  mvn compile
+   86  ls -ltr
+   87  tree target/
+   88  ls -ltr
+   89  mvn clean
+   90  ls -ltr
+   91  mvn test
+   92  ls -ltr
+   93  tree target/
+   94  mvn package
+   95  tree target/
+   96  cd
+   97  ls -la
+   98  tree .m2
+   99  clear
+  100  history
