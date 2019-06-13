@@ -87,6 +87,7 @@
 - Tomcat Softlink Installation
 
         ln -s /opt/apache-tomcat-7.0.94/bin/shutdown.sh /usr/bin/tomcatdown
+        ln -s /opt/apache-tomcat-7.0.94/bin/startup.sh /usr/bin/tomcatup
   
 - Tomact Administartion
   
