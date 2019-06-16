@@ -12,6 +12,9 @@
     sudo cp -pr * /var/www/html/
     sudo service httpd start
 
+## GitHub-WebHook setup 
+    http://13.127.145.152:8080/github-webhook/  
+    
 ##  Email Notification Setup 
 
 ![image](https://github.com/learn-with-devops/devops/blob/master/Jenkins/images/email-setup.PNG)
