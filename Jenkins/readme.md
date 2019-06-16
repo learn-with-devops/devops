@@ -2,4 +2,4 @@
 
 #  Email Notification Setup 
 
-![image](
+![image](https://github.com/learn-with-devops/devops/blob/master/Jenkins/images/email-setup.PNG)
