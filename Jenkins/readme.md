@@ -18,3 +18,16 @@
 ##  Email Notification Setup 
 
 ![image](https://github.com/learn-with-devops/devops/blob/master/Jenkins/images/email-setup.PNG)
+
+
+## Plugin Installation with Sample Theame
+
+    Install Jenkins Simple Theme Plugin
+
+    Click Manage Jenkins
+
+    Click Configure System and scroll down to Theme
+
+    Specify the URL for http://jenkins-contrib-themes.github.io/jenkins-neo-theme/dist/neo-light.css.
+
+    Click Save
