@@ -12,6 +12,9 @@
     
     - Give Execute permission to that file.
       chmod 755 filename.sh
+    
+    - Finally Execute the file
+      sh filename.sh
 
 
 ## GitHub-WebHook setup 
