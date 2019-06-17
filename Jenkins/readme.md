@@ -28,6 +28,19 @@
 
     Click Configure System and scroll down to Theme
 
-    Specify the URL for http://jenkins-contrib-themes.github.io/jenkins-neo-theme/dist/neo-light.css.
+    Specify the URL for 
+                    http://jenkins-contrib-themes.github.io/jenkins-neo-theme/dist/neo-light.css.
 
     Click Save
+
+
+## Jenkins Backup
+
+    We can take Jenkins Backup in different way. In that some of the ways are .. 
+    
+    - By Using Plugings
+            . Thin Backup Plugin
+            . Backup Plugin
+            
+    - By Taking entire jenkins folder as zip and storing some where with ShellScript by scheduling with cronjobs( like in AWS S3 , Nexus and In your local AWS )
+    
