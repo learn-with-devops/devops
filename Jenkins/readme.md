@@ -8,7 +8,7 @@
 
     - Create a file with .sh extension
     
-    - Copy the content from ![here](https://github.com/learn-with-devops/devops/blob/master/Jenkins/Jenkins-Installation-with-yum.sh) to that generated file.
+   - Copy the content from [here](https://github.com/learn-with-devops/devops/blob/master/Jenkins/Jenkins-Installation-with-yum.sh) to that generated file.
     
     - Give Execute permission to that file.
       chmod 755 filename.sh
