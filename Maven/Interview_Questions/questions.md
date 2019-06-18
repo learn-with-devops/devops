@@ -10,4 +10,12 @@
 - List out diff types of artifacts and their use and execution process ??
 - Write a POM.XML file ??
 - What are the minimum things required to create a project ??
-- 
+- What is the system requirement for Maven?
+
+
+
+
+Follow the below links to see some more Interview Questions:
+
+https://www.javatpoint.com/maven-interview-questions
+https://mindmajix.com/maven-interview-questions
