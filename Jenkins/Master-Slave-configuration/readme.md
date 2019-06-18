@@ -18,11 +18,11 @@ yum install java-1.8*
 ## Setup Jenkins Slave
 ```sh
 # Create user and add the user to wheel group
-useradd jenkins-slave-01
+useradd bujji
 # Create SSH Keys
-sudo su - jenkins-slave-01
-ssh-keygen -t rsa -N "" -f /home/jenkins-slave-01/.ssh/id_rsa
-# The private and public keys will be created at these locations `/home/jenkins-slave-01/.ssh/id_rsa` and `/home/jenkins-slave-01/.ssh/id_rsa.pub`
+sudo su - bujji
+ssh-keygen -t rsa -N "" -f /home/bujji/.ssh/id_rsa
+# The private and public keys will be created at these locations `/home/bujji/.ssh/id_rsa` and `/home/bujji/.ssh/id_rsa.pub`
 cd .ssh
 cat id_rsa.pub > authorized_keys
 chmod 700 authorized_keys
@@ -42,7 +42,7 @@ chmod 700 known_hosts
 #### Configure the Slave using `Manage Jenkins`
 Configure the node as shown here
 `Manage Jenkins` > `Manage Nodes` > `New Node`
-![Jenkins Master and Slave Configuration](https://raw.githubusercontent.com/miztiik/DevOps-Demos/master/setup-jenkins-slave/images/Slave-Node-Configuration-01.png)
+![Jenkins Master and Slave Configuration](https://github.com/learn-with-devops/devops/blob/master/Jenkins/Master-Slave-configuration/images/jenkins-node-setup.PNG)
 ### Test Jenkins Jobs
 1. Create “new item”
 1. Enter an item name – `My-First-Project`
@@ -56,7 +56,7 @@ Configure the node as shown here
    #!/bin/bash
    echo "_______________________________"
    echo "|                             |"
-   echo "|   Welcome to Valaxy Demo    |"
+   echo "|  Welcome to Qube Technology |"
    echo "|           _nnnn_            |"
    echo "|          dGGGGMMb           |"
    echo "|         @p~qp~~qMb          |"
