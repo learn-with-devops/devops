@@ -1,9 +1,10 @@
 # Configure Jenkins Slaves on AWS EC2
 Jenkins is a self-contained Java-based program, ready to run out-of-the-box, with packages for Windows, Mac OS X and other Unix-like operating systems. As an extensible automation server, Jenkins can be used as a simple CI server or turned into the continuous delivery hub for any project.
 
+![Jenkins Master and Slave Configuration](https://github.com/learn-with-devops/devops/blob/master/Jenkins/Master-Slave-configuration/images/Jenkins%20Master%20and%20Slave%20Configuration.png)
 ### Prerequisites
-1. Jenkins Master Running [Get help here](https://youtu.be/-0dkiteJEuE)
-1. EC2 RHEL 7.x Instance - _for Slave Node_ [Get help here](https://www.youtube.com/watch?v=KDtS6BzJo3A)
+1. Jenkins Master Running
+1. EC2 Centos Instance - _for Slave Node
    - With Internet Access
    - Security Group with Port `8080` open for internet
    - Java v1.8.x 
