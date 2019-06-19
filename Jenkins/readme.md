@@ -30,7 +30,8 @@
     Click Configure System and scroll down to Theme
 
     Specify the URL for 
-                    http://jenkins-contrib-themes.github.io/jenkins-neo-theme/dist/neo-light.css.
+    
+                    http://afonsof.com/jenkins-material-theme/dist/material-teal.css
 
     Click Save
 
