@@ -20,8 +20,14 @@
 
 ![image](https://github.com/learn-with-devops/devops/blob/master/Jenkins/images/email-setup.PNG)
 
+## Plugin Installation
 
-## Plugin Installation with Sample Theame
+   We have different ways to achive that.
+   - Install plugins from avilable section 
+   - Download the required version of piugin from https://plugins.jenkins.io/ then upload by using advanced option.
+   - Download the required version of piugin from https://plugins.jenkins.io/ then Directly copt to the Plugin section with command prompt.
+
+## Sample Theame Plugin Installation
 
     Install Jenkins Simple Theme Plugin
 
