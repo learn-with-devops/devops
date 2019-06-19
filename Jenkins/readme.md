@@ -66,3 +66,10 @@
     - Declarative Pipeline (Jenkins Pipeline)
     - Scripted Pipeline (Through code)
     
+## Jenkins lock
+
+    If you want to lock the jenkins to prevent further executions then you can achive it in two levels
+    - Lock Entire Jenkins
+    - Lock a Specific Project
+    
+    
