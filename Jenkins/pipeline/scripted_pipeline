@@ -1,0 +1,24 @@
+node{
+    stage('clean'){
+        deleteDir()
+    }
+    
+    stage('ListOutFiles')
+    {
+        sh 'ls -ltr'
+        sh 'pwd'
+    }
+    
+    stage('checkout the GitCode')
+    {
+        //git branch: 'development',url:'https://github.com/jntu-college/login.git'
+        git 'https://github.com/jntu-college/login.git'
+    }
+    
+     stage('ListOutFiles')
+    {
+        sh 'ls -ltr'
+        sh 'pwd'
+    }
+    
+}
