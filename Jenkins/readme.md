@@ -61,3 +61,9 @@
             
     - By Taking entire jenkins folder as zip and storing some where with ShellScript by scheduling with cronjobs( like in AWS S3 , Nexus and In your local AWS )
     
+    
+## Jenkins Pipeline Types
+
+    - Declarative Pipeline (Jenkins Pipeline)
+    - Scripted Pipeline (Through code)
+    
