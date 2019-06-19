@@ -20,6 +20,11 @@ node{
         sh 'ls -ltr'
         sh 'pwd'
     }
+    stage 'Build'
+  
+        // sh "sudo scp -i /home/redraghu/.ssh/id_rsa -r * redraghu@122.77.98.178:/home/redraghu/Test-File-Upload-Download"
+         sh "sudo ssh -i /home/redraghu/.ssh/id_rsa redraghu@122.77.98.178 sh /home/redraghu/Deploy_File-Upload-Download.sh"
+    }
     
 }
 
