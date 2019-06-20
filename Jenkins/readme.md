@@ -65,7 +65,7 @@
     - By Taking entire jenkins folder as zip and storing some where with ShellScript by scheduling with cronjobs( like in AWS S3 , Nexus and In your local AWS )
 
 ## Jenkins Master Slave Configuration
-![Master_Slave_Configuration_Setup](https://github.com/learn-with-devops/devops/tree/master/Jenkins/Master-Slave-configuration) 
+[!Master_Slave_Configuration_Setup](https://github.com/learn-with-devops/devops/tree/master/Jenkins/Master-Slave-configuration) 
     
 ## Jenkins Pipeline Types
 
