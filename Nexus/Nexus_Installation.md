@@ -7,6 +7,8 @@ Nexus is one a artifact repository which helps to store your build outcomes.
 
 ### Implementation steps 
 
+#### [ Nexus official document page ](https://www.sonatype.com/download-nexus-repo-oss?__hstc=31049440.01e1dcf0a10af0098bbf5a339fe4923b.1561183609765.1561189588365.1561265828356.3&__hssc=31049440.1.1561265828356&submissionGuid=ecc32901-7158-4fe6-8e79-98b7a6203451)
+
 Download and setup nexus stable version
 ```sh 
 cd /opt
@@ -47,3 +49,10 @@ Use default credentials to login
 
 username : admin  
 password : admin123
+
+
+### For Making nexus as a Service follow the below steps
+
+https://help.sonatype.com/repomanager3/installation/run-as-a-service
+
+### 
