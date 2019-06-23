@@ -1,8 +1,8 @@
 # Nexus
 
-## [Nexus Installation Process](https://github.com/learn-with-devops/devops/blob/master/Nexus/Nexus_Installation.md)
+### [Nexus Installation Process](https://github.com/learn-with-devops/devops/blob/master/Nexus/Nexus_Installation.md)
 
-## Docker Image Pulling and pushing to Nexus repo
+### Docker Image Pulling and pushing to Nexus repo
 
       # Please Pull one basic/required image to your server
       docker pull alpine
