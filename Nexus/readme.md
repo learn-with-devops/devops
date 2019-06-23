@@ -2,6 +2,19 @@
 
 ### [Nexus Installation Process](https://github.com/learn-with-devops/devops/blob/master/Nexus/Nexus_Installation.md)
 
+### Nexus Configuration with Docker 
+
+         Create a file under /etc/docker folder like below
+         
+         vi /etc/docker/daemon.json
+         
+            {
+              "insecure-registries": [
+                "18.216.203.67:8088"
+              ],
+              "disable-legacy-registry": true
+            }
+            
 ### Docker Image Pulling and pushing to Nexus repo
 
       # Please Pull one basic/required image to your server
