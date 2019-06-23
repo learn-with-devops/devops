@@ -15,6 +15,10 @@
               "disable-legacy-registry": true
             }
             
+### Try to login to the Nexus repository from your docker server
+
+      docker log -u <username> -p <password> <nexusservername>:<repo port>
+            
 ### Docker Image Pulling and pushing to Nexus repo
 
       # Please Pull one basic/required image to your server
