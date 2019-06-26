@@ -1,7 +1,7 @@
-### Maven installation , Softlink
-### TOmcat Installation and Softlink
+#### -  Maven installation , Softlink
+#### -  TOmcat Installation and Softlink
 
-### Create a Pipeline Job ---Scripted pipeline
+#### -  Create a Pipeline Job ---Scripted pipeline
               node{
 
                           stage 'clean'
