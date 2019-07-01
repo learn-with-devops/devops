@@ -1,5 +1,3 @@
-## Adhoc Mode
-
 Adhoc Mode 
 ==========
 
