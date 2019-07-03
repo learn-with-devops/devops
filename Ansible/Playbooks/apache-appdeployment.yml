@@ -1,0 +1,19 @@
+---
+- name: Application deployment into the remote appgroup servers
+  hosts: dbgroup
+
+  tasks:
+  - name: Apache installation
+    yum: name=httpd state=latest
+
+  - name: install git
+    yum: name=git state=latest
+
+  - name: Cleanup the apache
+    shell: rm -rf /var/www/html/*
+
+  - name: Download the GitRepo
+    git: repo=https://github.com/jntu-college/login.git dest=/var/www/html
+
+  - name: Restart the Apache
+    service: name=httpd state=restarted
