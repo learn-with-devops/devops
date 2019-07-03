@@ -8,6 +8,7 @@ Adhoc Mode
 - File (For Creating the File/Folder)
 
   ansible appgroup -m file -a "path=/root/anand state=directory owner=root group=centos " -b
+  ansible appgroup -m file -a "path=/home/centos.index.html state=touch owner=root group=centos " -b
 
 - Yum (For Software Installation)
 
@@ -19,7 +20,7 @@ Adhoc Mode
 
 - Shell 
 
-  ansible appgroup -m service -a "name=httpd state=started"
+  ansible appgroup -m shell -a "cat /etc/passwd"
 
 - Copy
 
@@ -27,11 +28,11 @@ Adhoc Mode
 
 - User
 
-  ansible appgroup -m copy -a " src=/etc/passwd dest=/root"
+  ansible appgroup -m user -a " name=anand state=present"
 
 - Group
 
-  ansible appgroup -m copy -a " src=/etc/passwd dest=/root"
+  ansible appgroup -m group -a " name=employee state=present"
 
 - Git
 
