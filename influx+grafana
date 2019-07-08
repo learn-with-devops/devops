@@ -1,0 +1,215 @@
+import json
+import os
+import time as t
+from datetime import datetime
+from influxdb import InfluxDBClient
+client = InfluxDBClient("13.233.198.238", 8086, "admin", "admin")
+value = client.get_list_database()
+print(value)
+client.switch_database('cpu_test')
+c=0
+while True:
+    c+=1
+	time=datetime.now()
+
+	# Cpu Info
+	CPU_Pct=round(float(os.popen('''grep 'cpu ' /proc/stat | awk '{usage=($2+$4)*100/($2+$4+$5)} END {print usage }' ''').readline()),2)
+
+	json_body = [
+		{
+			"measurement": "cpu_info_test",
+			"tags": {
+				"user": "anand1",
+			},
+			"time": time,
+			"fields": {
+				"cpu": CPU_Pct
+			}
+		}
+	]
+	client.write_points(json_body)
+	t.sleep(2)
+	if c==10:
+		break
+    
+    
+    
+    
+   Others:
+   ---------
+   client = 
+test_client = InfluxDBClient("13.232.215.38", 8086, "ubuntu", "anand", "cpu")
+
+
+
+test_client = InfluxDBClient(host='13.233.198.238', port=8086, username='admin', password='admin' )
+
+def generate_send_fake(measname):
+    fake_point = [{
+        "measurement": measname,
+        "fields": {"value": random.randint(0, 100)},
+        # "time": json.dumps((datetime.now().replace(minute=0, second=0, microsecond=0)).isoformat()).replace('"', '')
+        "time": datetime.utcnow().replace(minute=0, second=0, microsecond=0)
+    }]
+    return fake_point
+
+test_client.write_points(generate_send_fake('test_meas_one'))
+test_client.write_points(generate_send_fake('test_meas_two'))
+
+
+
+
+INSERT cpu,host=serverA value=0.77
+
+
+Useful :http://www.andremiller.net/content/grafana-and-influxdb-quickstart-on-ubuntu
+
+sudo stress --cpu  8 --timeout 20
+
+
+
+
+Other
+--------------
+import argparse
+ 
+from influxdb import InfluxDBClient
+from influxdb.client import InfluxDBClientError
+import datetime
+import random
+import time
+ 
+ 
+USER = 'admin'
+PASSWORD = 'admin'
+DBNAME = 'mydb'
+ 
+ 
+def main():
+    host='localhost'
+    port=8086
+ 
+    nb_day = 15  # number of day to generate time series
+    timeinterval_min = 5  # create an event every x minutes
+    total_minutes = 1440 * nb_day
+    total_records = int(total_minutes / timeinterval_min)
+    now = datetime.datetime.today()
+    metric = "server_data.cpu_idle"
+    series = []
+ 
+    for i in range(0, total_records):
+        past_date = now - datetime.timedelta(minutes=i * timeinterval_min)
+        value = random.randint(0, 200)
+        hostName = "server-{d34bf16ac7b745ad0d2811187511ec8954163ba9b5dbe9639d7e21cc4b3adbdb}d" {d34bf16ac7b745ad0d2811187511ec8954163ba9b5dbe9639d7e21cc4b3adbdb} random.randint(1, 5)
+        # pointValues = [int(past_date.strftime('{d34bf16ac7b745ad0d2811187511ec8954163ba9b5dbe9639d7e21cc4b3adbdb}s')), value, hostName]
+        pointValues = {
+                "time": past_date.strftime ("{d34bf16ac7b745ad0d2811187511ec8954163ba9b5dbe9639d7e21cc4b3adbdb}Y-{d34bf16ac7b745ad0d2811187511ec8954163ba9b5dbe9639d7e21cc4b3adbdb}m-{d34bf16ac7b745ad0d2811187511ec8954163ba9b5dbe9639d7e21cc4b3adbdb}d {d34bf16ac7b745ad0d2811187511ec8954163ba9b5dbe9639d7e21cc4b3adbdb}H:{d34bf16ac7b745ad0d2811187511ec8954163ba9b5dbe9639d7e21cc4b3adbdb}M:{d34bf16ac7b745ad0d2811187511ec8954163ba9b5dbe9639d7e21cc4b3adbdb}S"),
+                # "time": int(past_date.strftime('{d34bf16ac7b745ad0d2811187511ec8954163ba9b5dbe9639d7e21cc4b3adbdb}s')),
+                "measurement": metric,
+                'fields':  {
+                    'value': value,
+                },
+                'tags': {
+                    "hostName": hostName,
+                },
+            }
+        series.append(pointValues)
+    print(series)
+ 
+    client = InfluxDBClient(host, port, USER, PASSWORD, DBNAME)
+ 
+    print("Create a retention policy")
+    retention_policy = 'awesome_policy'
+    client.create_retention_policy(retention_policy, '3d', 3, default=True)
+ 
+    print("Write points #: {0}".format(total_records))
+    client.write_points(series, retention_policy=retention_policy)
+ 
+    time.sleep(2)
+ 
+    query = 'SELECT MEAN(value) FROM "{d34bf16ac7b745ad0d2811187511ec8954163ba9b5dbe9639d7e21cc4b3adbdb}s" WHERE time &amp;amp;gt; now() - 10d GROUP BY time(500m);' {d34bf16ac7b745ad0d2811187511ec8954163ba9b5dbe9639d7e21cc4b3adbdb} (metric)
+    result = client.query(query, database=DBNAME)
+    print (result)
+    print("Result: {0}".format(result))
+ 
+if __name__ == '__main__':
+    main()
+    
+    
+    
+    
+    Other
+    ---------
+    client = InfluxDBClient(host='13.232.215.38', port=8086, username='ubuntu', password='anand')
+
+
+from influxdb import InfluxDBClient
+
+client.create_database('hema')
+client.get_list_database()
+
+client.switch_database('hema')
+
+
+client.query('SELECT "duration" FROM "hema"."autogen"."brushEvents" WHERE time > now() - 4d GROUP BY "user"')
+
+
+
+SHOW RETENTION POLICIES ON mydb
+
+SHOW TAG KEYS ON mydb
+
+SHOW MEASUREMENTS
+
+SHOW RETENTION POLICIES
+
+
+
+create user "shashi" with password "shashi123" grant read on "surya" to "shashi"
+
+while true; do curl -i -XPOST 'http://13.233.198.238:8086/write?db=statsdemo' --data-binary 'cpu,host=serverA value=`cat /proc/loadavg | cut -f1 -d" "`'; sleep 5; done
+
+
+
+
+Other
+------
+import random
+import json
+from datetime import datetime
+from influxdb import InfluxDBClient
+client = InfluxDBClient("13.233.198.238", 8086, "admin", "admin")
+client.get_list_database()
+#client.switch_database('cpu_test')
+#client.write_points(json_body)
+
+
+
+
+
+
+
+
+
+
+def generate_send_fake(measname):
+
+    fake_point = [{
+        "measurement": measname,
+        "fields": {"value": random.randint(0, 100)},
+        # "time": json.dumps((datetime.now().replace(minute=0, second=0, microsecond=0)).isoformat()).replace('"', '')
+        "time": datetime.utcnow().replace(minute=0, second=0, microsecond=0)
+    }]
+
+    return fake_point
+
+test_client.write_points(generate_send_fake('test_meas_one'))
+test_client.write_points(generate_send_fake('test_meas_two'))
+
+
+Links : 
+================
+http://www.compassmentis.com/2016/06/grafana-influxdb-and-python-simple-sample/   -- Grafana Installation
+https://www.influxdata.com/blog/getting-started-python-influxdb/
+
+http://www.andremiller.net/content/grafana-and-influxdb-quickstart-on-ubuntu     ---Influxdb Installation
