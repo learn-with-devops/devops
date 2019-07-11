@@ -11,7 +11,7 @@ An Ansible playbook is an organized unit of scripts that defines work for a serv
   -   Ansible-playbook {playbook name} --sysntax-check
   -   Ansible-playbook {playbook name} --check
     
-    #### Follow the Ansible Playbook Example [here](https://github.com/learn-with-devops/devops/tree/master/Ansible/Playbooks)
+   #### Follow the Ansible Playbook Example [here](https://github.com/learn-with-devops/devops/tree/master/Ansible/Playbooks)
     
 Aansible Roles
 --------------------------------------------------------------
