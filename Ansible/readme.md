@@ -5,7 +5,8 @@
 Ansible PlayBook
 --------------------------------------------------------------
 An Ansible playbook is an organized unit of scripts that defines work for a server configuration managed by the automation tool Ansible. Ansible is a configuration management tool that automates the configuration of multiple servers by the use of Ansible playbooks. ... Ansible plays are written in YAML.
-- Synatax
+
+Syntax:
          -   Ansible-playbook {playbook name}
          -   Ansible-playbook -vvv {playbook name} 
          -   Ansible-playbook {playbook name} --sysntax-check
@@ -19,7 +20,8 @@ In Ansible, the role is the primary mechanism for breaking a playbook into multi
 
 ![image](https://github.com/learn-with-devops/devops/blob/master/Ansible/images/tasks.PNG)
 
--   Syntax
+Syntax:
+
     ansible-galaxy [delete|import|info|init|install|list|login|remove|search|setup] {file name}
 
    #### Follow the Ansible Role Example [here](https://github.com/learn-with-devops/Ansible-Role-Apache)
