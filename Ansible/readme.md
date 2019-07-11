@@ -7,6 +7,7 @@ Ansible PlayBook
 An Ansible playbook is an organized unit of scripts that defines work for a server configuration managed by the automation tool Ansible. Ansible is a configuration management tool that automates the configuration of multiple servers by the use of Ansible playbooks. ... Ansible plays are written in YAML.
 
 Syntax:
+
          -   Ansible-playbook {playbook name}
          -   Ansible-playbook -vvv {playbook name} 
          -   Ansible-playbook {playbook name} --sysntax-check
