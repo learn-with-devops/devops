@@ -19,4 +19,4 @@ In Ansible, the role is the primary mechanism for breaking a playbook into multi
 
 ![image](https://github.com/learn-with-devops/devops/blob/master/Ansible/images/tasks.PNG)
 
-#### Follow the Ansible Role Example [here](https://github.com/learn-with-devops/Ansible-Role-Apache)
+   #### Follow the Ansible Role Example [here](https://github.com/learn-with-devops/Ansible-Role-Apache)
