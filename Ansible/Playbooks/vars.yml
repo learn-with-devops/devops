@@ -1,0 +1,15 @@
+---
+- name: When_Condition example
+  hosts: appgroup
+  vars:
+   - package: wget, httpd, unzip , git 
+  gather_facts: False
+  become: True
+
+  tasks:
+  - name: Apache installation
+    yum: name={{ package }}  state=latest
+    register: logs_of_software_installation
+
+  - name: Display the output logs
+    debug: var=logs_of_software_installation

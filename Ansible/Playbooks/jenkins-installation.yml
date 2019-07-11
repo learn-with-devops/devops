@@ -1,0 +1,26 @@
+---
+- name: Jenkins Installation
+  hosts: localhost 
+  vars:
+   - presoftwares: wget, zip, unzip
+   - jenkinsname: jenkins
+  gather_facts: False
+
+  tasks:
+  - name: Install Java
+    yum: name=java-1.8.0-openjdk-devel state=latest
+
+  - name: Install Pre-required softwares
+    yum: name={{ presoftwares }} state=latest
+
+  - name: Download the Jenkins PAckage
+    shell: sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins.io/redhat-stable/jenkins.repo
+
+  - name: Download the key file
+    shell: sudo rpm --import http://pkg.jenkins.io/redhat-stable/jenkins.io.key
+
+  - name: Install Jenkins
+    yum: name=jenkins state=latest
+
+  - name: start the Jenkins
+    shell: service jenkins start 

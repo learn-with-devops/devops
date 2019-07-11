@@ -1,0 +1,13 @@
+---
+- name: When_Condition example
+  hosts: appgroup
+  vars_files:
+   - vars_software.yml 
+  gather_facts: False
+
+  tasks:
+  - name: Apache installation
+    yum: name={{ package }}  state=latest
+
+  - name: tree installation
+    yum: name={{ software }}  state=latest

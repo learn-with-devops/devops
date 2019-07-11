@@ -1,0 +1,25 @@
+---
+- name: Application deployment into the remote appgroup servers
+  hosts: dbgroup 
+  gather_facts: True 
+  
+  tasks:
+  - name: Apache installation
+    yum: name=httpd state=latest
+
+  - name: copy the file
+    copy: src=/home/centos/index.html  dest=/var/www/html
+    notify:
+    - restart apache
+  
+  - name: copy the testfile
+    copy: src=/etc/passwd dest=/home
+    notify:
+    - passwd_file copied
+    
+  handlers:
+  - name: restart apache
+    service: name=httpd state=restarted
+
+  - name: passwd_file copied
+    shell: echo "success"
