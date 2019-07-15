@@ -33,3 +33,9 @@
 
         docker build -t <image-name > .
         docker build --tag <image-name > <Dockerfile_location>
+	
+    - Remove Unwanted Images
+    
+        docker image prune
+	
+ 
