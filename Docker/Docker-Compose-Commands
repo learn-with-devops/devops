@@ -23,3 +23,14 @@ docker-compose stop
 
 docke-compose rm
 
+version: "3"
+services:
+  redis:
+    image: redis:alpine
+    container_name: my_redis
+
+  moby:
+    image: russmckendrick/moby-counter
+    container_name: my_moby
+    ports:
+      - "80:80"
