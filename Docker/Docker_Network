@@ -1,0 +1,9 @@
+Moby-Counter Example :
+-----------------------------
+
+docker run -t -d --name redis --network my-mobi redis:alpine
+docker ps
+docker run -t -d -p 80:80 --name moby-counter --network my-mobi russmckendrick/moby-counter
+
+
+
