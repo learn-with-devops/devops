@@ -1,3 +1,6 @@
+
+docker network create my-mobi --driver=bridge
+
 Moby-Counter Example :
 -----------------------------
 
