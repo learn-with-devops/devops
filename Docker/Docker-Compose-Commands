@@ -1,0 +1,25 @@
+Docker compose Commands:
+----------------------------
+
+
+docker-compose --version/-v
+
+docker-compose up/down
+
+docker-compose config --> syntax check
+
+docker-compose up --scale web=3
+
+docker-compose logs
+
+docker-compose top
+
+docker-compose ps
+
+- Run a docker-compose in Background mode
+docker-compose up -d
+
+docker-compose stop
+
+docke-compose rm
+
