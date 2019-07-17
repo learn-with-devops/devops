@@ -9,4 +9,14 @@ docker ps
 docker run -t -d -p 80:80 --name moby-counter --network my-mobi russmckendrick/moby-counter
 
 
+docker run -itd --name=alpine11 --network=bridge alpine:latest
+ 1015  docker ps
+ 1016  docker inspect bridge
+ 1017  docker run -itd --name=alpine12 --network=bridge alpine:latest
+ 1018  docker ps
+ 1019  docker inspect bridge
+ 1020  docker attach alpine11
+
+
+
 
