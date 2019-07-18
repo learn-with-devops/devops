@@ -114,10 +114,30 @@ Docker Swarm Container Deployment types :
 	and finally restart the docker
 		sudo systemctl restart docker
 		
-	# Onother way to check the logs 
-	docker logs $(docker inspect --format "{{.Status.ContainerStatus.ContainerID}}" pioi4lfw9iq8)
+     # Onother way to check the logs 
+     docker logs $(docker inspect --format "{{.Status.ContainerStatus.ContainerID}}" pioi4lfw9iq8)
 	
-	
-	
+     # Example :
+	 
+	version: "3"
+
+	services:
+	   app:
+		  image: httpd
+		  deploy:
+			replicas: 5
+			resources:
+			  limits:
+				cpus: "0.2"
+				memory: 50M
+			restart_policy:
+			  condition: on-failure
+		  ports:
+			- "80:80"
+		  networks:
+			- my-httpd
+
+	networks:
+	  my-httpd:
 	
 	
