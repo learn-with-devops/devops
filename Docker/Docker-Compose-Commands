@@ -76,6 +76,12 @@ Network Declaration :
     
 networks:
   webnet
+----------------------------------------------------------------
+Port Forwording:
+
+   ports:
+      - "8080-8084:80"
+
 
 
 
