@@ -117,7 +117,7 @@ Docker Swarm Container Deployment types :
      # Onother way to check the logs 
      docker logs $(docker inspect --format "{{.Status.ContainerStatus.ContainerID}}" pioi4lfw9iq8)
 	
-     # Example :
+     # Example-1 :
 	 
 	version: "3"
 
@@ -139,5 +139,50 @@ Docker Swarm Container Deployment types :
 
 	networks:
 	  my-httpd:
-	
-	
+	  
+	  
+    # Example-2
+    
+    version: '3'
+
+	services:
+	   db:
+	     image: mysql:5.7
+	     deploy:
+	       replicas: 4
+	       restart_policy:
+		 condition: on-failure
+	     volumes:
+	       - db_data:/var/lib/mysql
+	     restart: always
+	     environment:
+	       MYSQL_ROOT_PASSWORD: somewordpress
+	       MYSQL_DATABASE: wordpress
+	       MYSQL_USER: wordpress
+	       MYSQL_PASSWORD: wordpress
+	     networks:
+	       - wordpress-overlay
+
+	   wordpress:
+	     depends_on:
+	       - db
+	     image: wordpress:latest
+	     deploy:
+	       replicas: 2
+	       restart_policy:
+		 condition: on-failure
+	     ports:
+	       - "8000:80"
+	     restart: always
+	     networks:
+	       - wordpress-overlay
+	     environment:
+	       WORDPRESS_DB_HOST: db:3306
+	       WORDPRESS_DB_USER: wordpress
+	       WORDPRESS_DB_PASSWORD: wordpress
+	volumes:
+	    db_data:
+	networks:
+	    wordpress-overlay:
+
+
