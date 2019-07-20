@@ -1,1 +1,6 @@
-test
+- ansible pulling
+- docker ignore
+- Need to check if the script got success or failue ?? If success then exit.
+- How to check the number of arguments u passed??
+- How to execute a job on parallel basis ??
+- Execute  a job on linux and Windows at a time ??
