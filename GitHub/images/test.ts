@@ -4,3 +4,4 @@
 - How to check the number of arguments u passed??
 - How to execute a job on parallel basis ??
 - Execute  a job on linux and Windows at a time ??
+- I want to execute a job on perticular slave node ?? How to do that with Pipeline ?? 
