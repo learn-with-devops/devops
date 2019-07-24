@@ -1,0 +1,33 @@
+## Loops
+
+Loops can do one task on multiple things, such as create a lot of users, install a
+lot of packages, or repeat a polling step until a certain result is reached.
+
+- yum:
+  name: "{{ item }}"
+  state: latest
+  with_items:
+    - httpd
+    - mod_wsgi
+    
+## Tags
+  Tags are useful to be able to run a subset of a playbook on-demand.
+ 
+
+## Blocks
+Blocks cut down on repetitive task directives, allow for logical grouping of tasks
+and even in play error handling
+
+
+
+
+
+
+
+
+
+
+
+
+### Reference Documents:
+http://people.redhat.com/mskinner/rhug/q2.2017/Ansible-Hands-on-Introduction.pdf
