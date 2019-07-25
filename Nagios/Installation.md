@@ -4,7 +4,7 @@ Steps for Installing and Configuring Nagios on Centos 7
 
 Installing Dependencies
 
-#yum install -y httpd php
+#yum install -y httpd php wget unzip
 
 Adding Libraries
 
