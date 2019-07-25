@@ -2,8 +2,9 @@
 
 http://13.233.39.202/nagios/
 
-Username : nagiosadmin
-pass: anand
+	Username : nagiosadmin
+
+	pass: anand
 
 
 
