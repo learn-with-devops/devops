@@ -1,0 +1,26 @@
+## Ansible Interview Questions
+
+- What is Ansible and UseCases ??
+- What is the Inventory/Host file ??
+- What is the diff b/w Push & Pull based configuration ??
+- Ansible Vs Cheff Vs Puffet
+- What is Adhoc Mode ??
+- What is a Playbook ??
+- What is Ansible-Roles ??
+- Write a Playbook for Apache installation and Static Code deployment ??
+- What is Notify-Handler ??
+- Write a Loop in ansible-playbook ??
+- Expline the Ansible-Role scheliton ??
+- How to get the remote server information ??
+- Write conditions with playbooks??
+- What is Ansible Tower?
+- Explain Ansible facts
+- How do you see all variables for a host?
+- Compile the Ansible-playbook and Execute it in dry run mode ??
+- what is "ansibe-playbook -vvv"
+- Ansible Playbooks vs Roles?
+- What are the advantages of using Ansible? compare to chef and puffet ??
+- Expline the ansible architecture ??
+- Can you build your own modules with Ansible?
+- What is ask_pass in ansible?
+- What is fork in ansible configuration file??
