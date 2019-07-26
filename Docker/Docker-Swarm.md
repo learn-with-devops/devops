@@ -18,7 +18,7 @@ Initial Setup Process
 	- Now Jump into the Master Node and run the following commands
 	
 	  # Initialize the Docker Swarm Mode
-	  docker swarm init --listen-addr <IP Address of Master Node>
+	  docker swarm init
 
 	- Once u run the above command on master then you will get Docker-Swarm-join-Token. Plese copy the entire line and run that into the slave nodes. That's it.
 
