@@ -43,7 +43,10 @@ Configure SonarQube server name and authentication token
 To Get Authentication code follow below steps.
 	Login to SonarQube server as a admin  `My Account` > `Security` > `Generate Token`
 
-Create a job to test SonarQube. Provide below sonar properties details in the job under build 
+Create a job to test SonarQube.
+- https://github.com/LableOrg/java-maven-junit-helloworld
+
+Provide below sonar properties details in the job under build 
 - Build:
   - `Execute SonarQube Scanner` > `Analysis properties`  (it is mandatary).  
      - sonar.projectKey=`Qube`
