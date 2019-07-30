@@ -1,4 +1,4 @@
-## Docker Uinion File System
+## Docker Union File System
 
     If I have a directory d1/, I know I can mount it at /mountPoint inside a Docker container by doing this:
 
