@@ -5,3 +5,6 @@
 ## Database Name
     - Sonarqubedb
     
+## Code Quality analasys before PR Merging
+    https://techtalkbook.com/sonarqube-git-analysis/
+    
