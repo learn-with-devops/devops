@@ -69,4 +69,16 @@ https://stackoverflow.com/questions/35891193/union-mounts-into-docker-containers
     Reference Link : https://stackoverflow.com/questions/39326602/docker-compose-swarm-force-containers-to-run-on-specific-hosts
 
 
-Another Way :  docker service create --name proxy --constraint "node.hostname!=node01" nginx
+Another Way :
+
+            docker service create --name proxy --constraint "node.hostname!=node01" nginx
+
+        Continuing the previous example, assuming your cluster with node-1 and node-2, you can run a MySQL server container on the cluster. When you run the container, you can use a constraint to ensure the database gets good I/O performance. You do this by filtering for nodes with flash drives:
+        
+        $ docker tcp://<manager_ip:manager_port>  run -d -P -e constraint:storage==ssd --name db mysql
+f8b693db9cd6
+
+$ docker tcp://<manager_ip:manager_port>  ps
+CONTAINER ID        IMAGE               COMMAND             CREATED                  STATUS              PORTS                           NAMES
+f8b693db9cd6        mysql:latest        "mysqld"            Less than a second ago   running             192.168.0.42:49178->3306/tcp    node-1/db
+
