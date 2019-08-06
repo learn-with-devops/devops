@@ -72,4 +72,12 @@
 
     kubectl scale --replicas=10 deploy/helloworld
     
-   
+#### List out the pod running nodes with all details
+
+    kubectl get pod -o=custom-columns=NAME:.metadata.name,STATUS:.status.phase,NODE:.spec.nodeName --all-namespaces
+    or
+    kubectl get pod -o=custom-columns=NODE:.spec.nodeName,NAME:.metadata.name --all-namespaces
+    or 
+    kubectl get pod --all-namespaces -o json | jq '.items[] | .spec.nodeName + " " + .status.podIP'
+    
+#### 
