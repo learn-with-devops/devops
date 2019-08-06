@@ -67,3 +67,6 @@ https://stackoverflow.com/questions/35891193/union-mounts-into-docker-containers
 
 
     Reference Link : https://stackoverflow.com/questions/39326602/docker-compose-swarm-force-containers-to-run-on-specific-hosts
+
+
+Another Way :  docker service create --name proxy --constraint "node.hostname!=node01" nginx
