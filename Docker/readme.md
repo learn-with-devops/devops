@@ -23,3 +23,44 @@ Answer :
 Reference Link :
 
 https://stackoverflow.com/questions/35891193/union-mounts-into-docker-containers
+
+
+### Run a Docker Container on Specific Host ( Possible by using CONSTRAINTS option for services)
+
+         version: "3"
+        services:
+          service1:
+            image: localrepo/image1
+            deploy:
+              placement:
+                constraints: [node.hostname == node1]
+              replicas: 1
+              resources:
+                limits:
+                  cpus: "1"
+                  memory: 1000M
+              restart_policy:
+                condition: on-failure
+            ports:
+              - 8000:8000
+            networks:
+              - webnet
+
+          service2:
+            image: localrepo/image2
+            deploy:
+              placement:
+                constraints: [node.hostname == node2]
+              replicas: 1
+              resources:
+                limits:
+                  cpus: "1"
+                  memory: 500M
+              restart_policy:
+                condition: on-failure
+            ports:
+              - "8000:8000"
+            networks:
+              - webnet
+        networks:
+          webnet:
