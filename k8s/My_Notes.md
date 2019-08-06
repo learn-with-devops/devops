@@ -28,4 +28,20 @@
 
     kubectl get services
     
-#### 
+#### Expose the Deployment to the Outer World
+ 
+    kubectl expose deployment helloworld --type=NodePort
+    
+#### Then Type below to see the port
+
+    kubectl get services  # Use that Port for accessing from Internet
+    
+#### If you want to see the deployment service in YAML format.
+
+    kubectl get deploy/helloworld -o yaml
+    
+#### Scale Up the Containers count
+
+    kubectl scale --replicas=10 deploy/helloworld
+    
+   
