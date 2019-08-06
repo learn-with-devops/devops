@@ -64,3 +64,6 @@ https://stackoverflow.com/questions/35891193/union-mounts-into-docker-containers
               - webnet
         networks:
           webnet:
+
+
+    Reference Link : https://stackoverflow.com/questions/39326602/docker-compose-swarm-force-containers-to-run-on-specific-hosts
