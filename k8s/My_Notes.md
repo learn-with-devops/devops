@@ -66,6 +66,7 @@
 
         kubectl create –f  first.yaml
 
+    Reference Link :  https://stackoverflow.com/questions/27832984/will-can-kubernetes-run-docker-containers-on-the-master-nodes
     
 #### Scale Up the Containers count
 
