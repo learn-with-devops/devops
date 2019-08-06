@@ -1,5 +1,7 @@
 # Kubernetes
 
+### Chat-Sheet : https://kubernetes.io/docs/reference/kubectl/cheatsheet/
+
 #### Deploying an Helloworld Application.
     
     kubectl run helloworld --image=karthequian/helloworld --port=80
