@@ -36,7 +36,8 @@ Disadvantages:
                   -  Deployments getting delayed( Manual Deployments)
                   -  If something went wrong roll back of package from prod server is getting time.
                   -  Developers need to wait a lot for Test results/feedback.
-                  -  
+                  -  Dev Team focus on new changes and Ops team will focus on Product Stability.
+                  
 -   Customer have a good Idea about the Requirement. Otherwise all are went in the wrong Direction.
 -   Scrum Master is responsible for managing team. If not it will collapse. 
 -   More risk of sustainability, maintainability and extensibility.
