@@ -19,3 +19,17 @@ Day-2 Linux Interview Questions:
       11. Find a file with less a than 2mb size && greter than 5mb size??
       12. find files that have a modification time of a day ago ??
       13. Find a Directory with a specific name ??
+
+Day-3 Linux Interview Questions:
+----------------------------------
+
+      14. How to add a line of code in the exit file (No need to effect the existing code in the same file) ?? 
+      15. List out top 5 CPU consuming proesses ??
+      16. Check a process is running howmuch long ??
+      17. diff b/w $* and $& ??
+      18. Exclude a String in a file and print ??
+      19. zip and tar a file ?? unzip a zip/tar file??
+      20. Find the modified files in specified time ??
+      21. Count number lines a file??
+      22. Find the last 10 recent logs ??
+      23. Print second word of every line ??
