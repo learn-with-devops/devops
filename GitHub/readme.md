@@ -24,7 +24,7 @@
            
  ### Git Flow Diagram with commands
  
- ![image](https://github.com/learn-with-devops/devops/blob/master/GitHub/images/Untitled%20Diagram.png)
+ ![image](https://github.com/learn-with-devops/devops/blob/master/GitHub/images/GitHub_Flow.png)
 
 ## Branches
 
