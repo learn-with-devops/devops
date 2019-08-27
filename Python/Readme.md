@@ -2,6 +2,9 @@
 
 
 Modules
+  - Json
+  - CSV
+  - OS
   - Numpy
   - Scipy
   - Pandas
