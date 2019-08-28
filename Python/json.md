@@ -1,5 +1,6 @@
 # Python JSON Modules
 
+
 JSON (JavaScript Object Notation) is frequently used between a server and a web application. An example of JSON data:
 
         {
@@ -18,7 +19,7 @@ JSON (JavaScript Object Notation) is frequently used between a server and a web 
 The json module enables you to convert between JSON and Python Objects.
 
 Convert JSON to Python Object (Dict)
-- To convert JSON to a Python dict use this:
+To convert JSON to a Python dict use this:
 
         import json
 
