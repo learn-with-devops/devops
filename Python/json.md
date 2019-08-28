@@ -82,3 +82,24 @@ The json module enables you to convert between JSON and Python Objects.
 
         new = json.dumps(data, indent=2, sort_keys=True)  // String/list to JSON Data
         print(new)
+
+
+### Real Time Scenario ( Read a Json File and do modifications on that and convert again to JSON file.)
+
+    Reference : https://github.com/CoreyMSchafer/code_snippets/tree/master/Python-JSON
+    
+                import json
+
+                with open('states.json') as f:
+                    data = json.load(f)
+                    print(type(data))
+                    print(data)
+
+                for st in data['states']:
+                    # print(st['name'], st['abbreviation'])
+                    del st['abbreviation']
+                    print(st)
+
+                with open('new_states.json', 'w') as f:
+                    json.dump(data, f, indent=2)
+    
