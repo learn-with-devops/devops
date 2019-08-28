@@ -1,4 +1,4 @@
-# Python JSON Modules
+## Python JSON Modules
 
 
 JSON (JavaScript Object Notation) is frequently used between a server and a web application. An example of JSON data:
@@ -27,3 +27,45 @@ To convert JSON to a Python dict use this:
         python_obj = json.loads(json_data)
         print python_obj["name"]
         print python_obj["city"]
+
+
+### My Example
+
+        import json
+
+        people_string = '''
+        {
+            "people": [
+                {
+                    "name": "Anand",
+                    "phone": "989898",
+                    "mail": ["anand@hcl.com","anandr@hpe.com"],
+                    "Address": "Bangalore"
+                },
+                {
+                    "name": "Balu",
+                    "phone": "99009",
+                    "mail": null,
+                    "Addess": "hyd"
+                }
+            ]
+        }
+        '''
+
+        data = json.loads(people_string)
+        print(type(data))
+        print(data)
+        print("-------------------------")
+
+        print(type(data['people']))
+
+        print("-------------------------")
+
+        for peop in data['people']:
+            print(peop['name'])
+
+        for p in data['people']:
+            del p['phone']
+
+        new = json.dumps(data, indent=2, sort_keys=True)
+        print(new)
