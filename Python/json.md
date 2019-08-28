@@ -13,7 +13,7 @@
         false	False
         null	None
 
-JSON (JavaScript Object Notation) is frequently used between a server and a web application. An example of JSON data:
+## JSON (JavaScript Object Notation) is frequently used between a server and a web application. An example of JSON data:
 
         {
             "persons": [
