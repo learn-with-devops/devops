@@ -104,3 +104,34 @@ The json module enables you to convert between JSON and Python Objects.
                 with open('new_states.json', 'w') as f:
                     json.dump(data, f, indent=2)
     
+    
+### Example 2
+
+        import json
+
+        with open('wiki.json') as w:
+            data = json.load(w)
+
+        #print(type(data))
+
+        # tt = json.loads(data)
+        #print(type(json.dumps(data, indent=2)))
+
+        #a = json.dumps(data, indent=2)
+        # print(a)
+
+        #print(len(data['dataset']['data']))
+
+        date_n = dict()
+        for item in data['dataset']['data']:
+            #print(item)
+            date = item[0]
+            count = item[2]
+            date_n[date]= count
+
+        print(date_n['2005-01-03'])
+
+
+        #    print("Current_date    ", date ," ", count )
+        
+        Ref: https://www.youtube.com/watch?v=9N6a-VLBa2I
