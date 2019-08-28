@@ -53,7 +53,7 @@ The json module enables you to convert between JSON and Python Objects.
         }
         '''
 
-        data = json.loads(people_string)
+        data = json.loads(people_string)    // Convert the JSON data to Directory
         print(type(data))
         print(data)
         print("-------------------------")
@@ -66,7 +66,7 @@ The json module enables you to convert between JSON and Python Objects.
             print(peop['name'])
 
         for p in data['people']:
-            del p['phone']
+            del p['phone']       // Delete a specific string 
 
-        new = json.dumps(data, indent=2, sort_keys=True)
+        new = json.dumps(data, indent=2, sort_keys=True)  // String/list to JSON Data
         print(new)
