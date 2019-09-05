@@ -113,4 +113,16 @@ Pass a Single HTML page under a Route
 		
 		
 
+Exceptions & Error Handling : 
+-----------------------------
+	An exception is an error that happens during execution of a program. When that
+	error occurs, Python generate an exception that can be handled, which avoids your
+	program to crash.
 
+	try:
+	     p = open('csv_data.csv')
+	     data = big_data
+	except FileNotFoundError as e:
+	    print(e)
+	except Exception as e:
+	    print(e)
