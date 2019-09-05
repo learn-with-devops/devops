@@ -10,6 +10,7 @@
     - JSON
     - CSV
     - OS
+    - Exceptions & Error Handling
     
   Pending Modules : 
   
