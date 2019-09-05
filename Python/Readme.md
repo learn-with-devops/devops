@@ -128,8 +128,8 @@ Exceptions & Error Handling :
 	    print(e)
 
 
-Example with try , except, else and Finally block : 
----------------------------------------------------
+#### Example with try , except, else and Finally block : 
+
 
 	try:
 	     p = open('csv_data.csv')
@@ -144,4 +144,18 @@ Example with try , except, else and Finally block :
 	finally:
 	    print("Finally Executing Successfully")
 	    
-	    
+#### Raise Your own Exception :
+
+	try:
+	     p = open('csv_data.csv')
+	     if p.name == 'csv_data.csv':
+		 raise Exception
+	except FileNotFoundError as e:
+	    print(e)
+	except Exception as e:
+	    print('Manual Error')
+	else:
+	    print(p.read())
+	    p.close()
+	finally:
+	    print("Finally Executing Successfully")
