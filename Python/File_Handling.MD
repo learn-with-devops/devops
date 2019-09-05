@@ -45,7 +45,7 @@
               ‘r+’ – Special read and write mode, which is used to handle both actions when working with a file
                 f = open('data.txt','r+')
         
-    Using Contaxt Manager:
+  Using Contaxt Manager:
     
             - Read all the Data in a file
                     with open('data.txt','r') as f:
