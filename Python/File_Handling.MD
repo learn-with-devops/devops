@@ -72,10 +72,37 @@
                             text = f.read(10)
                             print(f.tell())
 
-                    
+            - Content Overriding 
+                   with open('data.txt','w') as f:
+                            f.write('Tant')
+                            f.seek(0)
+                            f.write('A')
              
               
               
               
-            
+  Scenario : 
+  
+  - Copy the Content from Original file to Copy File.
+          with open('data.txt','r') as rf:
+               with open('data-copy.txt','w') as wf:
+                        for line in rf:
+                                 wf.write(line)
+              
+              
+  Files Types:
+  
+        There are 2 types of files mainly: 
+                1. Text   ( Deal with Files)
+                2. Binary ( Mainly deal with Images)
+                
+        - With Images
+          
+           -  Copy the Content from Original Image to Copy Image. ( b for Bytes )
+           
+                   with open('data.txt','rb') as rf:
+                       with open('data-copy.txt','wb') as wf:
+                                for line in rf:
+                                         wf.write(line)
+
             
