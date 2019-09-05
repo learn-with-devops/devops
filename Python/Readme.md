@@ -126,3 +126,22 @@ Exceptions & Error Handling :
 	    print(e)
 	except Exception as e:
 	    print(e)
+
+
+Example with try , except, else and Finally block : 
+---------------------------------------------------
+
+	try:
+	     p = open('csv_data.csv')
+	    # data = big_data
+	except FileNotFoundError as e:
+	    print(e)
+	except Exception as e:
+	    print(e)
+	else:
+	    print(p.read())
+	    p.close()
+	finally:
+	    print("Finally Executing Successfully")
+	    
+	    
