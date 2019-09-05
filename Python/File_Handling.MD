@@ -1,0 +1,52 @@
+## File Handling
+
+        Python too supports file handling and allows users to handle files i.e., to read and write files, 
+        along with many other file handling options, to operate on files. The concept of file handling has
+        stretched over various other languages, but the implementation is either complicated or lengthy, 
+        but alike other concepts of Python, this concept here is also easy and short.
+        
+  Files can be open in two ways : 
+  
+              1. By using Object
+              2. By Contaxt Manager ( using With)
+              
+  Using Object : 
+  
+            - Open a File ( By deafult it is in Read mode )
+                f = open('data.txt')
+              
+            - Display the File Name 
+                f = open('data.txt')
+                print(f.name)
+
+            - Display the File Open Mode
+                f = open('data.txt','r')
+                print(f.mode)
+            
+      #### Different types of Modes
+                    “ r “, for reading.
+                    “ w “, for writing.
+                    “ a “, for appending.
+                    “ r+ “, for both reading and writing
+                    
+            - Open in Read Mode
+                f = open('data.txt','r')
+                print(f.read()) 
+                
+            - Open in Write Mode
+                f = open('data.txt','w')
+                f.write('Adding fifth line')
+                
+            - Append the Data
+                f = open('data.txt','a')
+                f.write('Adding sixth line')
+                
+            - Read & Write 
+              ‘r+’ – Special read and write mode, which is used to handle both actions when working with a file
+                f = open('data.txt','r+')
+              
+              
+              
+              
+            
+            
