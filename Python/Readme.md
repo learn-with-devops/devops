@@ -36,7 +36,7 @@ Modules
 
 	    Flask is called a "micro" framework because it doesn't directly provide features like form validation, database abstraction, authentication, and so on. Such features are instead provided by special Python packages called Flask extensions. The extensions integrate seamlessly with Flask so that they appear as if they were part of Flask itself.
 
-### Sample flask application
+   #### Sample flask application
 
 	    from flask import Flask, escape, request
 
@@ -47,7 +47,7 @@ Modules
 		name = request.args.get("name", "Anand")
 		return f'Hello, {escape(name)}!'
 
-#### For execution :
+   #### For execution :
 
 	    - set the execution path
 		     set FLASK_APP=flasktest.py
