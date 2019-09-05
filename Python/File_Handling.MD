@@ -84,11 +84,12 @@
   Scenario : 
   
   - Copy the Content from Original file to Copy File.
-          with open('data.txt','r') as rf:
-               with open('data-copy.txt','w') as wf:
-                        for line in rf:
-                                 wf.write(line)
-              
+  
+                  with open('data.txt','r') as rf:
+                       with open('data-copy.txt','w') as wf:
+                                for line in rf:
+                                         wf.write(line)
+
               
   Files Types:
   
