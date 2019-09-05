@@ -5,7 +5,7 @@
         stretched over various other languages, but the implementation is either complicated or lengthy, 
         but alike other concepts of Python, this concept here is also easy and short.
         
-  Files can be open in two ways : 
+  Files can be Handled in two ways : 
   
               1. By using Object
               2. By Contaxt Manager ( using With)
@@ -23,7 +23,7 @@
                 f = open('data.txt','r')
                 print(f.mode)
             
-      #### Different types of Modes
+            - Different types of Modes
                     “ r “, for reading.
                     “ w “, for writing.
                     “ a “, for appending.
@@ -44,7 +44,36 @@
             - Read & Write 
               ‘r+’ – Special read and write mode, which is used to handle both actions when working with a file
                 f = open('data.txt','r+')
-              
+        
+    Using Contaxt Manager:
+    
+            - Read all the Data in a file
+                    with open('data.txt','r') as f:
+                            text = f.read()
+                            print(text)
+                            
+            - Read a First Single Line
+                    with open('data.txt','r') as f:
+                            text = f.readline()
+                            print(text)
+                            
+            - Read all contetnt of file in single line
+                    with open('data.txt','r') as f:
+                            text = f.readlines()
+                            print(text)
+            
+            - Read first 10 charecters of a file
+                    with open('data.txt','r') as f:
+                            text = f.read(10)
+                            print(text)
+
+            - Print Current position of Method
+                   with open('data.txt','r') as f:
+                            text = f.read(10)
+                            print(f.tell())
+
+                    
+             
               
               
               
