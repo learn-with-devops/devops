@@ -109,6 +109,7 @@ Generate a random Data from the list of general Data like below :
                               harireddy@hcl.com
 
 Solution : 
+
                   import random
                   first_name = ['anand', 'shashi', 'mahesh','Hari','raghu']
                   last_name = ['Reddy','Kumar','Rebal','prasd','naik']
