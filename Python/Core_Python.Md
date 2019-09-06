@@ -523,7 +523,7 @@ OOPS:
 		os.rmdir('test')   
 		print(os.listdir())
 		# Craete a directory
-		os.rmdir('test')
+		os.mkdir('test')
 		print(os.listdir())
 		
 		
