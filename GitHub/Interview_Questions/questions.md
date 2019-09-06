@@ -33,3 +33,7 @@
 -  How to revert the changes from local index to working directory && local index to staging area ??
 -  what is the use of .git file ??
 -  Setup the ssh connection to local PC to GitHub.
+-  what is .gitignore file ??
+-  Git Fork Vs Git Clone ??
+
+
