@@ -47,3 +47,8 @@
 
 
 
+Scenarios:
+------------
+
+-  Take  a Dummy JSON data from Quandl.com and Do the changes as per the requirement and finally store that data in the form of JSON.
+- 
