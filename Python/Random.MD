@@ -48,3 +48,76 @@ Operations :
                           import random
                           list = [2,4,5,6,8,10]
                           print(random.sample(list,2))
+                          
+                          
+                  5. suffle()
+                  
+                              import random
+                              list = [2,5,8,9,12]
+                              random.shuffle(list)
+                              print ("Printing shuffled list ", list)
+                              
+                  6. Print the list of values in 10 times
+                              import random
+                              list = [2,3,4]
+                              value = random.choices(list, k=20)
+                              print(value)
+
+                  7. weights() for generating a perticular data based on our requirements
+                              import random
+                              list = [2,3,4]
+                              value = random.choices(list, weights=[30,30,5], k=20)
+                              print(value)
+                              
+                         Note: OutPut = [4, 2, 2, 3, 3, 2, 2, 3, 2, 2, 3, 3, 2, 3, 2, 2, 2, 3, 3, 2]
+                         Here 2,3 getnerated a lot.Because, they have high weight and 4 generated rarely. Because they have less weight.
+                         
+                     
+                         
+                              
+        - Random Floting Point Values
+        
+                 - uniform
+                          
+                              import random
+                              value = random.uniform(1,30)
+                              print(value)
+                              
+                              
+         - Generate a Range of Numbers
+         
+                  - range()
+                  
+                              import random
+                              li = list(range(1,30))
+                              print(li)
+                              
+  
+
+Generate a random Data from the list of general Data like below : 
+
+                              anand Kumar
+                              219-555-9087 
+                              anandkumar@hcl.com
+
+                              shashi naik
+                              202-555-7424 
+                              shashinaik@hcl.com
+
+                              Hari Reddy
+                              393-555-6882 
+                              harireddy@hcl.com
+
+Solution : 
+                  import random
+                  first_name = ['anand', 'shashi', 'mahesh','Hari','raghu']
+                  last_name = ['Reddy','Kumar','Rebal','prasd','naik']
+                  city = ['ban','pan','bage','mad','gul']
+
+                  for num in range(10):
+                      first = random.choice(first_name)
+                      last = random.choice(last_name)
+                      phone = f'{random.randint(100,400)}-555-{random.randint(6666,9999)}'
+                      email = first.lower() + last.lower() + '@hcl.com'
+                      print(f'{first} {last}\n{phone} \n{email}\n')
+                              
