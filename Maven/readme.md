@@ -97,6 +97,7 @@
          java -jar jarfilename.jar
          
 - Tomcat Installation
+
       cd /opt
       wget http://mirrors.estointernet.in/apache/tomcat/tomcat-7/v7.0.94/bin/apache-tomcat-7.0.94.zip
       unzip apache-tomcat-7.0.94.zip
