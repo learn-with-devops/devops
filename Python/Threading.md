@@ -27,8 +27,8 @@ Create a Threads in Python in below ways :
       - WithOut extending a thread class
 
 
-WithOut Craeting a Class :
---------------------------
+WithOut Craeting a Class 
+
 
             from threading import *
             print("hello",current_thread().getName())
@@ -41,5 +41,5 @@ WithOut Craeting a Class :
             print("hello",current_thread().getName())
             
             
-By Extending a Thread Class :
------------------------------
+By Extending a Thread Class 
+
