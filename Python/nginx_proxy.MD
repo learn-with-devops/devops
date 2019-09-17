@@ -41,3 +41,21 @@ Program 2:
    
    
    
+   
+   Reverse Proxy configuration:
+   
+                        upstream pythonweb {
+
+                                    server localhost:5000;
+                                    server localhost:5001;
+
+                        }
+
+                        server {
+
+                                    listen 80;
+
+                                    location /home {
+                                    proxy_pass "http://pythonweb/home"
+                                    }
+                        }
