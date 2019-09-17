@@ -3,6 +3,13 @@
 RabbitMQ is an open-source message-broker software that originally implemented the Advanced Message Queuing Protocol and has since been extended with a plug-in architecture to support Streaming Text Oriented Messaging Protocol, Message Queuing Telemetry Transport, and other protocols.
 
 
+   Connection from Cerely to RabbitMQ Output
+
+        [2019-09-17 09:16:19,914: INFO/MainProcess] Connected to amqp://guest:**@127.0.0.1:5672//
+        [2019-09-17 09:16:19,923: INFO/MainProcess] mingle: searching for neighbors
+        [2019-09-17 09:16:20,942: INFO/MainProcess] mingle: all alone
+
+
 # Celery
 
 Celery is an open source asynchronous task queue or job queue which is based on distributed message passing. While it supports scheduling, its focus is on operations in real time.
