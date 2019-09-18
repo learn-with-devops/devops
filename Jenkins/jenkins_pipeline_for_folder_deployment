@@ -79,3 +79,169 @@ NEW_HEAD=$(git rev-parse HEAD)
 [ $OLD_HEAD = $NEW_HEAD ] && exit 0
 
 git diff --name-only $OLD_HEAD $NEW_HEAD | awk -F'/' '{print $1}' > folder-list.txt
+
+
+
+
+Reference Documents:
+------------------------
+
+git diff --name-only bec8b962176d5e5381cc458c826e5f496d03b043 HEAD | egrep '.css|.js|.tpl' css/style.css
+
+
+
+https://stackoverflow.com/questions/21703653/git-pull-check-if-a-file-changed-bash
+
+
+git rev-parse HEAD
+git merge-base FETCH_HEAD master
+
+git diff --name-only $OLD_HEAD $NEW_HEAD
+
+
+git diff --name-only bec8b962176d5e5381cc458c826e5f496d03b043 8851909f1e622826979eadbae1260f85b971a610 
+
+
+cd /var/lib/jenkins/workspace/cisco-test
+OLD_HEAD=$(git rev-parse HEAD)
+git pull origin master
+NEW_HEAD=$(git rev-parse HEAD)
+
+[ $OLD_HEAD = $NEW_HEAD ] && exit 0
+
+git diff --name-only $OLD_HEAD $NEW_HEAD 
+
+cut -f2 -d"/"   or awk -F'/' '{print $NF}'  //for taking the last string
+
+git diff --name-only bec8b962176d5e5381cc458c826e5f496d03b043 8851909f1e622826979eadbae1260f85b971a610 | awk -F'/' '{print $1}'
+
+
+
+when condition :
+---------------
+
+https://stackoverflow.com/questions/37690920/jenkins-pipeline-conditional-step-stage?rq=1
+
+
+def commit
+def var
+pipeline {
+agent any
+stages {
+    stage('Git-Checkout') {
+        steps {
+            script{
+                 sh 'sudo sh /root/test-j.sh > folders_changed.txt'
+                 // commit = sh ('cat folders_changed.txt |tail -n 2')
+                 // echo "${commit}"
+                 // var = sh 'cat folders_changed.txt |tail -n 2'
+                 // echo "$var"
+                 // println $var
+            }
+        }
+    }
+}
+}
+
+
+
+
+
+def commit
+def result
+def var
+pipeline {
+agent any
+stages {
+    stage('Git-Checkout') {
+        steps {
+            script{
+                 sh 'sudo sh /root/test-j.sh > folders_changed.txt'
+                 result = readFile('folders_changed.txt').trim()
+                 echo result
+                 // commit=sh('cat folders_changed.txt |tail -n 2')
+                 // echo "the branch is: ${commit}"
+                 // var = sh 'cat folders_changed.txt |tail -n 2'
+                 // echo "$var"
+                 // println $var
+            }
+        }
+    }
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+def commit
+def result
+def var
+pipeline {
+agent any
+stages {
+    stage('Git-Checkout') {
+        steps {
+            script{
+                 sh 'sudo sh /root/test-j.sh '
+                 result = readFile('folder-list.txt').trim()
+                 echo result
+                 //commit = sh('cat folders_changed.txt |tail -n 2')
+                 // echo commit
+                 // var = sh 'cat folders_changed.txt |tail -n 2'
+                 // echo "$var"
+                 // println $var
+            }
+        }
+    }
+}
+}
+
+
+
+
+
+
+stage('Deploy') {
+    steps {
+        script { 
+            if (result == 'CC') {
+                echo 'Changes Done in CC Folder'
+            } else {
+                echo 'Changes not done in CC folder'
+            }
+        }
+    }
+}
+
+
+stage('Deploy') {
+    steps {
+        script { 
+            if (result == 'DD') {
+                echo 'Changes Done in DD Folder'
+            } else {
+                echo 'Changes not done in DD folder'
+            }
+        }
+    }
+}
+
+stage('Deploy') {
+    steps {
+        script { 
+            if (result == 'EE') {
+                echo 'Changes Done in EE Folder'
+            } else {
+                echo 'Changes not done in EE folder'
+            }
+        }
+    }
+}
