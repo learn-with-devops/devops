@@ -33,3 +33,5 @@ Day-3 Linux Interview Questions:
       21. Count number lines a file??
       22. Find the last 10 recent logs ??
       23. Print second word of every line ??
+      24. Find number of CPU cores prasent in Servers ??? //nproc or cat /proc/cpuinfo
+      25. 
