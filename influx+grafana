@@ -32,7 +32,52 @@ while True:
 	if c==10:
 		break
     
-    
+ 
+ 
+## Grafana Installation :
+
+#### 1. Install Grafana using the installation instructions: 
+
+	$ wget https://grafanarel.s3.amazonaws.com/builds/grafana_3.0.4-1464167696_amd64.deb
+	$ sudo apt-get install -y adduser libfontconfig
+	$ sudo dpkg -i grafana_3.0.4-1464167696_amd64.deb
+
+
+#### 2. Start the server and automatically start the server on boot up
+	
+	- sudo service grafana-server start
+	- sudo systemctl enable grafana-server.service
+	
+#### 3. Test
+
+        - In your browser, go to localhost:3000
+        - Log in as (user) admin, (password) admin
+
+
+
+## Influx DB Installation
+
+#### Update the server
+
+        - apt-get update
+	- apt-get upgrade
+	
+#### Adding the influx package to apt repository
+
+	curl -sL https://repos.influxdata.com/influxdb.key | sudo apt-key add -
+	source /etc/lsb-release
+	echo "deb https://repos.influxdata.com/${DISTRIB_ID,,} ${DISTRIB_CODENAME} stable" | sudo tee /etc/apt/sources.list.d/influxdb.list
+
+#### Install the InfluxDB
+
+	sudo apt-get update && sudo apt-get install influxdb
+	
+#### Start the Influx 
+
+	sudo service influxdb start
+	
+-------------------------------------------------------------------------------------------------------------------------------------
+ 
     
     
    Others:
@@ -236,3 +281,31 @@ Others :
 
         - In your browser, go to localhost:3000
         - Log in as (user) admin, (password) admin
+
+
+
+## Influx DB Installation
+
+#### Update the server
+
+        - apt-get update
+	- apt-get upgrade
+	
+#### Adding the influx package to apt repository
+
+	curl -sL https://repos.influxdata.com/influxdb.key | sudo apt-key add -
+	source /etc/lsb-release
+	echo "deb https://repos.influxdata.com/${DISTRIB_ID,,} ${DISTRIB_CODENAME} stable" | sudo tee /etc/apt/sources.list.d/influxdb.list
+
+#### Install the InfluxDB
+
+	sudo apt-get update && sudo apt-get install influxdb
+	
+#### Start the Influx 
+
+	sudo service influxdb start
+	
+
+
+
+
