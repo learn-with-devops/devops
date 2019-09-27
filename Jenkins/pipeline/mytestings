@@ -1,0 +1,445 @@
+def branch
+
+def getDeploymentEnvironment() {
+    if (env.BRANCH_NAME.startsWith('PR-')) {
+        return 'PR'
+    } else {
+	    return env.BRANCH_NAME
+    }   
+}
+
+pipeline{
+	agent any
+
+	stages {
+
+        stage('Clean Workspace') {
+            steps {
+                deleteDir()
+                echo 'Cleeanup done'
+            }
+        }  
+
+        stage('Checkout'){
+            steps {
+        	checkout scm
+			    script {
+				    branch = "${getDeploymentEnvironment()}"
+				    echo "the present branch is: ${branch}"
+			    	}
+        	}
+         }
+	
+		stage('Compile') {
+            steps {
+            	script {
+            			sh 'mvn --version'
+            			sh 'mvn clean compile'
+            	}
+                
+            }
+        }  
+
+        stage('Test') {
+            steps {
+                script {
+                        sh 'mvn --version'
+                        sh 'mvn test'
+                }
+                
+            }
+        }  
+
+        stage('Dev Deployment') {
+
+            when {
+                expression { env.BRANCH_NAME == 'dev' }
+            }
+
+            steps {
+                script {
+                        sh 'sudo sh /root/deploy.sh'
+                        echo "Deployment Done in Dev"
+                }
+                
+            }
+        }  
+
+        stage('Master Deployment') {
+
+            when {
+                expression { env.BRANCH_NAME == 'master' }
+            }
+
+            steps {
+                script {
+                        sh 'sudo sh /root/deploy.sh'
+                        echo "Deployment Done in Master"
+                }
+                
+            }
+        }  
+
+        stage('PR Deployment') {
+
+            when {
+                expression { branch == 'PR' }
+            }
+
+            steps {
+                script {
+
+                        echo "Only Test Cases are runnig...Ignoring all the conditions"
+                }
+                
+            }
+        }  
+
+		
+    }
+}
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+
+pipeline {
+agent any
+stages {
+    stage('Git-Checkout') {
+        steps {
+
+                echo "Preparing for Git-Checkout"
+                git branch: 'dev', credentialsId: '2b6352c1-e3da-4628-8f7a-488d21b47cf0', url: 'https://wwwin-github.cisco.com/gmadaka/CMP_fork.git'
+                echo "Git-Checkout Success"
+
+            script{
+
+                sh 'python CMP_fork/git_dir.py'
+                File fh2 = new File('folder_list.txt')
+                def lines = fh2.readLines()
+                for (line in lines) {
+                    folder = line
+                    println folder
+                   }
+                cmp = lines.findAll { it.contains('cmp/collectors/emc-data-domain') }
+                cmpfolder = cmp.toString()
+                println cmpfolder
+
+                ddt = lines.findAll { it.contains('DD') }
+                ddtfolder = ddt.toString()
+                println ddtfolder
+
+                eet = lines.findAll { it.contains('EE') }
+                eetfolder = eet.toString()
+                println eetfolder
+              }
+            }
+        }
+    stage('Deploy cmp/collectors/emc-data-domain') {
+        when {
+            expression { cmpfolder == '[cmp/collectors/emc-data-domain]' }
+        }
+        steps {
+            script { 
+                    echo 'Deploying the cmp/collectors/emc-data-domain Microservice'
+                }
+            }
+        }
+
+    stage('Deploy DD') {
+        when {
+            expression { ddtfolder == '[DD]' }
+        }
+        steps {
+            script { 
+                    echo 'Deploying the DD Microservice'
+                }
+            }
+        }
+
+    stage('Deploy EE') {
+        when {
+            expression { eetfolder == '[EE]' }
+        }
+        steps {
+            script { 
+                    echo 'Deploying the EE Microservice'
+                }
+            }
+        }
+    }
+}
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+def commit
+def folder
+def var
+def lines
+def result
+def cctest
+def ddtest
+def hhtest
+def lline
+
+pipeline {
+agent any
+stages {
+    stage('Git-Checkout') {
+        steps {
+            script{
+                 String fileContents = new File('/var/lib/jenkins/workspace/cisco-test/folder-list.txt').text
+                 println fileContents
+                 
+                 def copy(source, dest, Closure replaceText){
+                     dest.write(find('/var/lib/jenkins/workspace/cisco-test/folder-list.txt'))
+                    }
+                 
+                 def source = new File('/var/lib/jenkins/workspace/cisco-test/folder-list.txt')
+                 find(source){
+                      it.findAll ('DD')
+                        } 
+                 
+/*                 sh 'cat /var/lib/jenkins/workspace/cisco-test/folder-list.txt | wc -l'
+                 File fh2 = new File('/var/lib/jenkins/workspace/cisco-test/folder-list.txt')
+                 lines = fh2.readLines()
+                 for (line in lines) {
+                      folder = line
+                      println folder
+                    }
+                 result = lines.findAll { it.contains('CC') }
+                 cctest = result
+                 sh "echo ${cctest}"
+                 
+                 
+                 new File("/var/lib/jenkins/workspace/cisco-test/folder-list.txt").eachLine { currentLine, lineNumber ->
+                 if (lineNumber == 1) {
+                         lline = currentLine
+                            }
+                        }
+                 println "Line 7 = $lline"*/
+                 }
+            }
+        }
+
+        
+    stage('Deploy CC') {
+        
+        when {
+                // Only say hello if a "greeting" is requested
+                expression { lline == 'CC' }
+            }
+        steps {
+            script { 
+                    echo 'Deploying the CC Microservice'
+                }
+            }
+        }
+    }
+}
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
+
+def directory
+pipeline 
+{
+	agent any
+	stages 
+	{
+		stage('Git-Checkout') 
+		{
+			steps 
+			{
+					echo "Preparing for Git-Checkout"
+					git branch: 'dev', credentialsId: '2b6352c1-e3da-4628-8f7a-488d21b47cf0', url: 'https://wwwin-github.cisco.com/gmadaka/CMP_fork.git'
+					echo "Git-Checkout Success"
+
+				script
+				{
+						sh 'python infra_automation/git_dir.py'
+						directory = readFile('folder_list').trim()
+						echo result
+				}
+			}
+		}
+
+		stage('Deployment')
+		{
+			steps
+			{
+
+				script
+				{
+					if (directory == 'cmp')
+					{
+							echo "Call the cmp pipeline job "
+
+					}
+					else if(directory == 'cmp/collectors/emc-data-domain')
+					{
+						echo "Call the dd job"
+					}
+					else if(directory == 'cmp/collectors/emc-vnx')
+					{
+						echo "Call the vnx job"
+					}
+					else
+					{
+						echo "Ignore..."
+					}
+				}
+			}
+		}
+	}
+}
+
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+#! /bin/bash
+
+
+cd /var/lib/jenkins/workspace/cisco-test
+OLD_HEAD=$(git rev-parse HEAD)
+git pull origin master
+NEW_HEAD=$(git rev-parse HEAD)
+
+[ $OLD_HEAD = $NEW_HEAD ] && exit 0
+
+git diff --name-only $OLD_HEAD $NEW_HEAD | awk -F'/' '{print $1}' > folder-list.txt
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+
+def commit
+def var
+pipeline {
+agent any
+stages {
+    stage('Git-Checkout') {
+        steps {
+            script{
+                 // sh 'sudo sh /root/test-j.sh '
+                 // result = readFile('folder-list.txt').trim()
+                 // echo result
+                 // result.eachLine { String line ->
+                 //    test = line
+                 //    println line
+                 //    }
+                 File fh2 = new File('/var/lib/jenkins/workspace/cisco-test/folder-list.txt')
+                 def lines = fh2.readLines()
+                 for (line in lines) {
+                      folder = line
+                      println folder
+                    }
+                 result = lines.findAll { it.contains('CC') }
+                 cctest = result
+                 println cctest
+                 
+                 result1 = lines.findAll { it.contains('DD') }
+                 ddtest = result1
+                 println ddtest
+                 
+                 result2 = lines.findAll { it.contains('HH') }
+                 hhtest = result2
+                 println hhtest
+                 }
+            }
+        }
+        
+    stage('Deploy DD') {
+        steps {
+            script { 
+                if (ddtest == "[DD]") {
+                    echo 'Changes Done in DD Folder'
+                } else {
+                    echo 'Changes not done in DD folder'
+                    }
+                }
+            }
+        }
+        
+    stage('Deploy CC') {
+        
+        when {
+                // Only say hello if a "greeting" is requested
+                expression { cctest == 'CC' }
+            }
+        steps {
+            script { 
+                    echo 'Deploying the CC Microservice'
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+def commit
+def folder
+def var
+def cctest
+def ddtest
+def hhtest
+def lline
+pipeline {
+agent any
+stages {
+    stage('Git-Checkout') {
+        steps {
+            script{
+
+                 File fh2 = new File('/var/lib/jenkins/workspace/cisco-test/folder-list.txt')
+                 def lines = fh2.readLines()
+                 for (line in lines) {
+                      folder = line
+                      println folder
+                    }
+                 def result = lines.findAll { it.contains('CC') }
+                 cctest = result
+                 sh "echo ${cctest}"
+                 
+                 
+                 new File("/var/lib/jenkins/workspace/cisco-test/folder-list.txt").eachLine { currentLine, lineNumber ->
+                 if (lineNumber == 1) {
+                         lline = currentLine
+                            }
+                        }
+                 println "Line 7 = $lline"
+                 
+                 }
+            }
+        }
+
+        
+    stage('Deploy CC') {
+        
+        when {
+                // Only say hello if a "greeting" is requested
+                expression { lline == 'CC' }
+            }
+        steps {
+            script { 
+                    echo 'Deploying the CC Microservice'
+                }
+            }
+        }
+    }
+}
+
