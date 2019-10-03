@@ -180,6 +180,36 @@
     }
 
 
+  -  Python file for Folder identification
+  
+            import os
+            import subprocess
+
+            git_cmd='git diff-tree --no-commit-id --name-only -r HEAD'
+            list1=[]
+
+            commit_msg = subprocess.check_output(git_cmd, shell=True)
+            for char in commit_msg:
+                    list1.append(char)
+            list2 = ''.join(list1).split('\n')
+
+            print list2
+            #git_file_path=list2[0]
+            #dir= os.path.dirname(git_file_path)
+
+            #print dir
+
+            with open("folder_list.txt","w") as wfile:
+                for item in list2:
+                    print item
+                    dir =os.path.dirname(item)
+                    wfile.write(dir)
+                    wfile.write("\n")
+
+            with open("folder_list.txt","r") as rfile:
+                rfile.read()
+
+
 
 
   - List out the Pull Request 
