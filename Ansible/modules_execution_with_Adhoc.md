@@ -8,6 +8,7 @@ Adhoc Mode
 - File (For Creating the File/Folder)
 
   ansible appgroup -m file -a "path=/root/anand state=directory owner=root group=centos " -b
+  
   ansible appgroup -m file -a "path=/home/centos.index.html state=touch owner=root group=centos " -b
 
 - Yum (For Software Installation)
