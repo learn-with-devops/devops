@@ -13,7 +13,7 @@
     shell: rm -rf /var/www/html/*
 
   - name: Download the GitRepo
-    git: repo=https://github.com/jntu-college/login.git dest=/var/www/html
+    git: repo=https://github.com/jntu-college/login.git dest=/var/www/html force=yes
 
   - name: Restart the Apache
     service: name=httpd state=restarted
