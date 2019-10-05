@@ -9,3 +9,10 @@
 
   - name: tree installation
     yum: name={{ software }}  state=latest
+
+
+
+
+Note: 
+
+ansible-playbook extra_vars.yml --extra-vars "package=wget" --extra-vars "software=zip"
