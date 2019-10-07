@@ -38,6 +38,20 @@ CSV (Comma Separated Values) is a simple file format used to store tabular data,
                           csv_writter.writerow(line)
                           
                           
+ - Dict_Reader and Dict_Writter
+ 
+              import csv
+
+              with open('uni_rec.csv', 'r') as csv_file:
+                  csv_reader = csv.DictReader(csv_file)
+
+                  with open('new_uni_rec.csv','w+') as csv_file_new:
+                      fieldnames = ['name','branch','year','cgpa']
+                      csv_writter = csv.DictWriter(csv_file_new, fieldnames=fieldnames, delimiter='\t')
+                      csv_writter.writeheader()
+                      for line in csv_reader:
+                          csv_writter.writerow(line)
+                          
 - Delimeter Example
 
               import csv
