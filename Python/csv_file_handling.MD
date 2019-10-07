@@ -14,6 +14,16 @@ CSV (Comma Separated Values) is a simple file format used to store tabular data,
                   for line in csv_reader:
                       print(line)
                       
+ 
+- Ignoring the header in a file
+
+              import csv
+
+              with open('uni_rec.csv', 'r') as csv_file:
+                  csv_reader = csv.reader(csv_file)
+                  next(csv_reader)     // It will ignore the heading row
+                  for line in csv_reader:
+                      print(line)
                       
 - Write a new file from existing data
 
@@ -26,3 +36,6 @@ CSV (Comma Separated Values) is a simple file format used to store tabular data,
                       csv_writter = csv.writer(csv_new, delimiter=',')
                       for line in csv_reader:
                           csv_writter.writerow(line)
+                          
+                          
+
