@@ -48,3 +48,13 @@ CSV (Comma Separated Values) is a simple file format used to store tabular data,
                       csv_writter = csv.writer(csv_file_new, delimiter='\t')  // Delimiter shoud be anything like ',','/n','-','_'
                       for line in csv_reader:
                           csv_writter.writerow(line)
+                          
+- Read the content in Dictory format to filer the data
+
+              import csv
+
+              with open('uni_rec.csv', 'r') as csv_file:
+                  csv_reader = csv.DictReader(csv_file)  // Read the data in dictory format
+
+                  for line in csv_reader:
+                      print(line['year'])  // dictory filter
