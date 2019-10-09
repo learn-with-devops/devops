@@ -1,6 +1,8 @@
 # InfluxDB
 
-    -  Influxdata is a platform for storing, collecting, visualizing and managing time-series data. It is faster than mysql. Currently Influxdb is the most famous time series database. In influxdb time is the primary key. 
+	Influxdata is a platform for storing, collecting, visualizing and managing time-series data. 
+	It is faster than mysql. Currently Influxdb is the most famous time series database. 
+	In influxdb time is the primary key. 
  
 
 ## Influx DB Installation on Ubuntu Server
@@ -8,7 +10,7 @@
 #### Update the server
 
         - apt-get update
-	      - apt-get upgrade
+	- apt-get upgrade
 	
 #### Adding the influx package to apt repository
 
