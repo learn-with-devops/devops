@@ -25,3 +25,30 @@
 #### Start the Influx 
 
 	sudo service influxdb start
+
+
+## Commands to work with Influx DB
+
+	- Create aDatabase
+	  create database <databasename>
+	  
+	- Swtich to that Database
+  	  use <database>
+	  
+	- Create a Measurment (table).
+	  // Here measurements nothing but tables...No need to create a table structure..Directly we can create a table with specific coloumns.
+	  
+	  insert <tablename>, column1=value column2=value
+	  ex: 
+	  	insert rank,class=ssc score=99.8
+		
+        - Display the details of measurments(table)
+	  select * from <measurements>
+	  
+	- Where condition
+	  // if it is number then use like below
+	  select * from table where time>=99
+	  
+	  // If it is string then use like below
+	  select * from table where name='somename'
+	  
