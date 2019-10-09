@@ -32,6 +32,9 @@
 	- Create aDatabase
 	  create database <databasename>
 	  
+	- List out the data bases
+	  show databases
+	  
 	- Swtich to that Database
   	  use <database>
 	  
@@ -51,4 +54,10 @@
 	  
 	  // If it is string then use like below
 	  select * from table where name='somename'
+	  
+	 - List out the tables/measurements
+	   show measurements
+	   
+	 - If you want to select couple of fileds from a table then use like this
+	   select class,score from rank
 	  
