@@ -53,6 +53,10 @@
                        rabbitmq_use_long_name=false
                        
                        
-### Chnage the name from 'starting' to 'started' in the ansible-tower-setup-3.1.5/roles/rabbitmq/tasks/main.yml file
+### Change the file name
 
-### Finally run the ./setup.sh   // Make sure need to allow 443 port for listuning
+             Chnage the name from 'starting' to 'started' in the ansible-tower-setup-3.1.5/roles/rabbitmq/tasks/main.yml file
+
+### Run the script
+
+             Finally run the ./setup.sh   // Make sure need to allow 443 port for listuning
