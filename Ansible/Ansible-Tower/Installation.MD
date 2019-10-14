@@ -60,3 +60,7 @@
 ### Run the script
 
              Finally run the ./setup.sh   // Make sure need to allow 443 port for listuning
+
+
+### Reference Link 
+               http://devopstechie.com/install-and-configure-ansible-tower-centos7/
