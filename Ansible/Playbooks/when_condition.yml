@@ -5,7 +5,7 @@
 
   tasks:
   - name: Apache installation
-    yum: name=httpd state=absent
+    yum: name=httpd state=latest
     when: ansible_distribution == 'CentOS' 
 
   - name: Apapche iNstallation on Ubuntu
