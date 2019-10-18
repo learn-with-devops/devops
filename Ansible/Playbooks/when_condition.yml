@@ -9,7 +9,7 @@
     when: ansible_distribution == 'CentOS' 
 
   - name: start the apapche service
-    service: name=httpd state=started
+    service: name=httpd state=restarted
 
   - name: Apapche iNstallation on Ubuntu
     apt: name=apache2 state=latest
