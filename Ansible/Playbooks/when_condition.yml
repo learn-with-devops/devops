@@ -8,6 +8,9 @@
     yum: name=httpd state=latest
     when: ansible_distribution == 'CentOS' 
 
+  - name: start the apapche service
+    service: name=httpd state=started
+
   - name: Apapche iNstallation on Ubuntu
     apt: name=apache2 state=latest
     when: ansible_distribution == 'Ubuntu'
