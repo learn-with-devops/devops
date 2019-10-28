@@ -185,4 +185,15 @@ Docker Swarm Container Deployment types :
 	networks:
 	    wordpress-overlay:
 
-
+----------------------------------------------------
+version: '3'
+services:
+    web:
+       image: httpd:latest
+       deploy:
+          replicas: 4
+          restart_policy:
+               condition: on-failure
+       ports:
+          - "80:80"
+	  
