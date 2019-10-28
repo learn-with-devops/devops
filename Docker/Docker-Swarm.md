@@ -3,7 +3,7 @@ Docker Swarm :
 
 Initial Setup Process 
 
-	- Create one 3 CentOS servers and make 1 server as Master and 2 as Slave/Worker nodes
+	- Create 3 CentOS servers and make 1 server as Master and 2 as Slave/Worker nodes
 
     - Open the following ports on all servers.
 	
