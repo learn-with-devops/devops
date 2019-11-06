@@ -66,7 +66,10 @@
 
         At its simplest, a package.json file can be described as a manifest of your project that includes the packages and applications it depends on, information about its unique source control, and specific metadata like the project's name, description, and author.
    
-               {
+   
+   Example : 
+             
+             {
                   "name": "metaverse",
                   "version": "0.92.12",
                   "description": "The Metaverse virtual reality. The final outcome of all virtual worlds, augmented reality, and the Internet.",
