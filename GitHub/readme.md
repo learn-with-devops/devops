@@ -6,7 +6,7 @@
 
     git config --global user.email sam@example.com
     
-    git config --ist
+    git config --list
 
 #### Create a new local repository
 
