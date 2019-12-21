@@ -38,6 +38,7 @@
     Specify the URL for 
     
                     http://afonsof.com/jenkins-material-theme/dist/material-teal.css
+                    Plugin Info URL : http://afonsof.com/jenkins-material-theme/
 
     Click Save
 
