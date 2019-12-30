@@ -4,6 +4,7 @@
 **steps** :  
 
 - Specify the Github url in job level
+    https://github.com/LableOrg/java-maven-junit-helloworld.git
 
 - Specify different maven phases in Build section.
 
