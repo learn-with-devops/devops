@@ -233,7 +233,7 @@
 ### Variables to shell script
 
         https://ci.eclipse.org/webtools/env-vars.html/
-    
+        Ref : https://stackoverflow.com/questions/41229418/how-to-check-if-a-pipeline-is-triggered-from-a-pull-request
 ## Jenkins lock
 
     If you want to lock the jenkins to prevent further executions then you can achive it in two levels
