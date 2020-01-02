@@ -229,6 +229,10 @@
 
                 sh 'sh /opt/docker_installation.sh'
               }
+              
+### Variables to shell script
+
+        https://ci.eclipse.org/webtools/env-vars.html/
     
 ## Jenkins lock
 
