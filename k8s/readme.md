@@ -34,8 +34,7 @@ Slave:
 	
 	- kubelet:  the main service on a node, regularly taking in new or modified pod specifications (primarily through the kube-apiserver) and ensuring that pods and their containers are healthy and running in the desired state. This component also reports to the master on the health of the host where it is running.
 	
-	
-kubectl :  Command in line tool that interact with kube-apiserver and send commands to master node.Each command is converted into an API call.
+	- kubectl :  Command in line tool that interact with kube-apiserver and send commands to master node.Each command is converted into an API call.
 
 
 								 
