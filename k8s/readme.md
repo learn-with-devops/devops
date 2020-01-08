@@ -50,4 +50,10 @@ Slave:
 	- kubectl :  Command in line tool that interact with kube-apiserver and send commands to master node.Each command is converted into an API call.
 
 
+
+Notes: 
+------
+
+ 	- Kubernetes supports 5000 worker nodes to attach to master.
+
 								 
