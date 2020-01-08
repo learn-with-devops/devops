@@ -55,5 +55,14 @@ Notes:
 ------
 
  	- Kubernetes supports 5000 worker nodes to attach to master.
+	
+	- pods : Ex..I VMWare terminology a POD is a VM..and A POD can contain one or more containers.
+	
+	
+Other Terminologies:
+--------------------
+
+	- Fault Tollerence ( Fault tolerance is the property that enables a system to continue operating properly in the event of the failure of (or one or more faults within) some of its components. )
+	
 
 								 
