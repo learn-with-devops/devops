@@ -1,3 +1,7 @@
+# Architecture types 
+	- Monolithic ( thease are loosly coupled and if any function down entire application down .. ex: WAR/JAR )
+	- MicroService ( Loosly coupled and each service work independently. So , If any function down also it will work with other microservices )
+
 # Kubernetes
 
 Reference : https://www.aquasec.com/wiki/display/containers/Kubernetes+Architecture+101
