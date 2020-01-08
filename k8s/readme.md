@@ -56,7 +56,7 @@ Notes:
 
  	- Kubernetes supports 5000 worker nodes to attach to master.
 	
-	- pods : Ex..I VMWare terminology a POD is a VM..and A POD can contain one or more containers.
+	- pods : Ex..I VMWare terminology a POD is a VM..and A POD can contain one or more containers. With the help of POD we can deploy multiple dependent containers together as a single unit. 
 	
 	
 Other Terminologies:
