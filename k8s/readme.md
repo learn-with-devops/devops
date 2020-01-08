@@ -72,4 +72,22 @@ Other Terminologies:
 	- Fault Tollerence ( Fault tolerance is the property that enables a system to continue operating properly in the event of the failure of (or one or more faults within) some of its components. )
 	
 
-								 
+
+Kubernetes Installation ways:
+-----------------------------
+
+1. Play-with-k8s 
+
+		- kubeadm init
+
+		kubeadm join 172.18.0.34:6443 --token vlgle2.swtx5i0tpppuzz3b \
+		    --discovery-token-ca-cert-hash sha256:c95829447a486516b6302a564e83f55178935ddf4172e89f111c17decced82a0
+
+
+		- kubectl apply -n kube-system -f  "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 |tr -d '\n')"
+
+2. Minikube
+
+3. Kubeadm
+
+
