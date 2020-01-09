@@ -44,3 +44,7 @@
 - Describe the service information
 
       kubectl describe svc nginx-pod
+      
+- Access the appliaction like below
+   
+      NODEIP:NODEPORT/index.html
