@@ -240,4 +240,7 @@
     - Lock Entire Jenkins
     - Lock a Specific Project
     
-    
+
+## Jenkinsfile Syntax Check Reference URL's
+
+    - https://www.eficode.com/blog/jenkins-groovy-tutorial
