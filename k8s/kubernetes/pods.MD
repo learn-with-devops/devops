@@ -48,3 +48,8 @@
 - Access the appliaction like below
    
       NODEIP:NODEPORT/index.html
+      
+- Delete a service & POD
+      
+      kubectl delete svc nginx-pod
+      kubectl delete pod nginx-pod
