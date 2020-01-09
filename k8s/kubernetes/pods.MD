@@ -29,4 +29,7 @@
       
       kubectl exec -it <podname> -- /bin/sh
   
+- Delete a pod
+   
+      kubectl delete pod <podname>
   
