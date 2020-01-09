@@ -88,6 +88,8 @@ Kubernetes Installation ways:
 
 2. Minikube
 
-3. Kubeadm
+3. Kubeadm with Google cloud
+
+4. KOPS with AWS cloud
 
 
