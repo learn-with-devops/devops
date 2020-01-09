@@ -33,3 +33,14 @@
    
       kubectl delete pod <podname>
   
+- Expose POD sercvice 
+
+      kubectl expose pod nginx-pod --type=NodePort --port=80
+      
+- List out the services
+
+      kubectl get service / kubectl get service nginx-pod
+      
+- Describe the service information
+
+      kubectl describe svc nginx-pod
