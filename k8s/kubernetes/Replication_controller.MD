@@ -35,3 +35,12 @@ Ensure that a specified number of pods runs at a time.( High avilab ility & Load
   
       kubectl scale rc nginx-rc --replicas=5
   
+--------------------------------------
+
+## Replica-Set:
+
+Replica-Set is next generation to the replication-controllers.
+
+ReplcaSet. ----> supports----> Set-Based-Selectors
+Replication-Controllers  ----> supports ---> Eqality-based-selectors.
+
