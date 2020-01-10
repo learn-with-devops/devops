@@ -41,6 +41,8 @@ Ensure that a specified number of pods runs at a time.( High avilab ility & Load
 
 Replica-Set is next generation to the replication-controllers.
 
-ReplcaSet. ----> supports----> Set-Based-Selectors
-Replication-Controllers  ----> supports ---> Eqality-based-selectors.
+    - ReplcaSet. ----> supports----> Set-Based-Selectors
+    - Replication-Controllers  ----> supports ---> Eqality-based-selectors.
+    
+[!image](https://github.com/learn-with-devops/devops/blob/master/k8s/kubernetes/images/04_20_36.jpg)
 
