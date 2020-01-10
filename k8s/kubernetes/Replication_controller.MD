@@ -44,5 +44,5 @@ Replica-Set is next generation to the replication-controllers.
     - ReplcaSet. ----> supports----> Set-Based-Selectors
     - Replication-Controllers  ----> supports ---> Eqality-based-selectors.
     
-[!image](https://github.com/learn-with-devops/devops/blob/master/k8s/kubernetes/images/04_20_36.jpg)
+![image](https://github.com/learn-with-devops/devops/blob/master/k8s/kubernetes/images/04_20_36.jpg)
 
