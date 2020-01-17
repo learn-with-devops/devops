@@ -2,7 +2,9 @@
 ## Config Maps
 
 If you want to make your containers are portable then use the ConfigMaps to do that.
+
                         or
+                        
 A ConfigMap stores configuration settings that your Kubernetes Pods consume.
 
 Note:  
