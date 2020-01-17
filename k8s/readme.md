@@ -11,6 +11,8 @@
 	- Fault Tolerence
 	- Deployment
 	
+# Architecture of Kubernetes
+![image](https://github.com/learn-with-devops/devops/blob/master/k8s/kubernetes/images/k8s_architecture.jpg)
 # Kubernetes
 
 Reference : https://www.aquasec.com/wiki/display/containers/Kubernetes+Architecture+101
