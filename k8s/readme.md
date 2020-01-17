@@ -40,6 +40,13 @@ Master :
 								 
 	- Kube-Schedular          : helps schedule the pods (a co-located group of containers inside which our application processes are running) on the various nodes based on resource utilization.
 	
+	- Controll Manager ( 4 types of controll managers)
+		- Node Controller
+		- Replication Controller
+		- EndPoint Comtroller
+		- Service account & Tocken Controller
+		
+	
 Slave: 
 -------
 
