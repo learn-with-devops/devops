@@ -20,3 +20,32 @@ We can create a configMaps in 3 ways.
     - Literal Values
     
 Ref : https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/
+
+
+## Secrets
+
+To handle small amount of Sensitive data like passwords , tokens and keys etc..
+
+Note:  
+    - secrets are going to store inside ETCD database.
+    - 1MB is the max size of each secret.
+    - Values are going to stored in tmpfs folder.
+    
+    
+## How to inject secrets to Pods ??
+
+2 ways : 
+
+  1. Volumes
+  2. Env Variables
+  
+## Creating secrets in two ways??
+  
+  1. Kubectl
+  2. Manually
+  
+  ![image](https://github.com/learn-with-devops/devops/blob/master/k8s/kubernetes/images/secrets_keys.PNG)
+  
+
+
+
