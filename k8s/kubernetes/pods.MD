@@ -53,3 +53,18 @@
       
       kubectl delete svc nginx-pod
       kubectl delete pod nginx-pod
+      
+- Pod Reference manifest file
+
+        # nginx-pod.yml
+        apiVersion: v1
+        kind: Pod
+        metadata:
+          name: nginx-pod
+          labels:
+             app: nginx
+             tier: test
+        spec:
+          containers:
+             - name: nginx-container
+               image: nginx
