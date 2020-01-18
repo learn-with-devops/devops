@@ -81,7 +81,6 @@ Other Terminologies:
 	- Fault Tollerence ( Fault tolerance is the property that enables a system to continue operating properly in the event of the failure of (or one or more faults within) some of its components. )
 	
 
-
 Kubernetes Installation ways:
 -----------------------------
 
@@ -100,5 +99,9 @@ Kubernetes Installation ways:
 3. Kubeadm with Google cloud
 
 4. KOPS with AWS cloud
+
+API Version
+--------------------
+![image](https://github.com/learn-with-devops/devops/blob/master/k8s/kubernetes/images/apiversion.PNG)
 
 
