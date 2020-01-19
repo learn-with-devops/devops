@@ -48,6 +48,8 @@ Note:
   ![image](https://github.com/learn-with-devops/devops/blob/master/k8s/kubernetes/images/ks1.PNG)
   
   2. Manually
+  ![image](https://github.com/learn-with-devops/devops/blob/master/k8s/kubernetes/images/ks2.PNG)
+  ![image](https://github.com/learn-with-devops/devops/blob/master/k8s/kubernetes/images/ks3.PNG)
   
 
 
