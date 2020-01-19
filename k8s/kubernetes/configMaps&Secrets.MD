@@ -41,10 +41,13 @@ Note:
   
 ## Creating secrets in two ways??
   
-  1. Kubectl
-  2. Manually
-  
   ![image](https://github.com/learn-with-devops/devops/blob/master/k8s/kubernetes/images/secrets_keys.PNG)
+  
+  
+  1. Kubectl
+  ![image](https://github.com/learn-with-devops/devops/blob/master/k8s/kubernetes/images/ks1.PNG)
+  
+  2. Manually
   
 
 
