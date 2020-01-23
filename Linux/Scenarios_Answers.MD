@@ -42,3 +42,28 @@
                 find /root/anand/ -mtime +60 -type f -exec rm -f {} \;
                 
                 
+## 3. Take a Backup of Old logs more than 60+ days ??
+
+                
+        Solution 1:
+        -----------
+        
+                #!/bin/bash
+
+                set -x 
+
+                #Script -Purpose:Backup script
+                # Exits with zero if no error.
+
+
+                # Step -1 Function to archieve file using date and time
+
+                date=`/bin/date "+%Y.%m.%d.%H.%M.%S"`
+
+                echo $date
+
+                mkdir -p /root/backup_folder/$date
+
+                find /root/anand/ -type f -iname "*.log" -mtime +60 -print |xargs -I {} mv {} /root/backup_folder/$date
+
+                tar -cvzf /root/$date.tar.gz /root/backup_folder/$date
