@@ -17,7 +17,7 @@
 
 ## 2. Delete files older than 10 days using shell script in Unix [duplicate] ??
 
-       Solution : 
+       Solution 1: 
        ------------
        
                find ./my_dir -mtime +10 -type f -delete
@@ -35,3 +35,10 @@
                  find /var/log/ -mtime +60 -type d
                  
                '''
+               
+        Solution 2:
+        ------------
+        
+                find /root/anand/ -mtime +60 -type f -exec rm -f {} \;
+                
+                
