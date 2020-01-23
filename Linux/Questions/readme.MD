@@ -27,3 +27,14 @@ Day-2 Linux Interview Questions:
       22. Find the last 10 recent logs ??
       23. Print second word of every line ??
       24. Find number of CPU cores prasent in Servers ??? //nproc or cat /proc/cpuinfo
+      
+Day-3 Linux Interview Questions : 
+-------------------------------------
+
+      25. Diff between softkink and hardlink ??
+      26. How to find version of Linux ??
+      27. How to restart iptables ??
+      28. How to open particular port in VM ??
+      29. Inode means??
+      30. How to start the service automatically when the server got reboot ??
+      31. 
