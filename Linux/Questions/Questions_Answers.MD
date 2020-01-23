@@ -289,3 +289,8 @@ How to start the service automatically when the server got reboot ??
 	/etc/init.d  == > place original file here
 	/etc/rc3.d   == > Create a shart cut here
 	
+What are the most common Shell types?
+----------------------------------
+
+	There are 4 major Shell types: Bourne Shell (sh), C Shell (csh), Korn Shell (ksh) and Bourne Again Shell (bash).
+	Of this, the (bash) type is the most frequently used.
