@@ -67,3 +67,13 @@
                 find /root/anand/ -type f -iname "*.log" -mtime +60 -print |xargs -I {} mv {} /root/backup_folder/$date
 
                 tar -cvzf /root/$date.tar.gz /root/backup_folder/$date
+                
+                
+ ## 4. Read the Input from CLI ??
+ 
+                #!/bin/sh
+                echo "what is your name?"
+                read name
+                echo "How do you do, $name?"
+                read remark
+                echo "I am $remark too!"
