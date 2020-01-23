@@ -294,3 +294,10 @@ What are the most common Shell types?
 
 	There are 4 major Shell types: Bourne Shell (sh), C Shell (csh), Korn Shell (ksh) and Bourne Again Shell (bash).
 	Of this, the (bash) type is the most frequently used.
+	
+Cron scheduler command helps you to execute the task on every Monday at 5 AM. This command is helpful for doing weekly tasks like system clean-up.
+----------------------------------
+ 
+   	0 5 * * mon  /scripts/script.sh
+	
+	
