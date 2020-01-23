@@ -37,4 +37,4 @@ Day-3 Linux Interview Questions :
       28. How to open particular port in VM ??
       29. Inode means??
       30. How to start the service automatically when the server got reboot ??
-      31. 
+      31. Cron scheduler command helps you to execute the task on every Monday at 5 AM. This command is helpful for doing weekly tasks like system clean-up. ??
