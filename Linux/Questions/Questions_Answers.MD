@@ -283,3 +283,9 @@ Port Numbers:
 	- Monit 2812
 	- Nexus 8081
 
+How to start the service automatically when the server got reboot ??
+----------------------------------
+
+	/etc/init.d  == > place original file here
+	/etc/rc3.d   == > Create a shart cut here
+	
