@@ -129,3 +129,22 @@
             else
                 echo "no user match"
             fi
+
+
+----------------------------------------------------------------
+
+## Check the String is palindrome or Not
+
+               #!/bin/bash
+
+               read name
+
+               n=`echo $name|rev`
+               #echo $n
+
+               if [ $name == $n ]
+               then
+                       echo " The Styring is Palindrome "
+               else
+                       echo "this is not a palindrome"
+               fi
