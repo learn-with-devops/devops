@@ -1,3 +1,5 @@
+![image](https://github.com/learn-with-devops/devops/blob/master/Linux/images/conditions.jpg)
+ 
 ## While Condition with Loop Nesting
 
             #! /bin/sh
@@ -89,6 +91,18 @@
                echo " $a and $b are not equal"
             fi
             
-            
- ![image](https://github.com/learn-with-devops/devops/blob/master/Linux/images/conditions.jpg)
+ 
+ ## IF-else-If condition
+ 
+            #! /bin/bash
+
+            if [ $1 -gt 18 ]
+            then
+               echo "You may go to the party"
+            elif [ $1 == 18 ]
+            then
+               echo "Return before mid night"
+            else
+               echo "you are not allowed"
+            fi
          
