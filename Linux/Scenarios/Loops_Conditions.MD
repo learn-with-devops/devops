@@ -244,4 +244,5 @@
 
             echo ${!words[@]}
             
+      Ref : https://stackoverflow.com/questions/30294915/how-to-remove-duplicate-words-from-a-string-in-a-bash-script
             
