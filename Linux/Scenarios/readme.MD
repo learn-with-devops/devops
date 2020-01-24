@@ -17,3 +17,6 @@
   - Reverse a String ?
   - Check If String is palindrome ?
   - Search a number in array ?
+  - Find missing number in array ?
+  - ind duplicate characters/words in the String?
+  
