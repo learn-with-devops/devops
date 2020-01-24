@@ -177,5 +177,12 @@
                   echo $i
               done
               
-              
+  ## Read file lines one by one
+  
+             file="/opt/array.sh"
+
+             while IFS= read -r line
+             do
+              echo "$line"
+             done < "$file"
               
