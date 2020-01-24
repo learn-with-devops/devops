@@ -31,9 +31,9 @@
 
 
 
-## For loop to print 10 numbers
+## For/While loop to print 10 numbers
 
-    Scenario 1:
+    Scenario 1 with For:
     
             #!/bin/bash
 
@@ -42,7 +42,7 @@
              echo $i
             done
             
-    Scenario 2:
+    Scenario 2 with For:
     
             #!/bin/bash
             for i in 1 2 3 4 5
@@ -52,6 +52,18 @@
             
             Note : 
                         -n --> for single line output
+                        
+    Scenario 3 with While : 
+    
+            #!/bin/bash
+
+            j=1
+
+            while [ $j -le 10 ]
+            do
+               echo -n  $j
+               j=$(( $j + 1 )) #increse the count
+            done
             
             
             
