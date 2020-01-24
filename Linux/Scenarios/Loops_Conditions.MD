@@ -148,3 +148,34 @@
                else
                        echo "this is not a palindrome"
                fi
+
+
+## Arry Declaration with variables
+
+         Scenario 1:
+         
+               #!/bin/bash
+
+               array=( "anand" "reddy" "reddam" )
+               for i in ${array[@]}
+               do
+                  echo  $i
+               done
+               
+         Scenario 2:
+         
+              listVar="1 2 3"
+              for j in $listVar
+              do
+                  echo "$j"
+              done
+              
+         Scenario 3:
+         
+              list='"item 1" "item 2" "item 3"'
+              for i in $list; do
+                  echo $i
+              done
+              
+              
+              
