@@ -90,4 +90,5 @@
             fi
             
             
+ ![image](https://github.com/learn-with-devops/devops/blob/master/Linux/images/conditions.jpg)
          
