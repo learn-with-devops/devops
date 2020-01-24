@@ -228,3 +228,20 @@
                             echo "Name is not presented"
                     fi
             done
+
+## Remove the repeted words in a array
+
+            #!/bin/bash
+
+            string="abc, def, abc, def"
+
+            declare -A words
+
+            IFS=", "
+            for w in $string; do
+              words+=( [$w]="" )
+            done
+
+            echo ${!words[@]}
+            
+            
