@@ -210,3 +210,21 @@
             else
               echo "$n is odd number"
             fi
+
+## Check the String/word present in a Array 
+
+            echo "Enter a name to search"
+            read name
+
+            array=("anand" "reddy" "reddam")
+
+            for i in ${array[@]}
+            do
+                    if [ $i == $name ]
+                    then
+                            echo " The name is present in Array : $i"
+                            break;
+                    else
+                            echo "Name is not presented"
+                    fi
+            done
