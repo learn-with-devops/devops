@@ -94,6 +94,8 @@
  
  ## IF-else-If condition
  
+      Scenarion 1 : 
+      
             #! /bin/bash
 
             if [ $1 -gt 18 ]
@@ -105,4 +107,25 @@
             else
                echo "you are not allowed"
             fi
+            
+       Scenario 2: 
+       
+            # we only want to perform an operation if the file is readable and has a size greater than zero.
+            #!/bin/bash
+
+            if [[ -r $1 ]] && [[ -s $1 ]]
+            then
+                echo "this is not empty"
+            fi
          
+       Scenario 3: 
+       
+            # Maybe we would like to perform something slightly different if the user is either centos or anand.
+            #!/bin/bash
+            USER=$1
+            if [[ $USER == 'centos' ]] || [[ $USER == 'anand' ]]
+            then
+                echo "this is $USER"
+            else
+                echo "no user match"
+            fi
