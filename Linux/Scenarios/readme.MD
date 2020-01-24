@@ -5,4 +5,6 @@
   - Delete files older than 10 days using shell script in Unix [duplicate] ??
   - Take a Backup of Old logs more than 60+ days ??
   - Read Input from Bash CLI ??
+  - Read the File line by line ??
+  
   
