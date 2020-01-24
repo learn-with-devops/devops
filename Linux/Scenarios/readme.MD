@@ -8,3 +8,12 @@
   - Read the File line by line ??
   
   
+
+----------------------------------
+
+## Others
+  - Check if number is odd or even?
+  - How to check number is prime or not?
+  - Reverse a String ?
+  - Check If String is palindrome ?
+  - Search a number in array ?
