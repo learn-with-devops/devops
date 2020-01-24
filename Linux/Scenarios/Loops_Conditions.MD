@@ -28,3 +28,31 @@
             7 6 5 4 3 2 1 0 
             8 7 6 5 4 3 2 1 0 
             9 8 7 6 5 4 3 2 1 0
+
+
+
+## For loop to print 10 numbers
+
+    Scenario 1:
+    
+            #!/bin/bash
+
+            for (( i=0; i<10; i++ ))
+            do
+             echo $i
+            done
+            
+    Scenario 2:
+    
+            #!/bin/bash
+            for i in 1 2 3 4 5
+            do
+              echo -n "$i "
+            done
+            
+            Note : 
+                        -n --> for single line output
+            
+            
+            
+         
