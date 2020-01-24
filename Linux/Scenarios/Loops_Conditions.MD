@@ -177,12 +177,23 @@
                   echo $i
               done
               
-  ## Read file lines one by one
+## Read file lines one by one
   
+       Scenario 1:
+       
              file="/opt/array.sh"
 
              while IFS= read -r line
              do
               echo "$line"
              done < "$file"
+             
+       Scenario 2:
+       
+             # Read the proccess Output line by line
+             while IFS= read -r line
+             do
+              echo "$line"
+             done < <(ps aux)
               
+
