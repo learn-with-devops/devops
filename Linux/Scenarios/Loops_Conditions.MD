@@ -71,7 +71,7 @@
             while [ $j -le 10 ]
             do
                echo -n  $j
-               j=$(( $j + 1 )) #increse the count
+               j=$(( $j + 1 )) # increse the count in another way like == > a= ` expr a + 1 ` or let a=a+1"
             done
             
             
