@@ -53,7 +53,16 @@
             Note : 
                         -n --> for single line output
                         
-    Scenario 3 with While : 
+    Scenario 3 with For :
+    
+            #! /bin/bash
+
+            for i in {1..100}
+            do
+              echo $i
+            done
+                        
+    Scenario 4 with While : 
     
             #!/bin/bash
 
