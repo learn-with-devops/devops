@@ -55,4 +55,10 @@ Create a IAM user with admin access and configure in Linux/Windows/Mac Server.
   
         terraform apply
         
+  - Update your existing infrastructure.
+   
+        terraform apply
         
+  - Destroy your Infrastructure
+  
+        terraform destroy
