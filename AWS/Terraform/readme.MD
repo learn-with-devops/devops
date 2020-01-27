@@ -2,8 +2,8 @@ AboutTerraform:
 
 Terraform is a tool for developing, changing and versioning infrastructure safely and efficiently. 
 Terraform can manage existing and popular service providers as well as custom in-house solutions. 
-Terraform is the first multi-cloud immutable infrastructure tool that was introduced to the world by HashiCorp,
-released three years ago, and written in Go. 
+Terraform is the first multi-cloud immutable infrastructure tool that was introduced to the world by **HashiCorp**,
+released three years ago, and written in **Go**. 
 
 Installation of terraform: 
 
