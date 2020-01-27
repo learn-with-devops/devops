@@ -82,3 +82,20 @@ Create a IAM user with admin access and configure in Linux/Windows/Mac Server.
             Name = "terraform_anand"
           }
         }
+
+
+## Variable Declaration
+
+  - String declaration
+  
+        variable "myvar" {
+          type = "string"
+          default = "Hello Platform"
+      }
+      
+      Run : 
+      
+        - terraform console
+        - var.myvar.  or "${var.myvar}"
+        
+  - 
