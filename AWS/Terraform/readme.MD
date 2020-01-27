@@ -28,3 +28,5 @@ It supports two kind of configuration files
 
   - .tf files
   - .tf.json files
+
+  Note : Terraform will download the required plugins based on provider name specified in the configuration file. 
