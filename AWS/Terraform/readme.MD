@@ -62,3 +62,18 @@ Create a IAM user with admin access and configure in Linux/Windows/Mac Server.
   - Destroy your Infrastructure
   
         terraform destroy
+        
+  - Sample configuration to craete a EC2_Server
+  
+        provider "aws" {
+        profile = "terraform_user"
+              region = "eu-west-1"
+        }
+        resource "aws_instance" "my-ec2-ins" {
+          ami     = "ami-02df9ea15c1778c9c"
+          instance_type = "t2.micro"
+
+          tags = {
+            Name = "terraform_anand"
+          }
+        }
