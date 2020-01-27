@@ -52,6 +52,9 @@ Create a IAM user with admin access and configure in Linux/Windows/Mac Server.
   
         terraform plan
         
+        Note : Store the dryrun mode output like below
+               terraform plan -out out.terraform
+        
   - Provision your script 
   
         terraform apply
