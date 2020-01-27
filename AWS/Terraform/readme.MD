@@ -12,3 +12,18 @@ released three years ago, and written in **Go**.
 - wget https://releases.hashicorp.com/terraform/0.11.11/terraform_0.11.11_linux_amd64.zip
 - export PATH=/root/terraform/:$PATH (or) PATH=${PATH}:/root/terraform
 
+## Supports
+
+It support any kind of cloud for provisining your infrastructure.
+
+  - AWS
+  - Azure
+  - GoogleCloud
+  - VM's etc...
+  
+## Configuration file
+
+It supports two kind of configuration files
+
+  - .tf files
+  - .tf.json files
