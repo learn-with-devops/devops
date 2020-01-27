@@ -36,3 +36,15 @@ It supports two kind of configuration files
 Create a IAM user with admin access and configure in Linux/Windows/Mac Server.
 
   - aws configure --profile <profile_name>
+ 
+ ## Terraform Commands 
+ 
+  - Initialize the terraform
+    
+        terraform init
+        
+  - Arrange the terraform configuration file in proper format 
+  
+        terraform fmt
+        
+  - 
