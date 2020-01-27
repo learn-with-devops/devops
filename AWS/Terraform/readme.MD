@@ -47,4 +47,12 @@ Create a IAM user with admin access and configure in Linux/Windows/Mac Server.
   
         terraform fmt
         
-  - 
+  - Run your script as DRY RUN mode.
+  
+        terraform plan
+        
+  - Provision your script 
+  
+        terraform apply
+        
+        
