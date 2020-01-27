@@ -98,4 +98,30 @@ Create a IAM user with admin access and configure in Linux/Windows/Mac Server.
         - terraform console
         - var.myvar.  or "${var.myvar}"
         
-  - 
+  - Map Declaration
+  
+        variable "mymap" {
+          type = map(string)
+          default = {
+        mykey = "my value"
+          }
+        }
+      Run :
+      
+        - var.mymap
+        - var.mymap["mykey"] or "${var.mymap["mykey"]}"
+        
+  - List Declaration
+  
+        variable "mylist" {
+          type = list
+          default = [1,2,3]
+        }
+        
+       Run:
+       
+         - var.mylist
+         - var.mylist[1]
+         - element(var.mylist, 1)
+  
+      
