@@ -64,6 +64,10 @@ Create a IAM user with admin access and configure in Linux/Windows/Mac Server.
   
         terraform destroy
         
+  - Terraform Console
+  
+        terraform console
+        
   - Sample configuration to craete a EC2_Server
   
         provider "aws" {
