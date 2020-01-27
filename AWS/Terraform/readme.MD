@@ -19,6 +19,7 @@ It support any kind of cloud for provisining your infrastructure.
   - AWS
   - Azure
   - GoogleCloud
+  - openStack
   - VM's etc...
   
 ## Configuration file
