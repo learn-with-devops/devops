@@ -1,6 +1,8 @@
-AboutTerraform:
+About Terraform:
 
-Terraform is a tool for developing, changing and versioning infrastructure safely and efficiently. 
+- It is An Infrastructure as a Code ( IAC )
+
+- Terraform is a tool for developing, changing and versioning infrastructure safely and efficiently. 
 Terraform can manage existing and popular service providers as well as custom in-house solutions. 
 Terraform is the first multi-cloud immutable infrastructure tool that was introduced to the world by **HashiCorp**,
 released three years ago, and written in **Go**. 
