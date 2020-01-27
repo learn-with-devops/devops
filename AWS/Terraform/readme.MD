@@ -123,5 +123,6 @@ Create a IAM user with admin access and configure in Linux/Windows/Mac Server.
          - var.mylist
          - var.mylist[1]
          - element(var.mylist, 1)
+         - slice(var.mylist, 0, 2)
   
       
