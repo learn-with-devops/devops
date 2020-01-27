@@ -1,0 +1,11 @@
+AboutTerraform:
+
+Terraform is a tool for developing, changing and versioning infrastructure safely and efficiently. 
+Terraform can manage existing and popular service providers as well as custom in-house solutions. 
+Terraform is the first multi-cloud immutable infrastructure tool that was introduced to the world by HashiCorp,
+released three years ago, and written in Go. 
+
+Installation of terraform: 
+
+- wget https://releases.hashicorp.com/terraform/0.11.11/terraform_0.11.11_linux_amd64.zip
+- export PATH=/root/terraform/:$PATH
