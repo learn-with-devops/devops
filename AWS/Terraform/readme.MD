@@ -30,3 +30,9 @@ It supports two kind of configuration files
   - .tf.json files
 
   Note : Terraform will download the required plugins based on provider name specified in the configuration file. 
+
+## SetUp with AWS 
+
+Create a IAM user with admin access and configure in Linux/Windows/Mac Server.
+
+  - aws configure --profile <profile_name>
