@@ -159,3 +159,12 @@ OtherInformation
 		2. Rolling Update
 		3. Canary
 		4. Blue / Green
+
+### Replication Controller (old) / Replica set (set) :
+	
+	- How can you ensure there is a 3 pod instances ... example 3 pods need to run at any point of time.
+	
+### Secrets : 
+	
+	- Kubernetes object to handle small amount of Data.
+	
