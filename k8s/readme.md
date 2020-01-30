@@ -133,4 +133,29 @@ OtherInformation
 		- Jobs  ( Run to completion )
 		- CronJobs ( Shcheuled )
 		
+### Services :
+
+	- A service is a grouping of pods that running on the clustter.
+	
+	Types of services :
+		- ClusterIp
+		- Node Port
+		- Load Balancer
 		
+### ConfigMaps
+	
+	- How do we make containerized apps portable ??
+	
+### Deployments:
+
+	- Imagine , we are upgrading your application from V1 to V2
+		- Upgrade with zero time
+		- Update sequentially , One after other
+		- Pause and Reduce upgrade process
+		- Rollback upgrade to previous stable release
+		
+	- Typef od Deployments
+		1. Recreate ( remove and deploy )
+		2. Rolling Update
+		3. Canary
+		4. Blue / Green
