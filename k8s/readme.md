@@ -108,3 +108,29 @@ Note:
 	Secrets also come under V1 stable release.
 
 
+
+OtherInformation 
+--------------------
+
+### DaemonSet :
+
+	- How do you deploy a Pod on every node.
+		
+		or
+		
+	- DaemonSet ensures that all nodes can run a copy of a pod.
+
+### Jobs :
+
+	- How do you run pods
+	
+		or
+		 
+	- Each job creates one or more jobs
+	
+	Types of jobs :
+	
+		- Jobs  ( Run to completion )
+		- CronJobs ( Shcheuled )
+		
+		
