@@ -179,6 +179,35 @@ python
 						
 						O/p : [1, 2, 3, 45, 6, 7, 8, 8, 9, 5]
 						
+			6] Repeted letters remove from list
+			
+						li = [1,2,3,4,2,1]
+						x = set(li)
+						print(type(x))
+						c = list(x)
+						print(type(c))
+						print(c)
+						
+						o/p: [1,2,3,4]
+						
+						( or )
+						
+						mylist = ["a", "b", "a", "c", "c"]
+						mylist = list(dict.fromkeys(mylist))
+						print(mylist)
+						
+						
+						(0r)
+						
+						def dupl(li):
+						    li2 = []
+						    for i in li:
+							if i not in li2:
+							    li2.append(i)
+						    return li2
+						li = [3,4,5,6,2,4,6]
+						print(dupl(li))
+						
 						
 
 	    3. Tuples
