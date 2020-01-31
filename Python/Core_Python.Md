@@ -131,7 +131,7 @@ python
 			
 						# Using the Slice Operator 
 							def Cloning(li1): 
-							    li_copy = li1[:] 
+							    li_copy = li1[:]  # li_copy = list(li1)
 							    return li_copy 
 
 							# Driver Code 
@@ -140,8 +140,44 @@ python
 							print("Original List:", li1) 
 							print("After Cloning:", li2) 
 							
-			3 ] 
+			3 ] Count number of occurences in a list
+			
+				Opt 1:
+						from collections import Counter
+						li = [2,4,56,6,6,7,4,2,6,7]
+						print(li)
+						Counter(li)     # print(li.count(6))
 						
+				Opt 2:
+				
+						li = [2,8,9,3,2,6,9,8,6,6]
+						# x = 9
+						x = input ("Enter the value need to find :")
+
+						def countx(li, x):
+						    count = 0
+						    for i in li:
+							if (i==x):
+							    count = count+1
+						    return count
+
+						print(' {} has occured {} time '.format(x, countx(li, x)))
+						
+			4] . Print the 3 sized list
+			
+						li = [[1,2,3],[45,6,7,8],[8,9,5]]
+						print(li)
+						for i in li:
+						    if len(i)==3:
+							print(i)
+
+			5] Lst all the data in same list
+			
+						li = [[1,2,3],[45,6,7,8],[8,9,5]]
+						li2 = sum(li, [])
+						print(li2)
+						
+						O/p : [1, 2, 3, 45, 6, 7, 8, 8, 9, 5]
 						
 						
 
