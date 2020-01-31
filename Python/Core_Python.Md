@@ -80,6 +80,9 @@ python
 
 						# Print list multiple times
 						print (list2*2)
+						
+						# Reverse a String 
+						print(list[::-1])
 
 	    3. Tuples
 
