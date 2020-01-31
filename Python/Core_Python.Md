@@ -77,12 +77,48 @@ python
 
 						list2 = ['brush','bath','towel']
 						print (list+list2)
+						
+						 	or
+							
+						print(list+['shash',80])
 
 						# Print list multiple times
+						
 						print (list2*2)
 						
 						# Reverse a String 
+						
 						print(list[::-1])
+						
+						# Sort a List in Asending order
+						
+						list1.sort()
+						print(list1)
+						
+						# Sort a list in Decending order
+						
+						so = ['a','i','u','o','e']
+						print(so)
+						so.sort(reverse=True)
+						print(so)
+						
+			# Scenarios or Programs
+					
+			1 ] . random = [(2, 2), (3, 4), (4, 1), (1, 3)] 
+			      Arrabge the above list as sorted format by second element
+			      
+			      Ans :
+			      
+						random = [(2, 2), (3, 4), (4, 1), (1, 3)]
+
+						def secondElement(ele):
+						    return ele[1] # passing the second value as parameter
+
+						random.sort(key = secondElement)
+						print(random)
+						
+						
+						
 
 	    3. Tuples
 
