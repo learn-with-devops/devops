@@ -20,3 +20,18 @@ DevOps :
     - we have a sigle core linux server ....4 % load average is there.....So what is that mean ??
     - Daemon set in k8s ??
     - How many replication controllers are there in k8s ??
+
+
+### Sigmoid 
+
+Shell :
+
+    - xargs , test , lsof , lsblk , blkid , less 
+    - Write a script to find a word in a folder-folder's files and delete the remaining files except the name present in file.
+    - Create a virtual host in Apache
+    - two servers contain the same file and one server file got modified. Now we need to find the modified information without comaping / sync         the files .
+    
+Python : 
+    
+    - Write a progrm to reverse a list/string without using reverse method ??
+    - 
