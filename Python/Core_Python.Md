@@ -262,6 +262,12 @@ python
 
 						print (a*2)
 						
+						# Replace a word
+						
+						s = 'anand'
+						s.replace('a', '')
+
+						
 				a] Reverse a string without using reverse/::-1
 				
 						def re(s):
@@ -340,6 +346,27 @@ python
 						str = "geeks for geeks121"
 						countCharacterType(str)  
   
+  
+  				e] remove a char from a string
+				
+				
+						# Initializing String  
+						test_str = "GeeksForGeeks"
+
+						# Printing original string  
+						print ("The original string is : " + test_str) 
+
+						# Removing char at pos 3 
+						# using loop 
+						new_str = "" 
+
+						for i in range(0, len(test_str)): 
+						    if i != 2: 
+							new_str = new_str + test_str[i] 
+
+						# Printing string after removal   
+						print ("The string after removal of i'th character : " + new_str)
+						
 
 	    5. Set
 
