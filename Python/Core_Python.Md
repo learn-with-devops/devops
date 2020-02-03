@@ -261,6 +261,85 @@ python
 						# print multiple times
 
 						print (a*2)
+						
+				a] Reverse a string without using reverse/::-1
+				
+						def re(s):
+						    str = ""
+						    for i in s:
+							str = i+str
+						    return str
+
+						s = "hello"
+						print(re(s))
+						
+				b] Print the duplicate charetctes count
+				
+						chars = "abcdefghijklmnopqrstuvwxyz"
+						check_string = "anand"
+
+						for char in chars:
+						  count = check_string.count(char)
+						  if count > 1:
+						    print char, count
+						    
+				c] Check the strings are Angrams
+				
+						def isangram(str1,str2):
+						    return sorted(str1) == sorted(str2)
+						str1 = "anand"
+						str2 = "danan"
+
+						if isangram(str1,str2):
+						    print("strings are anagrams")
+						else:
+						    print ("strings are not anagrams")
+						    
+				d] Count vowels , numnbers , special charetcters and components
+				
+						def countCharacterType(str): 
+
+						    # Declare the variable vowels,  
+						    # consonant, digit and special 
+						    # characters 
+						    vowels = 0
+						    consonant = 0
+						    specialChar = 0
+						    digit = 0
+
+						    # str.length() function to count  
+						    # number of character in given string. 
+						    for i in range(0, len(str)):  
+
+							ch = str[i]  
+
+							if ( (ch >= 'a' and ch <= 'z') or 
+							     (ch >= 'A' and ch <= 'Z') ):  
+
+							    # To handle upper case letters 
+							    ch = ch.lower() 
+
+							    if (ch == 'a' or ch == 'e' or ch == 'i' 
+									or ch == 'o' or ch == 'u'): 
+								vowels += 1
+							    else: 
+								consonant += 1
+
+							elif (ch >= '0' and ch <= '9'): 
+							    digit += 1
+							else: 
+							    specialChar += 1
+
+						    print("Vowels:", vowels) 
+						    print("Consonant:", consonant)  
+						    print("Digit:", digit)  
+						    print("Special Character:", specialChar)  
+  
+  
+						# Driver function. 
+						str = "geeks for geeks121"
+						countCharacterType(str)  
+  
 
 	    5. Set
 
