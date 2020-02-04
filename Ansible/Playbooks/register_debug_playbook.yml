@@ -1,0 +1,16 @@
+---
+- name: When_Condition example
+  hosts: web
+  become: True
+  gather_facts: True
+
+  tasks:
+  - name: Python version check
+    shell: python --version
+    register: version
+
+  - debug: var=version
+
+  - debug: msg="{{ version.stdout }}"
+
+  - debug: msg="{{ version.stderr }}"
