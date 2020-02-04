@@ -61,3 +61,21 @@ time.sleep(20)
 print("----------------- Ec2 Instance Status After Stopping-----------------")
 for ins1 in instancelist:
 	print(ins1, st['State']['Name'])
+
+
+## Lambda Rule for Triggering an Ec2-Instances to stop
+
+import json
+import boto3
+
+ec = boto3.client('ec2')
+instancelist = []
+def lambda_handler(event, context):
+    inst = ec.describe_instances(Filters=[{'Name': 'tag:name', 'Values': ['backup']}])
+    instancelist = []
+    for i in inst['Reservations']:
+        for st in i['Instances']:
+            # print(st['InstanceId'])
+            instancelist.append(st['InstanceId'])
+    ec.stop_instances(InstanceIds = instancelist)
+    return instancelist
