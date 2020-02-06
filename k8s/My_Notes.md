@@ -1,5 +1,15 @@
 # Kubernetes
 
+------------------------------------------
+
+#### Validate cluster
+
+    kops validate cluster
+    
+#### List out the nodes
+
+    kubectl get nodes
+
 ### Chat-Sheet : https://kubernetes.io/docs/reference/kubectl/cheatsheet/
 
 #### Deploying an Helloworld Application.
