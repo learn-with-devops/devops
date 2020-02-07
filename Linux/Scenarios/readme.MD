@@ -89,6 +89,15 @@
         
   - pass 10 , 11...argument in a script 
   
+        script.sh 1 2 3 4 5 6 7 8 9 anand reddy
+        
+        script: 
+          echo $9
+          echo ${10}
+          echo ${11}
+  
+        ex: 
+        
         #!/bin/ksh   
         echo There is $# parameters
         while [ $# -ne 0 ]; do
