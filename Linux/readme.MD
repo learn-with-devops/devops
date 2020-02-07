@@ -34,8 +34,23 @@
 
 
    
+ ### Other Ports
 
 
+            - ssh  22
+            - smtp 25
+            - SQL server 1433
+            - http 80
+            - https 443
+            - jenkins/Apache TomCat 8080
+            - MySQL 3306
+            - Oracle 1521
+            - FTP 20/21
+            - Telnet 23
+            - DNS 53
+            - DHCP 68
+            - Monit 2812
+            - Nexus 8081
    
 
 
