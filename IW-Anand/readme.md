@@ -37,27 +37,27 @@ Python :
     - 
 ### Application Vs Web Server
 
-  Webserver : IIS , nginx , Apache. ( servers static content mostly ) ( HTML/CSS/PHP)
-  App server : Weblogic , Glassfish, Tomcat ( serves static and dynamic content both ) ( EJB , Servlets , JSP )
-  
-  
-### Application Vs Web Server    
+      Webserver : IIS , nginx , Apache. ( servers static content mostly ) ( HTML/CSS/PHP)
+      App server : Weblogic , Glassfish, Tomcat ( serves static and dynamic content both ) ( EJB , Servlets , JSP )
+     
     
 ### Apache Vs Nginx 
 
-The main difference between Apache and NGINX lies in their design architecture. Apache uses a process-driven approach and creates a new thread for each request. Whereas NGINX uses an event-driven architecture to handle multiple requests within one thread.
+    The main difference between Apache and NGINX lies in their design architecture. Apache uses a process-driven approach and creates a new thread for each request. Whereas NGINX uses an event-driven architecture to handle multiple requests within one thread.
 
-- Today, Nginx is often used as a reverse proxy, load balancer, mail proxy and for HTTP caching.
+    - Today, Nginx is often used as a reverse proxy, load balancer, mail proxy and for HTTP caching.
 
-Apache
-  Process Driven Approach 
-  Creates a new thread for each request.
-  Supports all Unix-like systems including Linux and BSD.& It fully supports MS-Windows
+    Apache
+      Process Driven Approach 
+      Creates a new thread for each request.
+      Supports all Unix-like systems including Linux and BSD.& It fully supports MS-Windows
 
 
-NGINX
-  Event-Driven, asyncronus and non-blocking approach
-  Handles multiple requests within one thread
-  Nginx serves the static resources without PHP having to know about this.
-  Supports almost all Unix-like OS & Supports Windows partially.
+    NGINX
+      Event-Driven, asyncronus and non-blocking approach
+      Handles multiple requests within one thread
+      Nginx serves the static resources without PHP having to know about this.
+      Supports almost all Unix-like OS & Supports Windows partially.
+
+
 
