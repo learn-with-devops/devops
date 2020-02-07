@@ -83,6 +83,19 @@
       
   - lsblk ( list of avilable block devices)
   - blkid ( list out th UUID of block device )
-      blkid /dev/xvda1
-      o/p: /dev/xvda1: UUID="f41e390f-835b-4223-a9bb-9b45984ddf8d" TYPE="xfs" 
+  
+        blkid /dev/xvda1
+        o/p: /dev/xvda1: UUID="f41e390f-835b-4223-a9bb-9b45984ddf8d" TYPE="xfs" 
+        
+  - pass 10 , 11...argument in a script 
+  
+        #!/bin/ksh   
+        echo There is $# parameters
+        while [ $# -ne 0 ]; do
+                 echo $1
+                 shift
+            done
+            
+        o/p: Will:/home> ./script a b c d e f g h i j k l m n o p q r s t u v w x y z
+        There is 26 parameters
   
