@@ -81,5 +81,8 @@
           7] Kill all Activity of Particular User
             kill -9 `lsof -t -u anand`
       
-  - 
+  - lsblk ( list of avilable block devices)
+  - blkid ( list out th UUID of block device )
+      blkid /dev/xvda1
+      o/p: /dev/xvda1: UUID="f41e390f-835b-4223-a9bb-9b45984ddf8d" TYPE="xfs" 
   
