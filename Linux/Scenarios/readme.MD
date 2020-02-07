@@ -78,7 +78,8 @@
           6] search by PID
             lsof -p 1
            
-          7] 
+          7] Kill all Activity of Particular User
+            kill -9 `lsof -t -u anand`
       
   - 
   
