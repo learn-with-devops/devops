@@ -39,6 +39,23 @@
         4] find lins/words/charecters in all files
            ls | xargs wc
         
-  - lsof
+  - test (test that lets you do most of these comparisons and tests )
+    
+    1] check the strings are equal
+        test howto = forge && echo "same" || echo "not"
+        o/p: not
+        
+    2] test 5 -eq 7 && echo "same" || echo "not"
+        o/p : not
+        
+    3] test two files which one created first ??
+      test file1 -nt file2 && echo "newer" || echo "nor"  // -nt --> newer than. 
+      -ot --> older than
+      
+    4] check it is a directory
+      test -d new_dir && echo "yes". // -f --> for file
+      
+ -lsof
+      
   - 
   
