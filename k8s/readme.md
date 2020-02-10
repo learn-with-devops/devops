@@ -156,6 +156,12 @@ OtherInformation
 		
 	- Typef od Deployments
 		1. Recreate ( remove and deploy )
+			
+			  strategy:
+    				type: Recreate
+				
+			link : https://github.com/learn-with-devops/devops/tree/master/k8s
+			
 		2. Rolling Update
 		
 			kubectl set image deploy nginx-deployment nginx-container=nginx:latest --record.  // Update the image and record it for rollback
