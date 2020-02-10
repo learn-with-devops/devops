@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-test-deployment
+  labels: 
+   app: nginx-test-app
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: nginx-test-app
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: nginx-test-app
+    spec:
+      containers: 
+      - name: nginx-test-container
+        image: nginx:stable
+        ports: 
+        - containerPort: 80
