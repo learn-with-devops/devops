@@ -157,6 +157,12 @@ OtherInformation
 	- Typef od Deployments
 		1. Recreate ( remove and deploy )
 		2. Rolling Update
+		
+			kubectl set image deploy nginx-deployment nginx-container=nginx:latest --record.  // Update the image and record it for rollback
+			kubectl rollout history deployment/nginx-deployment. // list out the rollout history
+			
+			kubectl rollout undo deployment/nginx-deployment.   // undo the update
+			
 		3. Canary
 		4. Blue / Green
 
