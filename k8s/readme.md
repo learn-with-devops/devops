@@ -169,6 +169,10 @@ OtherInformation
 			
 			kubectl rollout undo deployment/nginx-deployment.   // undo the update
 			
+		   Note : (Readiness Probe. -- > to make zero downtime of deployment) 
+			
+				https://medium.com/platformer-blog/enable-rolling-updates-in-kubernetes-with-zero-downtime-31d7ec388c81
+			
 		3. Canary
 		4. Blue / Green
 
