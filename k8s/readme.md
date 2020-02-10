@@ -172,10 +172,10 @@ OtherInformation
 
 - Validate the k8s manifest file.
 	
-	kubectl create --validate=true -f file.json
+		kubectl create --validate=true -f file.json
 	
 - Run the manifest file in Dry Run mode
 
-	kubectl apply --validate=true --dry-run=true --filename=nginx-run.yaml
+		kubectl apply --validate=true --dry-run=true --filename=nginx-run.yaml
 	
 	
