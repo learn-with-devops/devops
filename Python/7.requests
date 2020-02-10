@@ -3,17 +3,26 @@
 
 ### Install request module
 
-    pip install requests
+        pip install requests
     
 ### Check the Website status 
 
-   import requests
-   
-   r = requests.get('http://52.91.10.207:31000/index.html')
-   print(r)
-   
-   o/p : <Response [200]>
+       import requests
+
+       r = requests.get('http://52.91.10.207:31000/index.html')
+       print(r)
+
+       o/p : <Response [200]>
    
 ### Print the page code in o/p.
 
-   print(r.text)
+        print(r.text)
+
+
+### Download an Image content and save as a file.
+
+        im = requests.get('https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528__340.jpg')
+        print (im.content)
+
+        with open('image.png', 'wb') as img:
+            img.write(im.content)
