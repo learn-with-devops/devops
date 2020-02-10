@@ -1,1 +1,19 @@
 ## Request module
+
+
+### Install request module
+
+    pip install requests
+    
+### Check the Website status 
+
+   import requests
+   
+   r = requests.get('http://52.91.10.207:31000/index.html')
+   print(r)
+   
+   o/p : <Response [200]>
+   
+### Print the page code in o/p.
+
+   print(r.text)
