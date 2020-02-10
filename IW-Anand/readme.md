@@ -34,7 +34,15 @@ Shell :
 Python : 
     
     - Write a progrm to reverse a list/string without using reverse method ??
-    - 
+    
+   
+### Rekuten 
+
+  - what is Linux booting procedure ??
+  - CMD vs Entrypoint
+  - cgroup VS NameSpace
+  - Run a deployment directly with out creating a manifest file... Now the question is , How the deployment create without manifest file directly.
+  
 ### Application Vs Web Server
 
       Webserver : IIS , nginx , Apache. ( servers static content mostly ) ( HTML/CSS/PHP)
