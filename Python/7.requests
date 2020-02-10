@@ -13,6 +13,14 @@
        print(r)
 
        o/p : <Response [200]>
+       
+       Note : 
+       
+       - Get the status code
+         print(r.status_code).   /// o/p : 200
+         
+       - Get the server info like on with application server got deployed and version.
+         print(r.headers)
    
 ### Print the page code in o/p.
 
