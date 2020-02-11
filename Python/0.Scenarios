@@ -2,10 +2,12 @@
 
 1. Sort a list by asending order and Decending order.
 
-
                 li = ["anand", "reddy", "reddam","shashi","kumar"]
                 print(li)
                 print(dir(li))
                 a = sorted(li)     # Sort a list in asending order
                 print(a)
                 print(sorted(a, reverse= True))  # Sort a list in Desending order
+                
+                
+2. 
