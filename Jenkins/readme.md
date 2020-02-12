@@ -244,3 +244,13 @@
 ## Jenkinsfile Syntax Check Reference URL's
 
     - https://www.eficode.com/blog/jenkins-groovy-tutorial
+
+
+## Add another pipeline and call from another Job
+
+    stage('call the another pipeline')
+		{
+			steps {
+				build job: 'test-pipeline-child', quietPeriod: 0
+			}
+		}
