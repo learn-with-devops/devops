@@ -301,3 +301,9 @@ Cron scheduler command helps you to execute the task on every Monday at 5 AM. Th
    	0 5 * * mon  /scripts/script.sh
 	
 	
+Run a Process in BackGround Mode 
+--------------------------------
+
+	nohup python gateway_metrics.py
+	
+	
