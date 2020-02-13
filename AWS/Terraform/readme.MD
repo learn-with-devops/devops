@@ -57,7 +57,7 @@ Create a IAM user with admin access and configure in Linux/Windows/Mac Server.
         
   - Provision your script 
   
-        terraform apply
+        terraform apply.      // terrafor apply --auto-approve ( for auto creating the ec2 )
         
   - Update your existing infrastructure.
    
@@ -159,4 +159,25 @@ Create a IAM user with admin access and configure in Linux/Windows/Mac Server.
          - element(var.mylist, 1)
          - slice(var.mylist, 0, 2)
   
-      
+     
+## Starting from scrach
+
+### EC2 Instace Creation with direct process
+
+        provider "aws" {
+            region = "eu-west-1"
+        }
+
+        resource "aws_instance" "httpd" {
+            count   =  2
+            ami              = "ami-0ff760d16d9497662"
+            instance_type    = "t2.micro"
+            key_name         = "Anand-Mac-Ireland"
+            monitoring       = true
+            vpc_security_group_ids = ["sg-0635bbd6766f3cab1"]
+            subnet_id        =  "subnet-e7257faf"
+            tags = {
+                Name = "apache-test"
+                Env  = "test"
+            }
+        }
