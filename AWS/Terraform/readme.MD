@@ -85,6 +85,21 @@ Create a IAM user with admin access and configure in Linux/Windows/Mac Server.
             Name = "terraform_anand"
           }
         }
+        
+### Note
+
+        [root@ip-172-31-31-8 ec2_demo]# cat ~/.aws/config 
+        [default]
+        region = eu-west-1
+        [profile terraform_user]
+        region = eu-west-1
+        [root@ip-172-31-31-8 ec2_demo]# cat ~/.aws/credentials 
+        [default]
+        aws_access_key_id = AKIAJHO7C627BHFOAMOA
+        aws_secret_access_key = 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
+        [terraform_user]
+        aws_access_key_id = AKIAXSB5ISV5RWIQFB26
+        aws_secret_access_key = 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
 
 ## Variable Types
 
