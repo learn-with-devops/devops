@@ -86,6 +86,22 @@ Create a IAM user with admin access and configure in Linux/Windows/Mac Server.
           }
         }
 
+## Variable Types
+
+### Simple Variable types
+
+    - String 
+    - Number
+    - Boolean
+    
+### Complex types
+
+    - List
+    - Set
+    - Map 
+    - Object
+    - Tuple
+    
 
 ## Variable Declaration
 
