@@ -67,6 +67,12 @@ Create a IAM user with admin access and configure in Linux/Windows/Mac Server.
   
         terraform destroy
         
+  - Destroy a Specific Service insted of all 
+        
+         terraform destroy --target resource_type.name --target resource_type.name
+         
+         terraform destroy --target aws_instance.httpd
+        
   - Terraform Console
   
         terraform console
