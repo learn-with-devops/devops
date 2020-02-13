@@ -1,10 +1,10 @@
 
 ###  [1] Declare a String variable
 
-variable "myvar" {
-    type = string
-    default = "hello anand"
-}
+    variable "myvar" {
+        type = string
+        default = "hello anand"
+    }
 
         // Call the String Variable
         //    - terraform console
@@ -12,24 +12,24 @@ variable "myvar" {
 
 ###  [2] Declare a Map
 
-variable "mymap" {
-    type = map(string)
-    default = {
-            name = "anand"
-            roll = 20
-            dep = "cse"
+    variable "mymap" {
+        type = map(string)
+        default = {
+                name = "anand"
+                roll = 20
+                dep = "cse"
+        }
     }
-}
 
         // terraform console
         // - var.mymap or "${var.mymap}" or var.mymap["name"]
 
 ### [3] List Declaration
 
-variable "mylist" {
-    type = list
-    default = [1,2,3]
-}
+    variable "mylist" {
+        type = list
+        default = [1,2,3]
+    }
 
         // terraform console
         // - var.mylist or var.mylist[0]
