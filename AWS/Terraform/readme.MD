@@ -254,3 +254,34 @@ Create a IAM user with admin access and configure in Linux/Windows/Mac Server.
             
             terraform output
             
+### USER_DATA
+
+    The user_data only runs at instance launch time.
+    
+    Way -1 : 
+    
+          resource "aws_instance" "httpd" {
+          count            = "${var.instance_count}"
+          ami              = "${lookup(var.ami_types,var.region_name)}"
+          instance_type    = "${var.instance_type}"
+          key_name         = "Anand-Mac-Ireland"
+          monitoring       = "${var.monitoring}"
+          vpc_security_group_ids = ["sg-0635bbd6766f3cab1"]
+          subnet_id        = "subnet-e7257faf"
+          user_data = <<-EOT
+              #! /bin/bash
+              sudo yum update -y
+              sudo yum install -y httpd
+              sudo systemctl enable httpd
+              echo "<h1>Deployed via Terraform</h1>" | sudo tee /var/www/html/index.html
+              sudo service httpd start
+          EOT
+          tags = "${var.tags}"
+
+          }
+   
+    Way -2 :
+    
+
+          
+            
