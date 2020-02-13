@@ -281,7 +281,9 @@ Create a IAM user with admin access and configure in Linux/Windows/Mac Server.
           }
    
     Way -2 :
+    But we prefer to use a file() function:
     
+          user_data        = "${file("software_install.sh")}"
 
           
             
