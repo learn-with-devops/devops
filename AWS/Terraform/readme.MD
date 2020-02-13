@@ -283,7 +283,71 @@ Create a IAM user with admin access and configure in Linux/Windows/Mac Server.
     Way -2 :
     But we prefer to use a file() function:
     
-          user_data        = "${file("software_install.sh")}"
+          // user_data        = "${file("software_install.sh")}"
+          
+              provider "aws" {
+                  region = "${var.region_name}"
+              }
 
+              variable "instance_count" {
+                  default = "1"
+              }
+
+              variable "ami_types" {
+                  type = map(string)
+                  default = {
+                      "eu-west-1" = "ami-0ff760d16d9497662"
+                      "eu-east-2" = "ami-0ff760d16d9497663"
+                      "eu-west-3" = "ami-0ff760d16d9497662"
+                  }
+              }
+
+              variable "region_name" {
+                  default = "eu-west-1"
+              }
+
+              variable "instance_type" {
+                  default = "t2.micro"
+              }
+
+              variable "monitoring" {
+                  default = "true"
+              }
+
+              variable "tags" {
+                  type = map(string)
+                  default = {
+                      "name" = "apache-test"
+                      "env" = "test"
+                  }
+              }
+
+              resource "aws_instance" "httpd" {
+                  count            = "${var.instance_count}"
+                  ami              = "${lookup(var.ami_types,var.region_name)}"
+                  instance_type    = "${var.instance_type}"
+                  key_name         = "Anand-Mac-Ireland"
+                  monitoring       = "${var.monitoring}"
+                  vpc_security_group_ids = ["sg-0635bbd6766f3cab1"]
+                  subnet_id        = "subnet-e7257faf"
+                  user_data        = "${file("software_install.sh")}"
+                  tags = "${var.tags}"
+
+              }
+
+              output "instance_ip" {
+                  value = "${aws_instance.httpd.*.public_ip}"
+              }
+
+          
+          
+          software_install.sh : 
+          
+            #!/bin/bash
+                  sudo yum update -y
+                  sudo yum install -y httpd
+                  sudo systemctl enable httpd
+                  echo "<h1>Hi Anand !!! You are rocking with Terraform Now </h1>" | sudo tee /var/www/html/index.html
+                  sudo service httpd start
           
             
