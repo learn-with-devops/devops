@@ -359,3 +359,11 @@ Create a IAM user with admin access and configure in Linux/Windows/Mac Server.
                   sudo service httpd start
           
             
+# Provisinor file
+
+      Copies the myapp.conf file to /etc/myapp.conf
+      
+      provisioner "file" {
+        source      = "conf/myapp.conf"
+        destination = "/etc/myapp.conf"
+      }
