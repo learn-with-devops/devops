@@ -38,3 +38,18 @@ Day-3 Linux Interview Questions :
       29. Inode means??
       30. How to start the service automatically when the server got reboot ??
       31. Cron scheduler command helps you to execute the task on every Monday at 5 AM. This command is helpful for doing weekly tasks like system clean-up. ??
+
+Day-4 Linux Interview Questions :
+---------------------------------------
+
+      32 . Write a script to filter the log files and find the maximum number of hits from a specific IP ??
+      33 . Write a script to read a file line-by-line ??
+      34 . IP Tables??
+      35 . Run levels in Booting procedure ??
+      36 . Stateless & Statefull security group ??
+      37 . Multi leyer docker ?? or How to reduce the docker image size ??
+      38 . NameSpaces & Ingeress/Ingress controller
+      39 . Ponethsis Grafana ??
+      40 . Docker & Kubernetes Security & Networking ??
+      41 . 
+      
