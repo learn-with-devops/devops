@@ -51,5 +51,9 @@ Day-4 Linux Interview Questions :
       38 . NameSpaces & Ingeress/Ingress controller
       39 . Ponethsis Grafana ??
       40 . Docker & Kubernetes Security & Networking ??
-      41 . 
+      41 . How can restrict a port in a server ??
+      42 . How can we restrict a port for perticular user and don't restrict for others ??
+      43 . Can we restrict what type of files can be uploded to s3 bucket ??
+      44 . xargs, lsof ,blkid , test & lsblk ??
+      45 . 
       
