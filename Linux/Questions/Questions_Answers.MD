@@ -307,3 +307,8 @@ Run a Process in BackGround Mode
 	nohup python gateway_metrics.py
 	
 	
+Write a script to filter the log files and find the maximum number of hits from a specific IP ??
+--------------------------------
+
+	cat logfile.log | awk '{print $1}'|sort|uniq -c | tail
+	
