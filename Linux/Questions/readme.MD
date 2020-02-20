@@ -55,5 +55,14 @@ Day-4 Linux Interview Questions :
       42 . How can we restrict a port for perticular user and don't restrict for others ??
       43 . Can we restrict what type of files can be uploded to s3 bucket ??
       44 . xargs, lsof ,blkid , test & lsblk ??
-      45 . 
+
+Day-5 Linux Interview Questions :
+---------------------------------------
+
+      ( Ref : https://stackoverflow.com/questions/15810793/interview-questions-at-amazon-in-unix )
+      
+      45. Count multiple occurences of your name in a file.. and your name is occurring multiple times in a line.
+      46. Write a regular expression to retrieve “Ravi-10” from the file. And print only the name “Ravi-10” (complete line should not be printed) .
+      47. In a log file you have date in yyyy mm dd hh:mi:ss format. Retrive those dates where time is between 19:10:00 to 19:20:00
+      
       
