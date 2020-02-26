@@ -10,4 +10,17 @@
                 print(sorted(a, reverse= True))  # Sort a list in Desending order
                 
                 
-2. 
+2. count the number of occurences in a list
+
+                weekdays = ['sun','mon','tue','wed','thu','fri','sun','mon','mon']
+                for x in set(weekdays):
+                    print(x,weekdays.count(x))
+
+          o/p: 
+          
+                ('wed', 1)
+                ('sun', 2)
+                ('thu', 1)
+                ('tue', 1)
+                ('mon', 3)
+                ('fri', 1)
