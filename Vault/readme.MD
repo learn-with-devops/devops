@@ -35,6 +35,21 @@
 
       - Start by setting the environment variable.
             
-            export VAULT_ADDR=’http://127.0.0.1:8200’
+            export VAULT_DEV_ROOT_TOKEN_ID="s.6CsK5JMavuiBNNMoHml7fa7y"
             
-      - 
+            export VAULT_ADDR='http://127.0.0.1:8200'
+            
+      - See the status
+      
+            vault status
+            
+ ## Vault PUT/GET/DELETE Operations
+ 
+      - PUT
+            vault kv put secret/github username=anand password=shashi
+            
+      - Get 
+            vault kv get secret/github
+           
+      - Delete
+            vault kv detete secret/github
