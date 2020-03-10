@@ -65,3 +65,11 @@
                 172.31.45.83 jenkins-server  jenkins.io
         
         
+## ROUTE
+
+        used to check which router got attached to the server.
+        
+                route
+                route -n
+                
+         
