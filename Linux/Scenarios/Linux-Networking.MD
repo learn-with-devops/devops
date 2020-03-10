@@ -72,4 +72,12 @@
                 route
                 route -n
                 
+## NSLOOKUP / HOST
+
+        Both are used to check the DNS/IP address connections/alias-names etc..
+        
+        nslookup www.google.com
+        host www.google.com
+        
+        
          
