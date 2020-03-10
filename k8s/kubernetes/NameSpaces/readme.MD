@@ -14,3 +14,24 @@ Kubernetes can offer multiple Kubernetes clusters on a single cluster, much like
      - Kube-system is for all things relating to, you guessed it, the Kubernetes system. Any deployments to this namespace are playing a dangerous game and can accidentally cause irreparable damage to the system itself. Yes, I have done it; I do not recommend it.
     
      - Kube-public is readable by everyone, but the namespace is reserved for system usage.
+
+
+### NameSpace commands
+
+    - get a namespace
+    
+        kubectl get namespaces
+        
+    - list out the pods belong to a specific namespace.
+    
+        kubectl get pods --namespace=development/default
+        
+    - list out all the pods irrespective of namespaces
+    
+        kubectl get pods --all-namespaces
+        
+    - Set Development Namespace as Default namespace.
+    
+        kubectl config set-context $(kubectl config current-context) --namespace=development
+        
+        
