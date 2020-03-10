@@ -95,3 +95,9 @@
         -sL -- > for not downloding the data to locall
         
        
+## DIG
+
+        is a powerful command-line tool for querying DNS name servers.
+        
+        
+## NOTE : NSLOOKUP , DIG , HOST for checking the DNS resolutions/IP address etc
