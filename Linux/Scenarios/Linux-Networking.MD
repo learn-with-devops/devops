@@ -110,5 +110,6 @@
 
         Seeing the traceroute information can help you determine why your connections to a given server might be poor and can help you identify problems. It also shows you how systems are connected to each other, letting you see how your ISP connects to the Internet as well as how the target system is connected.
         
-        traceroute www.paytm.com
+        
+    traceroute www.paytm.com
 
