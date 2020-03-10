@@ -22,6 +22,27 @@ Kubernetes can offer multiple Kubernetes clusters on a single cluster, much like
     
         kubectl get namespaces
         
+    - Create a namespace
+    
+        1. kubectl create namespace development
+        
+        2. kubectl create -f namespace_creation.yaml
+        
+            apiVersion: v1
+            kind: namespace
+            metadata: 
+                name: development
+                
+        3. kubectl create -f namespace_creation.yaml --namespace=development
+        
+        4. kubectl create -f namespace_creation.yaml
+        
+            apiVersion: apps/v1
+            kind: deployment
+            metadata: 
+                name: nginx-deploy
+                namespace: development
+        
     - list out the pods belong to a specific namespace.
     
         kubectl get pods --namespace=development/default
