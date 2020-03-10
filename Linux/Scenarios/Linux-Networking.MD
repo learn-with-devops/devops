@@ -19,16 +19,20 @@
 
   2. Ping 8.8.8.8  // for google 
         
-        ping priveteIP/PublicIP
-        ping google.com
+                ping priveteIP/PublicIP
+                ping google.com
         
   3. Ping to the the server with DNS Name
   
-        - first edit /etc/hosts file add like below
-        
-                public/private-IP DNS-NAME-1 DNS-NAME2 ..
+                - first edit /etc/hosts file add like below
+
+                        public/private-IP DNS-NAME-1 DNS-NAME2 ..
+
+                        192.168.0.9 jenkins-server jenkins.in
                 
-                192.168.0.9 jenkins-server jenkins.in
+   4. Ping 10 times to remote server
+   
+                ping -c 10 server-1
                 
         
      
