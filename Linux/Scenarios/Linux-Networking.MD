@@ -13,3 +13,5 @@
           ICMP, uses the basic support of IP as if it were a higher level protocol, however, ICMP is actually an integral part of IP, and must be implemented by every IP module.
 
         Ping, itself, is an application that uses ICMP echo requests and replies.
+        
+        Ref : https://networkengineering.stackexchange.com/questions/42463/ping-port-number
