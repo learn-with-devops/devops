@@ -109,4 +109,6 @@
         The Traceroute tool will show you each hop sequentially, and total hops required. For each hop, it will display the hop #, roundtrip times, best time (ms), IP address, TTL, and country.
 
         Seeing the traceroute information can help you determine why your connections to a given server might be poor and can help you identify problems. It also shows you how systems are connected to each other, letting you see how your ISP connects to the Internet as well as how the target system is connected.
+        
+        traceroute www.paytm.com
 
