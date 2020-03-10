@@ -101,3 +101,12 @@
         
         
 ## NOTE : NSLOOKUP , DIG , HOST for checking the DNS resolutions/IP address etc
+
+## TRACEROUTE
+
+        What is a traceroute? A traceroute is a network tool used to show the route taken by packets across an IP network.
+
+        The Traceroute tool will show you each hop sequentially, and total hops required. For each hop, it will display the hop #, roundtrip times, best time (ms), IP address, TTL, and country.
+
+        Seeing the traceroute information can help you determine why your connections to a given server might be poor and can help you identify problems. It also shows you how systems are connected to each other, letting you see how your ISP connects to the Internet as well as how the target system is connected.
+
