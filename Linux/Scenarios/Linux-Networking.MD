@@ -50,3 +50,14 @@
                         Escape character is '^]'.
                         SSH-2.0-OpenSSH_7.4
 
+## HOST FILE
+
+        You can use /etc/host for adding the DNS names for a server insted of DNS names..But , we cannot add n-number of servers into all the hosts.
+        
+        [root@ip-172-31-35-191 ~]# cat /etc/hosts
+                127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+                ::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+
+                172.31.45.83 jenkins-server  jenkins.io
+        
+        
