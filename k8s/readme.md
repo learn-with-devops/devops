@@ -11,6 +11,10 @@
 	- Fault Tolerence
 	- Deployment
 	
+# Pre-Requisites
+
+	- security, certificates, networking and storage
+	
 # Architecture of Kubernetes
 ![image](https://github.com/learn-with-devops/devops/blob/master/k8s/kubernetes/images/k8s_architecture.jpg)
 # Kubernetes
