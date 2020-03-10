@@ -50,6 +50,10 @@
                         Escape character is '^]'.
                         SSH-2.0-OpenSSH_7.4
 
+        Note : the perticular PORT (80) got opened in remote server and when u tried to connect with telnet like "telnet jenkins.io 8080" your getting "connection refused eroor"
+        
+        i.e That mean , the perticular port running service not running properly.
+
 ## HOST FILE ( Old one replaced by DNS )
 
         You can use /etc/host for adding the DNS names for a server insted of DNS names..But , we cannot add n-number of servers into all the hosts.
