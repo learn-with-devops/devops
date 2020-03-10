@@ -15,3 +15,21 @@
         Ping, itself, is an application that uses ICMP echo requests and replies.
         
         Ref : https://networkengineering.stackexchange.com/questions/42463/ping-port-number
+
+
+  2. Ping 8.8.8.8  // for google 
+        
+        ping priveteIP/PublicIP
+        ping google.com
+        
+  3. Ping to the the server with DNS Name
+  
+        - first edit /etc/hosts file add like below
+        
+                public/private-IP DNS-NAME-1 DNS-NAME2 ..
+                
+                192.168.0.9 jenkins-server jenkins.in
+                
+        
+     
+  
