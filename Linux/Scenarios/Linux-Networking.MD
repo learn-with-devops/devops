@@ -81,3 +81,17 @@
         
         
          
+## CURL
+
+        Is used to get information of URL and some times you can use this to get info and stored that into a variable.
+        
+        ex: 
+        
+        #! /bin/bash
+        
+        IP_Addr = $(curl -sL http://169.254.169.254/latest/meta-data/public-iata/public-ipv)
+        echo "that Ip addr is $IP_Addr"
+        
+        -sL -- > for not downloding the data to locall
+        
+       
