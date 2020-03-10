@@ -35,5 +35,18 @@
                 ping -c 10 server-1
                 
         
-     
-  
+     Note : Some organizartions they will block a ICMP protocal ( PING protocal ) for their security resions.
+            In that case you can use TELNET
+            
+            
+## TELNET
+
+        - Test the connection with the following way
+
+                telnet server-1 22  // 22 is SSH port allowed by 2-nd server
+                
+                o/p :   Trying 172.31.35.191...
+                        Connected to server-1.
+                        Escape character is '^]'.
+                        SSH-2.0-OpenSSH_7.4
+
