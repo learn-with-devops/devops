@@ -50,7 +50,7 @@
                         Escape character is '^]'.
                         SSH-2.0-OpenSSH_7.4
 
-## HOST FILE
+## HOST FILE ( Old one replaced by DNS )
 
         You can use /etc/host for adding the DNS names for a server insted of DNS names..But , we cannot add n-number of servers into all the hosts.
         
