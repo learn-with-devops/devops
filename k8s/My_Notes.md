@@ -91,5 +91,18 @@
     kubectl get pod -o=custom-columns=NODE:.spec.nodeName,NAME:.metadata.name --all-namespaces
     or 
     kubectl get pod --all-namespaces -o json | jq '.items[] | .spec.nodeName + " " + .status.podIP'
+  
+  
+## Kubectl to deploy/expose/scale
+
+    # Create  a Pod
+    kubectl run --generator=run-pod/v1 nginx-pod --image=nginx:alpine
     
-#### 
+    # Expose the pod service
+    kubectl expose pod redis --port=6379 --name=redis-service
+    
+    # Create a deployment
+    kubectl create deployment webapp --image=kodekloud/webapp-color
+    
+    # Sclae up the deployment
+    kubectl scale deployment/webapp --replicas=3
