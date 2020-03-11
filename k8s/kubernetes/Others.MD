@@ -8,3 +8,11 @@
     ex: 
        spec:
         nodeName: server02
+
+### Diplay all the Objects(pods , rs , rc, deployment etc) with env as prod.
+
+    kubectl get all --selector env=prod
+
+### Filter a pod with multiple lables
+
+    kubectl get all --selector env=prod,bu=finance,tier=frontend
