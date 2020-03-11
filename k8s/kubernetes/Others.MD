@@ -25,3 +25,11 @@
     
         Taints are set to Nodes.
         Tolerations are set to Pods.
+        
+        - Taints --> Nodes
+            kubectl taints nodes node-name key=value:taint-effect     // taint-effects : 3 types   NoSchedule|PreferNoSchedule|NoExecute
+            
+            ex : 
+                kubectl taints nodes server-01 app=blue:NoSchedule
+                
+           
