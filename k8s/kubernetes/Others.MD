@@ -16,3 +16,12 @@
 ### Filter a pod with multiple lables
 
     kubectl get all --selector env=prod,bu=finance,tier=frontend
+    
+## Taints & Tolerations
+
+    are used to set restrictions on what pods schedule on a node.
+    
+    Note: 
+    
+        Taints are set to Nodes.
+        Tolerations are set to Pods.
