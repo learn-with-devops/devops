@@ -32,4 +32,14 @@
             ex : 
                 kubectl taints nodes server-01 app=blue:NoSchedule
                 
+        - Tolerations --> POds
+        
+            ex: 
+                    spec:
+                        tolerations:
+                            - key: "app"
+                              operator: "equal"
+                              value: "blue"
+                              effect: "NoSchedule"
+                
            
