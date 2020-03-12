@@ -89,4 +89,5 @@
                 size: Large
         
         
+        Note :  It has a limitations .... i.e we cannot say that deploy on any Large/Medium nodes and we cannot say don't deploy on small node.
         
