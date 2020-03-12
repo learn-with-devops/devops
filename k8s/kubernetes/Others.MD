@@ -48,6 +48,10 @@
          Question : Create a taint on node01 with key of 'spray', value of 'mortein' and effect of 'NoSchedule'
          
          Ans: kubectl taint node node01 spray=mortein:NoSchedule
+         
+         Que : Remove a taint on master node
+         
+         Ans: kubectl taint node master node-role.kubernetes.io/master:NoSchedule-   } - for removing the taint 
 
   #### Example for Tolarent and Taints
   
