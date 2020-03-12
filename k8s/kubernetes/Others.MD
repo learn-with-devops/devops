@@ -45,3 +45,6 @@
                               effect: "NoSchedule"
                 
            
+         Question : Create a taint on node01 with key of 'spray', value of 'mortein' and effect of 'NoSchedule'
+         
+         Ans: kubectl taint node node01 spray=mortein:NoSchedule
