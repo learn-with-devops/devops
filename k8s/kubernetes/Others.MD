@@ -48,3 +48,20 @@
          Question : Create a taint on node01 with key of 'spray', value of 'mortein' and effect of 'NoSchedule'
          
          Ans: kubectl taint node node01 spray=mortein:NoSchedule
+
+  #### Example for Tolarent and Taints
+  
+            Ex: apiVersion: v1
+                kind: Pod
+                metadata:
+                  name: bee
+                spec:
+                   containers:
+                      - image: nginx
+                        name: bee
+
+                   tolerations:
+                      - key: spray
+                        value: mortein
+                        effect: NoSchedule
+                        operator: Equal
