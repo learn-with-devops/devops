@@ -92,16 +92,46 @@
         Note :  It has a limitations .... i.e we cannot say that deploy on any Large/Medium nodes and we cannot say don't deploy on small node. ( We can achive this with Node_Afinity )
         
         
-    #### Example
-    
-        spec:
-              affinity:
-                  nodeAffinity:
-                    preferredDuringSchedulingIgnoredDuringExecution:
-                      nodeSelectorTerms:
-                        - matchExpressions:
-                          - key: size
-                            operator: Exists/IN
-                            values: 
-                                - Large
-                                - Medium
+        #### Example
+
+            spec:
+                  affinity:
+                      nodeAffinity:
+                        preferredDuringSchedulingIgnoredDuringExecution:
+                          nodeSelectorTerms:
+                            - matchExpressions:
+                              - key: size
+                                operator: Exists/IN
+                                values: 
+                                    - Large
+                                    - Medium
+
+#### Node Affinity Example
+
+                    apiVersion: apps/v1
+                    kind: Deployment
+                    metadata:
+                      name: blue
+                    spec:
+                      replicas: 6
+                      selector:
+                        matchLabels:
+                          run: nginx
+                      template:
+                        metadata:
+                          labels:
+                            run: nginx
+                        spec:
+                          containers:
+                          - image: nginx
+                            imagePullPolicy: Always
+                            name: nginx
+                          affinity:
+                            nodeAffinity:
+                              requiredDuringSchedulingIgnoredDuringExecution:
+                                nodeSelectorTerms:
+                                - matchExpressions:
+                                  - key: color
+                                    operator: In
+                                    values:
+                                    - blue
