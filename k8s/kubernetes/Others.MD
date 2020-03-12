@@ -135,3 +135,22 @@
                                     operator: In
                                     values:
                                     - blue
+
+## Resource Limit
+
+    We can limit the resources by specifing the things like below.
+    
+            spec: 
+
+                resources:
+                  requests:
+                    memory: "64Mi"
+                    cpu: "250m"
+                  limits:
+                    memory: "128Mi"
+                    cpu: "500m"
+                    
+                    
+ ## DaemomnSet
+ 
+ 
