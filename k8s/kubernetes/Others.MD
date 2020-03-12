@@ -91,3 +91,17 @@
         
         Note :  It has a limitations .... i.e we cannot say that deploy on any Large/Medium nodes and we cannot say don't deploy on small node. ( We can achive this with Node_Afinity )
         
+        
+    #### Example
+    
+        spec:
+              affinity:
+                  nodeAffinity:
+                    preferredDuringSchedulingIgnoredDuringExecution:
+                      nodeSelectorTerms:
+                        - matchExpressions:
+                          - key: size
+                            operator: Exists/IN
+                            values: 
+                                - Large
+                                - Medium
