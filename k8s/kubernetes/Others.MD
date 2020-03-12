@@ -1,6 +1,6 @@
 ## Scheduling
 
-### Manual Scheduling
+#### Manual Scheduling
 
     we can schedule manually by specifing the "nopeName" in manifest file...
     There is no way to use kubectl to update the pod once its created.But, you can use with the API to pass.
@@ -9,11 +9,11 @@
        spec:
         nodeName: server02
 
-### Diplay all the Objects(pods , rs , rc, deployment etc) with env as prod.
+#### Diplay all the Objects(pods , rs , rc, deployment etc) with env as prod.
 
     kubectl get all --selector env=prod
 
-### Filter a pod with multiple lables
+#### Filter a pod with multiple lables
 
     kubectl get all --selector env=prod,bu=finance,tier=frontend
     
@@ -69,3 +69,24 @@
                         value: mortein
                         effect: NoSchedule
                         operator: Equal
+                        
+    
+   ## Node Selectors
+   
+        You can use node selectors to place specific pods on specific nodes, all pods in a project on specific nodes, or create a default node selector to schedule pods that do not have a defined node selector or project selector.
+        
+   #### Attach label to the node
+   
+        kubectl label nodes <node-name> <label-key>=<label-value>
+        
+        Ex: 
+            kubectl label nodes node01 size=large
+            
+   #### Node Selector to create a Pod on specific place
+   
+        spec: 
+            nodeSelector:
+                size: Large
+        
+        
+        
