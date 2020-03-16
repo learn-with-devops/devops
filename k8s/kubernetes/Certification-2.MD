@@ -42,3 +42,13 @@
       
       
 
+
+### Managing Application Logs
+
+   How we are seeing the logs in Docker the same way we can see the logs in k8s.
+   
+        kubectl logs -f <pod-name>
+        
+   Note : A pod containing multiple docker images...If u want to see the specific container images then do like below
+   
+        kubectl logs -f <pod-name> <container-name>
