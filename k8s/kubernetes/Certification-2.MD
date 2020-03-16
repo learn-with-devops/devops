@@ -24,6 +24,12 @@
     
       CADVISER is responsible on the node to expose the metrics to the monitoring solution with the help of KUBELET.
     
+    Installation :
+    
+        git clone https://github.com/kodekloudhub/kubernetes-metrics-server.git
+        cd kubernetes-metrics-server
+        kubectl create -f .
+      
     Command: 
     
         - Find a Highest CPU/RAM consumed nodes.
