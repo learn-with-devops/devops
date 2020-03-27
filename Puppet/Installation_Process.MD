@@ -1,8 +1,9 @@
 # Puppet Installation
 
-## Puppet-Master Installation and Pre-Reqisites Setup
+## Puppet-Master Pre-Reqisites Setup
 
   - Launch a CENTSOS Server in AWS console with min 4GB RAM and 2CORE CPU.
+  
     Allow the following ports : 22, ALL TCP , All ICMP , 8140.
   
   - Edit the /etc/hosts file and add the master and slave names here and do the same in slave servers also.
@@ -16,7 +17,7 @@
      
     Note : 
     
-    Do the PING test to check like 
+     Do the PING test to check like 
     
     `ping puppetslave.cisco.com`
     
@@ -26,3 +27,23 @@
       `hostnamectl set-hostname puppetmaster.cisco.com`
       
       `bash`
+
+## Puppet-Master Installation Steps
+
+  - Download the required packager from https://yum.puppet.com/. I am using PUPPET5.
+  
+    `rpm -Uvh https://yum.puppet.com/puppet5/puppet5-release-el-7.noarch.rpm`
+    
+  - Install the Puppet by using yum.
+  
+    `yum install puppetserver.noarch -y`
+    
+  - Start the PuppetServer
+  
+    `systemctl start puppetserver`
+    
+  
+## Puppet-Slave installation
+
+
+   
