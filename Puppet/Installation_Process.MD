@@ -94,3 +94,10 @@
   
     `puppet cert sign puppetslave.cisco.com`
    
+  - If you want to automate the cert SIGN option with Master server then edit "/etc/puppetlabs/puppet/autosign.conf" and add below content.
+  
+  `*.cisco.com`
+  
+  Note: 
+  
+    When ever you added the MasterName detailes puppet.conf file in Slave/Agent then automatically it will be appear and auto approve in master.
