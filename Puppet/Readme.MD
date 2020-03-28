@@ -25,3 +25,39 @@
   - Run the puppet code
   
     `puppet apply`
+    
+    
+ ## Resource Commands
+ 
+ ### Create a User ( create_user.pp )
+ 
+       user { "anand":
+        ensure => "present",
+        uid    => "1011",
+        shell  => "/bin/sh",
+       }
+       
+### Create a File inside a new folder
+
+        file { "/root/anand":
+          ensure => "directory",
+          }
+
+        file { "/root/anand/test.txt":
+          ensure   => "present",
+          owner    => "anand",
+          group    => "anand",
+          mode     => "755",
+          content  => "Hello Anand !! This is Puppet code learning",
+         }
+         
+### Install a Package
+
+        package { "httpd":
+          ensure   => "present",
+         }
+
+        service { "httpd":
+          ensure  => "running",
+         }
+
