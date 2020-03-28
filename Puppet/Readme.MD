@@ -86,4 +86,38 @@
          include httpddeploy
          
          
+## Execute the Manifest files in Agent servers like below.
 
+   Master : 
+
+      - vi /etc/puppetlabs/code/environments/production/manifests/site.pp
+
+              class httpddeploy {
+
+                package { "httpd":
+                  ensure  => "present",
+                 }
+
+                file { "/var/www/html/index.html":
+                  content  => "Hi all this is an Application Deployment with Puppet code",
+                 }
+
+                service { "httpd":
+                  ensure  => "running",
+                }
+              }
+
+              include httpddeploy
+  
+   Slave :
+ 
+        - For testing/validating the manifest file 
+
+          `puppet agent -tv --noop`
+
+        - Run the manifest file on Agent
+
+          `puppet agent -tv`
+
+  
+  
