@@ -65,3 +65,25 @@
 ## Puppet Classes
 
       Puppet classes are collection of puppet resources bundle to gether as a single unit.
+      
+### Application Deployment with Puppet Classes
+
+          class httpddeploy {
+
+            package { "httpd":
+              ensure  => "present",
+             }
+
+            file { "/var/www/html/index.html":
+              content  => "Hi all this is an Application Deployment with Puppet code",
+             }
+
+            service { "httpd":
+              ensure  => "running",
+            }
+          }
+          
+         include httpddeploy
+         
+         
+
