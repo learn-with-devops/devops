@@ -127,9 +127,15 @@
   
   - vi /etc/puppetlabs/code/environments/production/manifests/site.pp
   
-          node "puppetslave.cisco.com" {
+          node "puppetslave.cisco.com", "puppetslave02.cisco.com" {
               include httpddeploy
             }
+            
+          Note : If you didn't specify other agent info in site.pp file then it will throw an error at checking time.So , do like below.
+          
+          node "default" {
+          
+          }
             
   - Manifest File to run the things( vi /etc/puppetlabs/code/environments/production/manifests/httpddeploy.pp )
   
