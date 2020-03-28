@@ -27,7 +27,7 @@
     `puppet apply`
     
     
- ## Resource Commands
+ ## Puppet Resource
  
  ### Create a User ( create_user.pp )
  
@@ -61,3 +61,7 @@
           ensure  => "running",
          }
 
+
+## Puppet Classes
+
+      Puppet classes are collection of puppet resources bundle to gether as a single unit.
