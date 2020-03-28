@@ -152,6 +152,7 @@
     - Now , Run the manifest file/site.pp file from Agengt.
     
         `puppet agent -tv --noop`
+        
         `puppet agent -tv`
    
       
