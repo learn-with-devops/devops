@@ -121,3 +121,38 @@
 
   
   
+## Node Defination
+
+  To bind a Single/more agents with a  manifest file then go with Node Defination.
+  
+  - vi /etc/puppetlabs/code/environments/production/manifests/site.pp
+  
+          node "puppetslave.cisco.com" {
+              include httpddeploy
+            }
+            
+  - Manifest File to run the things( vi /etc/puppetlabs/code/environments/production/manifests/httpddeploy.pp )
+  
+        class httpddeploy {
+
+            package { "httpd":
+              ensure  => "present",
+             }
+
+            file { "/var/www/html/index.html":
+              content  => "Hi all !! this is an Application Deployment with Puppet code",
+             }
+
+            service { "httpd":
+              ensure  => "running",
+            }
+          }
+
+
+    - Now , Run the manifest file/site.pp file from Agengt.
+    
+        `puppet agent -tv --noop`
+        `puppet agent -tv`
+   
+      
+  
