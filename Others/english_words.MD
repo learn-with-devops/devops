@@ -19,9 +19,15 @@
 
 ## Others
 
+Day 01 ( 29/03/2020 )
+----
+
+URL : http://www.english-for-students.com/The-Prince-and-The-Snake.html
+
  - Wise  => Intelligent / Theliyaina
  - devilish => wicked , evil , accused / Paisachika
  - desolate Temple =>   / Ekanthamaina temple
  - ridiculing =>   mock / Egathali     ===> mock -> Veklkirinchu / Velakolam
  - set off => begen a journey / bayaluderindi ( They set off to the Prince’s palace )
  - delighted => glad , happy , joyful / Anandaparichindi
+
