@@ -1,7 +1,8 @@
 ### Fruit names 
 
-English           Telugu
--------          ---------
+-----------------------------
+|English     |       Telugu |
+-----------------------------
 
 Muskmelon         kharbuja
 Jackfruit         Panasa
