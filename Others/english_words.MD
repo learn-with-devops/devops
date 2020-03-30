@@ -33,3 +33,11 @@ URL : http://www.english-for-students.com/The-Prince-and-The-Snake.html
  - rushed  => hurry/tharalincharu
  - hid  => secret/dhachipettadu
  - tarmbling => /Vanukuthunnattuga
+ 
+ 
+Day-2 ( 30/03/2020 )
+
+ - flourishing  => Developing / Vruddi
+ - bullock carts => EdduBandlu
+ - vain => worthless/ Palinchaledu
+ - 
