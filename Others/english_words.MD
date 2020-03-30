@@ -30,4 +30,6 @@ URL : http://www.english-for-students.com/The-Prince-and-The-Snake.html
  - ridiculing =>   mock / Egathali     ===> mock -> Veklkirinchu / Velakolam
  - set off => begen a journey / bayaluderindi ( They set off to the Prince’s palace )
  - delighted => glad , happy , joyful / Anandaparichindi
-
+ - rushed  => hurry/tharalincharu
+ - hid  => secret/dhachipettadu
+ - tarmbling => /Vanukuthunnattuga
