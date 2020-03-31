@@ -26,3 +26,14 @@ It is meant to be as simple to deploy as it is to use. It consists of a single c
     `docker run -d -p 9000:9000 --name portainer --restart always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer`
     
     
+## Access the Portainer UI
+
+- Login to the UI
+
+    `http://ip:90000`
+    
+    `UserName : admin`
+    `Passwd : Set for the first time`
+    
+ 
+    
