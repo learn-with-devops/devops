@@ -39,6 +39,10 @@ It is meant to be as simple to deploy as it is to use. It consists of a single c
 - Go with local installation. So, Please select the `Local` option avilable in the UI.
 
 
+## Ading the Agent on Docker-Swarm Cluser for monitoring all the containers.
+
+- URL : https://www.portainer.io/installation/
+
 
 Note: 
 
