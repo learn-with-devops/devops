@@ -36,4 +36,4 @@ It is meant to be as simple to deploy as it is to use. It consists of a single c
     `Passwd : Set for the first time`
     
  
-    
+- Go with local installation. So, Please select the `Local` option avilable in the UI.
