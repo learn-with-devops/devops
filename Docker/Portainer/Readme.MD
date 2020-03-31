@@ -37,3 +37,9 @@ It is meant to be as simple to deploy as it is to use. It consists of a single c
     
  
 - Go with local installation. So, Please select the `Local` option avilable in the UI.
+
+
+
+Note: 
+
+    Reference : https://blog.51sec.org/2019/03/install-portainer-in-centos-ubuntu-and.html
