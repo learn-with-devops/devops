@@ -227,6 +227,8 @@
            `
         
            - Finally Ran this from Agent ( Else by deafult puppet agent will take the latest changes for every 30 mins default )
+                     
                      `puppet agent -tv --noop`  --> for Dry run mode
+                     
 
                      `puppet agent -tv `
