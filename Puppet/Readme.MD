@@ -171,7 +171,7 @@
 
   There are 2 ways to download the Modules
     
-        1. Manually
+   1. Manually
         
           - Download the required Module from forge.puppet.com
           
@@ -197,6 +197,36 @@
                    }
                 }
            `
-        2. Using Puppet Module Install
+           - Finally Ran this from Agent ( Else by deafult puppet agent will take the latest changes for every 30 mins default )
+             `puppet agent -tv --noop`  --> for Dry run mode
+             
+             `puppet agent -tv `
+    
+   2. Using Puppet Module Install
+   
+   
+          - Search for puppet module directly here.
+          
+            `puppet module search jenkins`
+            
+          - Indtall Module Directly
+          
+            `puppet module install puppet-jenkins`
+            
+          - Edit the site.pp file directly.
+          
+            `
+               node "puppetslave.cisco.com" {
+
+                  include httpddeploy
+
+                  class { "jenkins":
+
+                   }
+                }
+           `
         
-  
+           - Finally Ran this from Agent ( Else by deafult puppet agent will take the latest changes for every 30 mins default )
+                     `puppet agent -tv --noop`  --> for Dry run mode
+
+                     `puppet agent -tv `
