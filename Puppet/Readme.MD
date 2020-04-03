@@ -163,3 +163,40 @@
    
       
   
+
+## Puppet-Modules-Fogue
+
+
+### For Installing the VIM Module in Slave servers
+
+  There are 2 ways to download the Modules
+    
+        1. Manually
+        
+          - Download the required Module from forge.puppet.com
+          
+            `wget https://forge.puppet.com/v3/files/WhatsARanjit-vim-0.3.0.tar.gz`
+            
+          - Then Insatll Manually
+          
+            `puppet module install /root/WhatsARanjit-vim-0.3.0.tar.gz`
+            
+          - List Out the Avilable modules in Master
+           
+            `puppet module list`
+            
+          - Add the module in Master server in site.pp
+          
+             `
+               node "puppetslave.cisco.com" {
+
+                  include httpddeploy
+
+                  class { "vim":
+
+                   }
+                }
+           `
+        2. Using Puppet Module Install
+        
+  
