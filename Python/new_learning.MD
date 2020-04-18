@@ -14,8 +14,8 @@
 
 ### Differences:
 
-- '' & ""  --> for declare the data to a variable. Ex: name = "my name is 'anand'"
-- ''' | """
+- 'anand' & "anand"  --> for declare the data to a variable. Ex: name = "my name is 'anand'"
+- '''anand''' | """anand"""
    ---> name = '''
             My name is Ananad
             From Anantpur
