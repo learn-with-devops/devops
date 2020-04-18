@@ -12,7 +12,15 @@
 - float()  --> For converting the value as Float.
 - type() --> For checking the type of variable.
 
-Example: 
+### Differences:
+
+- '' & ""  --> for declare the data to a variable. Ex: name = "my name is 'anand'"
+- ''' | """
+   ---> name = '''
+            My name is Ananad
+            From Anantpur
+   '''
+### Example: 
 
 #### Print the current age ?
 
