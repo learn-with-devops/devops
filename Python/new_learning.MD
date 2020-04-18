@@ -1,4 +1,4 @@
-## New Topics
+## Day-1 Topics ( From: 0.0 to 37:40 )
 
 ### Terminalogies
 - variable
@@ -28,3 +28,13 @@
     print(type(birth_year))
     age = 2020 - int(birth_year)
     print('My current age is : ', age)
+
+#### Print a string in required positions
+
+    name = 'anandreddy'
+    print(name[:]) --> copying the string
+    print(name[0:2]) --> o/p: an
+    print(name[1:-1])  --> o/p: nandredd
+    
+    
+## Day-2 Topics
