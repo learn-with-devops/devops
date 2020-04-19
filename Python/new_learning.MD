@@ -69,3 +69,7 @@ Ex:
       ## In Operator with String
       
          print('Anand' in str). ##o/p: True|False
+
+### Operator presidence
+
+      Peranthasis()| Exponent(**) | Multiplication or division (*|/) | Addition or substraction (+|-)
