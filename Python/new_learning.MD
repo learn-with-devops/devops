@@ -53,3 +53,15 @@ Ex:
          # Formatted String way to print "anand [reddy] is a coder"
          m1 = f'{first} [{last}] is a coder'
          print(m1)
+         
+ ### String Operations
+ 
+         str = 'Hello all this is Anand'
+         print(len(str))
+         print(str.find('A'))
+         print(str.index('A'))
+         print(str.count('l'))
+         print(str.replace('Anand', 'Reddy'))
+         print(str[::-1]) # Reverse a string
+         print(str[0:10])
+         print (str[10:])
