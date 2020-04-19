@@ -84,3 +84,5 @@ Ex:
       print(math.ceil(2.9)) # o/p : 3
       print(math.floor(2.9)) # o/p: 2
       
+
+### If-else condition
