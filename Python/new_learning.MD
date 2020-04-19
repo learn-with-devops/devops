@@ -86,3 +86,15 @@ Ex:
       
 
 ### If-else condition
+
+### Logical Operators in python
+
+      AND|OR|NOT
+      
+      Ex: 
+      
+      has_credit = True
+      criminal_background = False
+      
+      if has_credit and not criminal_background:
+         print("Eligible for loan")
