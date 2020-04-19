@@ -38,3 +38,18 @@
     
     
 ## Day-2 Topics
+
+### Formated Strings
+
+Note: f'string support from 3.7 version onwords.
+ 
+Ex: 
+
+         first = 'anand'
+         last = 'reddy'
+         # Old Way of declaration to print "anand [reddy] is a coder"
+         msg = first + ' [' + last + '] is a coder'
+         print(msg)
+         # Formatted String way to print "anand [reddy] is a coder"
+         m1 = f'{first} [{last}] is a coder'
+         print(m1)
