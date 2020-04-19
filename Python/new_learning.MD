@@ -65,3 +65,7 @@ Ex:
          print(str[::-1]) # Reverse a string
          print(str[0:10])
          print (str[10:])
+         
+      ## In Operator with String
+      
+         print('Anand' in str). ##o/p: True|False
