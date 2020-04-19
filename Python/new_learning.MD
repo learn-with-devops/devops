@@ -37,7 +37,7 @@
     print(name[1:-1])  --> o/p: nandredd
     
     
-## Day-2 Topics
+## Day-2 Topics ( FROM 37:40 to 1:11:30 )
 
 ### Formated Strings
 
