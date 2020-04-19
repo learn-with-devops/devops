@@ -73,3 +73,14 @@ Ex:
 ### Operator presidence
 
       Peranthasis()| Exponent(**) | Multiplication or division (*|/) | Addition or substraction (+|-)
+
+### Round value
+
+      print(round(2.9)) # o/p: 3
+      print(abs(-2.9)) # o/p: 2.9
+      
+      ex: 
+      import math
+      print(math.ceil(2.9)) # o/p : 3
+      print(math.floor(2.9)) # o/p: 2
+      
