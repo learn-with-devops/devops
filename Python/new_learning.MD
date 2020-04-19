@@ -89,7 +89,9 @@ Ex:
 
 ### Logical Operators in python
 
-      AND|OR|NOT
+      AND => both conditions be valid
+      OR  => atleast one should be valid
+      NOT => converts to True if it is false and vice versa.
       
       Ex: 
       
