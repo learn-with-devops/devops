@@ -245,3 +245,17 @@ Ex:
       Note: 
             First preference is positional arguments and last preference is Key word arguments.
             
+### try-Except Block
+
+      try:
+          age = int(input('Enter the Age: '))
+          print(type(age))
+          Income = 100000
+          eligible = Income / age
+          print('He is : ', eligible)
+      except ValueError:
+          print('Value should be an Integer')
+      except ZeroDivisionError:
+          print('Age should not be zero')
+          
+   
