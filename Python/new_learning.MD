@@ -259,3 +259,17 @@ Ex:
           print('Age should not be zero')
           
    
+
+### Classes
+
+      class HelloApp():
+          def greetings(self):
+              return "hello Anand"
+
+          def sendoff(self):
+              return "Bye"
+
+
+      he = HelloApp()
+      print(he.greetings())
+      print(he.sendoff())
