@@ -215,7 +215,7 @@ Ex:
    print('x, y and z values are respectively ', x, y,z)
 
 
-## Print the Emoji's with Dictionary
+## Print the Emoji's with Dictionary ( For list out the emoji's use Control+Command+Space )
 
       inp = input("> ")
       word = inp.split(' ')
