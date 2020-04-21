@@ -176,6 +176,13 @@ Ex:
           else:
               print("I don't understand")
               
-              
+### Find a Max number in list
+
+         numbers = [2, 9, 29, 92, 5]
+         max = numbers[0]
+         for i in numbers:
+             if i > max:
+                 max = i
+         print(max)
 
     
