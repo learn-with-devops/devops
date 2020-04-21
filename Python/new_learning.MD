@@ -100,3 +100,36 @@ Ex:
       
       if has_credit and not criminal_background:
          print("Eligible for loan")
+
+## Day-3 (1:11:30 to )
+
+### If-else-if condition
+
+      name = input('Enter the name : ')
+      name_length = len(name)
+      print (name_length)
+
+      if name_length < 3:
+          print('Name must be atleast 3 charecters')
+      elif name_length > 50:
+          print('Name is more than 50 charecters')
+      else:
+          print('Name looks good')
+          
+  
+### LB's to Kilograms and Kg's to LB's
+
+      weight = input('Enter the value :')
+      print ('Weight = ', weight)
+      type1 = input('(L)bs or (K)g: ')
+
+      if type1 == 'L':
+          lb = round(int(weight) * 2.210)
+          print( f"you are {lb} kelograms" )
+      elif type1 == 'K':
+          kg = round(int(weight) / 2.210)
+          print( f"you are {kg} lb's")
+      else:
+          print('Enter the proper input')
+          
+        
