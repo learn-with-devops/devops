@@ -176,7 +176,7 @@ Ex:
           else:
               print("I don't understand")
               
-### Find a Max number in list
+### Find a Big number in list
 
          numbers = [2, 9, 29, 92, 5]
          max = numbers[0]
@@ -184,5 +184,14 @@ Ex:
              if i > max:
                  max = i
          print(max)
+         
+### Print a unique values in list
 
-    
+         numbers = [2, 9, 9, 92, 5, 2, 9]
+         list = []
+
+         for i in numbers:
+             if i not in list:
+                 list.append(i)
+         print (list)
+
