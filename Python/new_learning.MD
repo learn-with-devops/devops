@@ -213,3 +213,20 @@ Ex:
    tu = ('anand', 'reddy', 571)
    x, y, z = tu
    print('x, y and z values are respectively ', x, y,z)
+
+
+## Print the Emoji's with Dictionary
+
+      inp = input("> ")
+      word = inp.split(' ')
+      print(word)
+
+      emoji = {
+          ':)': '😊',
+          ':(': '😔'
+      }
+
+      ou = ""
+      for wd in word:
+          ou += emoji.get(wd, wd)
+      print(ou)
