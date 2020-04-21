@@ -241,3 +241,7 @@ Ex:
 
       greetings("Shashi", "Kumar")                           # Positional Arguments  : Order is a matter
       greetings(last_name="Reddy", first_name = "Anand " )   # Keyword_Arguments  : Order is not a matter 
+      
+      Note: 
+            First preference is positional arguments and last preference is Key word arguments.
+            
