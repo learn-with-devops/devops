@@ -230,3 +230,14 @@ Ex:
       for wd in word:
           ou += emoji.get(wd, wd)
       print(ou)
+
+
+## Functions
+
+### Greetings with User-Defined Functions.
+
+      def greetings(first_name, last_name):
+          print(f'Hi {first_name} {last_name}!! Welcome to Cisco Systems India 🙂 ')
+
+      greetings("Shashi", "Kumar")
+      greetings("Anand ", "Reddy")
