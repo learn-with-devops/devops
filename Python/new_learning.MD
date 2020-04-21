@@ -101,7 +101,7 @@ Ex:
       if has_credit and not criminal_background:
          print("Eligible for loan")
 
-## Day-3 (1:11:30 to )
+## Day-3 (1:11:30 to 2:13:34 )
 
 ### If-else-if condition
 
