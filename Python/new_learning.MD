@@ -133,3 +133,20 @@ Ex:
           print('Enter the proper input')
           
         
+
+### Guess Program
+
+      guess_count = 0
+      guess_count_max = 3
+
+      while guess_count < guess_count_max:
+            guess = int(input("Enter your guess : "))
+            if guess == 9:
+                print('You Won !!')
+                break
+            guess_count += 1
+
+      else:
+          print('Sorry, You are wrong !! ')
+          
+    
