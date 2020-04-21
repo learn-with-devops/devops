@@ -205,4 +205,11 @@ Ex:
          for i in list:
              for j in i:
                  print(j)
+                
+## Un-Packing
 
+   - It is a gretest mechanism for assigning the values of list  ot tuple directly like below.
+
+   tu = ('anand', 'reddy', 571)
+   x, y, z = tu
+   print('x, y and z values are respectively ', x, y,z)
