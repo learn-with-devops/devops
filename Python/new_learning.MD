@@ -239,5 +239,5 @@ Ex:
       def greetings(first_name, last_name):
           print(f'Hi {first_name} {last_name}!! Welcome to Cisco Systems India 🙂 ')
 
-      greetings("Shashi", "Kumar")
+      greetings("Shashi", "Kumar")   # Positional Arguments 
       greetings("Anand ", "Reddy")
