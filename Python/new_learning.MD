@@ -149,4 +149,33 @@ Ex:
       else:
           print('Sorry, You are wrong !! ')
           
+ ## CAR stop/start/help program
+ 
+      started = False
+      while True:
+          value = input('> ').lower()
+          if value == 'help':
+              print ('Start - To start a CAR')
+              print ('Stop - To stop a CAR')
+              print ('Quit - To exit')
+          elif value == 'start':
+              if started:
+                  print('Car already started..!!')
+              else:
+                  started = True
+                  print ('Car Started !!')
+          elif value == 'stop':
+              if not started:
+                  print('Car already stopped')
+              else:
+                  started = False
+                  print ('Car Stopped')
+          elif value == 'quit':
+              print('Exit a program')
+              break
+          else:
+              print("I don't understand")
+              
+              
+
     
