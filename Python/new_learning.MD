@@ -16,8 +16,36 @@
                
                a =  b =  c = 'test'
                print(a, b, c)
+               
+- Indentation
+
+       Python uses indentation to indicate a block of code.
  
 - Expression
+
+- Built-in Data Types
+
+       Text Type:        	str
+       Numeric Types:    	int, float, complex
+       Sequence Types: 	  list, tuple, range
+       Mapping Type: 	    dict
+       Set Types: 	       set, frozenset
+       Boolean Type:     	bool
+       Binary Types: 	    bytes, bytearray, memoryview
+       
+       
+      ## Note: Frozen Set
+     
+              a = {1, 2, 5, 4, 3, 6, 4, 2}
+              print(a)
+              print (type(a))
+              a.add(9)
+              print(a)
+
+              fs = frozenset(a)
+              print(fs)
+              fs.add(90)
+
 
 ### Built-In functions
 
