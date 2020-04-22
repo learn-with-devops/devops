@@ -2,6 +2,21 @@
 
 ### Terminalogies
 - variable
+ 
+      # Variable Declaration
+      
+               var = 'anand'
+               firstName = 'Anand'
+               first_Name = 'anand'
+               name2 = 'anand'
+               NAME = 'anand'
+               
+               x, y, z = 10, 20, 30
+               print (x, y , z)
+               
+               a =  b =  c = 'test'
+               print(a, b, c)
+ 
 - Expression
 
 ### Built-In functions
