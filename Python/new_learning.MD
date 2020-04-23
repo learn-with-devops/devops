@@ -351,3 +351,39 @@ Ex:
        da1.liabilities()
        
        
+## Modules
+
+  1. max_value.py
+  
+
+         def max_value(number):
+             max_number = number[0]
+
+             for i in number:
+                 if i > max_number:
+                     max_number = i
+             return max_number
+
+ 2. min_value.py
+ 
+
+        def min_value(number):
+           min_number = number[0]
+
+           for i in number:
+               if i < min_number:
+                   min_number = i
+           return min_number
+
+  3. Main.py
+  
+         import max_value
+         import min_value
+
+         number = [20, 30, 18, 30, 66, 36]
+         
+         max = max_value.max_value(number)
+         print (f'Max value in a List is {max}')
+
+         min = min_value.min_value(number)
+         print (f'Min value in a List is {min}')
