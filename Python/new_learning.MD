@@ -387,3 +387,23 @@ Ex:
 
          min = min_value.min_value(number)
          print (f'Min value in a List is {min}')
+
+
+## Random Module
+
+         import random
+
+         class Dice:
+
+             def __init__(self):
+                 pass
+
+             def roll(self):
+                     x = random.randint(1, 6)
+                     y = random.randint(1, 6)
+                     return f' ({x}, {y}) '
+
+         input1 = Dice()
+         print (input1.roll())
+         
+         
