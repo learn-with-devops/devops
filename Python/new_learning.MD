@@ -316,3 +316,38 @@ Ex:
       he = HelloApp()
       print(he.greetings())
       print(he.sendoff())
+
+
+## Day-4
+
+### Inheritence : 
+
+       class Father:
+
+           def land(self):
+               print("Land Belong to all sons & Doughters")
+
+           def liabilities(self):
+               print("Sons need to the amount equally")
+
+       class Son(Father):
+
+           def commitments(self):
+               print("Sons are responsible for commitments")
+
+       class Daughters(Father):
+
+           def funiral(self):
+               print ("Dauthers need to take the funiral activities")
+
+
+       son1 = Son()
+       son1.commitments()
+       son1.land()
+       son1.liabilities()
+
+       da1 = Daughters()
+       da1.funiral()
+       da1.liabilities()
+       
+       
