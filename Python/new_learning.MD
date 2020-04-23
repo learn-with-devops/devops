@@ -407,3 +407,25 @@ Ex:
          print (input1.roll())
          
          
+## Pathlib  (For show the files and folders of specific path )
+ 
+       import pathlib
+
+       # print (pathlib.Path.exists("ecommerce"))
+       path = pathlib.Path("anand")
+
+
+       # Create a Directory
+       print (path.mkdir())
+
+       # Remove a Directory
+       print (path.rmdir())
+
+       # Check the Directory exits
+       print (path.exists())
+
+       # Display all the files and folders 
+       for file in path.glob('*'):
+          print(file)
+   
+   
