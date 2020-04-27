@@ -42,7 +42,7 @@ JSON (JavaScript Object Notation) is frequently used between a server and a web 
         python_obj = json.loads(json_data)
         print python_obj["name"]
         print python_obj["city"]
-
+        
 
 ### My Example
 
@@ -67,7 +67,7 @@ JSON (JavaScript Object Notation) is frequently used between a server and a web 
         }
         '''
         
-### Convert the JSON data to Directory
+### Convert Python Object to JSON data 
 
         data = json.loads(people_string)    // Convert the JSON data to Directory
         print(type(data))
