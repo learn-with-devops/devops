@@ -80,9 +80,33 @@
 
 - Indentation
 
-       Python uses indentation to indicate a block of code.
+        Python uses indentation to indicate a block of code.
  
-- Expression
+- Comments
+
+        Comments can be used to explain Python code.
+
+        Comments can be used to make the code more readable.
+
+        Comments can be used to prevent execution when testing code.
+        
+        Ex: 
+        
+        - Single line comments
+        
+            #This is a comment
+            print("Hello, World!")
+        
+        - Multi-line
+        
+            """
+            This is a comment
+            written in
+            more than just one line
+            """
+            print("Hello, World!") 
+
+    
 
 - Built-in Data Types
 
