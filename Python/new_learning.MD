@@ -1,4 +1,4 @@
-## Day-1 Topics ( From: 0.0 to 37:40 )
+## Python
 
 ### Python OverView
 
@@ -166,10 +166,13 @@
 - Built-in Data Types
 	
 	  Variables can store data of different types, and different types can do different things.
-
-	       Text Type:        -- > str
-	       Numeric Types:    -- > int, float, complex
+	  
+	       Numeric Types:    -- > int, float, complex, long
+	       
+	       		- Type Conversions : int() | float()
+			
 	       Sequence Types: 	 -- > list, tuple, range
+	       Text Type:        -- > str
 	       Mapping Type: 	 -- > dict
 	       Set Types: 	 -- > set, frozenset
 	       Boolean Type:     -- > bool
