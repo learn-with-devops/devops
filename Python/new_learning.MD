@@ -17,6 +17,12 @@
                a =  b =  c = 'test'
                print(a, b, c)
                
+       # Illegal variable names:
+       
+               2myvar = "John"
+               my-var = "John"
+               my var = "John"
+
 - Indentation
 
        Python uses indentation to indicate a block of code.
