@@ -20,7 +20,22 @@
         - Frameworks : Django , Flask , Pylons, Web2py
         
     - Artificial Intelligence
-        - Analysing , Decision Making
+        - Analysing , Decision Making : like - Image recognation 
+        
+    - Computer Grphics
+        - GUI , Desktop Applications , Game Development ( Libaries : jython , Tkinter ,Pygame )
+        
+    - Testing Frameworks
+        - s/w testing to application  ( modules/tools : Selenium,Pytest )
+        
+    - BigData
+        
+    - Automation 
+    
+    - Data Science ( Numpy , Pandas )
+    
+    - Popularity / High Salary 
+    
     
 ### Basic things
 
