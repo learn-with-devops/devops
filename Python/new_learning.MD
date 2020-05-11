@@ -75,6 +75,8 @@
             
 - Identifiers
 
+        The identifier is only used to identify an entity uniquely in a program at the time of execution whereas, a variable is a name given to a memory location, that is used to hold a value. Variable is only a kind of identifier, other kinds of identifiers are function names, class names, structure names, etc.
+
 
 - Indentation
 
