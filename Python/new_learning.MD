@@ -167,84 +167,101 @@
 	
 	  Variables can store data of different types, and different types can do different things.
 	  
+	  
+	  Numeric Types:         -- > int, float, complex, long
+	  Sequence Types: 	 -- > list, tuple, range
+	  Set Types: 	         -- > set, frozenset
+	  Text Type:             -- > str
+	  Mapping Type: 	 -- > dict	
+	  Boolean Type:          -- > bool
+	  Binary Types: 	 -- > bytes, bytearray, memoryview
+	  
+	  
+	  
+	  
+	  
 	       Numeric Types:    -- > int, float, complex, long( 3+ not support )
 	       
-	       		- Type Conversions : int() | float()
+	       			- Type Conversions : int() | float()
 			
 	       Sequence Types: 	 -- > list, tuple, range
 	       
-	       	- List : 
-			
-			Lists are just like dynamic sized arrays. 
-			Lists need not be homogeneous always which makes it a most powerful tool in Python. 
-			A single list may contain DataTypes like Integers, Strings, as well as Objects. 
-			Lists are mutable, and hence, they can be altered even after their creation.
-			
-				names = ['Anand', 'Reddy', 'Reddam', 'Anand']
-				names.count('Anand')  # number of times repeted
-				names.index('Reddam') # Find a position of the value
-				names.append(10) # Add a value at end
-				names.insert(0, 'Srinu') # Insert a value in specific position
-				names.extend([3, 'Hello', 'Anand']) # add multiple values at end
-				names.remove('Anand') # Remove an Element
-				names.pop(2) # default it remove last element. But we can specify the element you want.
-				names.reverse() # Reverse a List
-				names.sort() # Sort a List in Assending Order
-				
-				------------------------------
-				
-				names[2] = 'redd' # Update the list value
-				len(names) # Length of list
-				names[::-1] # Reverse a list
-				names[0:2] # Display the particular items in a list
-				li2 = names[:] # Copy a list
-				names*2 # Multiple a List
-				# list1+list2 (Concate a list)
-				names+['shash',80] # Add extra values to list
-				
-			- Multidimensional List : 
-			
-				details = [['name', 'Anand'], ['age', 26], ['emp', 'software']]
+			- List : 
 
-				for i in range(len(details)):
-				    for j in range(len(details[i])):
-					print (details[i][j])
-			
-			- Tuple 
+				Lists are just like dynamic sized arrays. 
+				Lists need not be homogeneous always which makes it a most powerful tool in Python. 
+				A single list may contain DataTypes like Integers, Strings, as well as Objects. 
+				Lists are mutable, and hence, they can be altered even after their creation.
 
-				Tuples are also same like Lists but , these are immutable and declared with open and closed () .
+					names = ['Anand', 'Reddy', 'Reddam', 'Anand']
+					names.count('Anand')  # number of times repeted
+					names.index('Reddam') # Find a position of the value
+					names.append(10) # Add a value at end
+					names.insert(0, 'Srinu') # Insert a value in specific position
+					names.extend([3, 'Hello', 'Anand']) # add multiple values at end
+					names.remove('Anand') # Remove an Element
+					names.pop(2) # default it remove last element. But we can specify the element you want.
+					names.reverse() # Reverse a List
+					names.sort() # Sort a List in Assending Order
 
-				Ex :
-					details = ('anand', 'reddy', 100)
-					print (type(details))
-					print (details.index('reddy'))
-					print (details.count(100))
-					
+					------------------------------
+
+					names[2] = 'redd' # Update the list value
+					len(names) # Length of list
+					names[::-1] # Reverse a list
+					names[0:2] # Display the particular items in a list
+					li2 = names[:] # Copy a list
+					names*2 # Multiple a List
+					# list1+list2 (Concate a list)
+					names+['shash',80] # Add extra values to list
+
+				- Multidimensional List : 
+
+					details = [['name', 'Anand'], ['age', 26], ['emp', 'software']]
+
+					for i in range(len(details)):
+					    for j in range(len(details[i])):
+						print (details[i][j])
+
+				- Tuple 
+
+					Tuples are also same like Lists but , these are immutable and declared with open and closed () .
+
+					Ex :
+						details = ('anand', 'reddy', 100)
+						print (type(details))
+						print (details.index('reddy'))
+						print (details.count(100))
+
 			- Range
 			
-				range() returns an immutable sequence of numbers between the given start integer to the stop integer.
-				print(range(1, 10)) # Output: range(1, 10)
+					range() returns an immutable sequence of numbers between the given start integer to the stop integer.
+					print(range(1, 10)) # Output: range(1, 10)
+
+					numbers = range(1, 6)
+
+						  print(list(numbers)) # Output: [1, 2, 3, 4, 5]
+						  print(tuple(numbers)) # Output: (1, 2, 3, 4, 5)
+						  print(set(numbers)) # Output: {1, 2, 3, 4, 5}
+
+	       Set Types: 	 -- > set, frozenset
+	       
+				- Set
+					It is unordered collection of uniuqe items .
+
+						s = {'anand', 'reddy', 'reddam', 'reddy'}
+						s1 = {'gaa', 'naa', 'reddam'}
+
+						s.add('hello') # add a value to set
+						s.clear() # clear a set
+						s.update(['shashi','kumar']) # Update a list of values
+						s.remove('hello') # this will return an error if item not exists. So use discard. It will not throw an error.
+						s.discard('hello') s1 = {'gaa', 'naa', 'reddam'}
+						s3 = s.union(s1) # Union of two sets
+						print (s.intersection(s1)) # intersection of two sets	
+						
+				- FrozenSet
 				
-				numbers = range(1, 6)
-
-					  print(list(numbers)) # Output: [1, 2, 3, 4, 5]
-					  print(tuple(numbers)) # Output: (1, 2, 3, 4, 5)
-					  print(set(numbers)) # Output: {1, 2, 3, 4, 5}
-
-	       - Set Types: 	 -- > set, frozenset
-	       		- Set
-	       			It is unordered collection of uniuqe items .
-				
-	        			s = {'anand', 'reddy', 'reddam', 'reddy'}
-					s1 = {'gaa', 'naa', 'reddam'}
-
-					s.add('hello') # add a value to set
-					s.clear() # clear a set
-					s.update(['shashi','kumar']) # Update a list of values
-					s.remove('hello') # this will return an error if item not exists. So use discard. It will not throw an error.
-					s.discard('hello') s1 = {'gaa', 'naa', 'reddam'}
-					s3 = s.union(s1) # Union of two sets
-					print (s.intersection(s1)) # intersection of two sets		
 				
 	       Text Type:        -- > str
 	       Mapping Type: 	 -- > dict
