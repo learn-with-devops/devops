@@ -1,27 +1,32 @@
 ## Day-1 Topics ( From: 0.0 to 37:40 )
 
-### Terminalogies
+### Python OverView
+
+    Python is an interpreted, high-level, general-purpose programming language. Created by Guido van Rossum and first released in 1991, Python's design philosophy emphasizes code readability with its notable use of significant whitespace.
+
 - variable
  
-      # Variable Declaration
-      
-               var = 'anand'
-               firstName = 'Anand'
-               first_Name = 'anand'
-               name2 = 'anand'
-               NAME = 'anand'
+      Variables are containers for storing data values.
+   
+           # Variable Declaration
+
+                    var = 'anand'
+                    firstName = 'Anand'
+                    first_Name = 'anand'
+                    name2 = 'anand'
+                    NAME = 'anand'
+
+                    x, y, z = 10, 20, 30
+                    print (x, y , z)
+
+                    a =  b =  c = 'test'
+                    print(a, b, c)
                
-               x, y, z = 10, 20, 30
-               print (x, y , z)
-               
-               a =  b =  c = 'test'
-               print(a, b, c)
-               
-       # Illegal variable names:
-       
-               2myvar = "John"
-               my-var = "John"
-               my var = "John"
+           # Illegal variable names:
+
+                   2myvar = "John"
+                   my-var = "John"
+                   my var = "John"
 
 - Indentation
 
