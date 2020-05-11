@@ -261,6 +261,12 @@
 						print (s.intersection(s1)) # intersection of two sets	
 						
 				- FrozenSet
+					Freeze the list, and make it unchangeable:
+					
+						s = ['anand', 'reddy']
+						x = frozenset(s)
+						print (type(x))
+						x[1] = 'Hello' #'frozenset' object does not support item assignment
 				
 				
 	       Text Type:        -- > str
