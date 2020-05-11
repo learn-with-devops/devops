@@ -20,10 +20,12 @@
  - File Handling
  - Input / f - string
  - MultiThredding
- - DataBase Connection
+ - PIP
  
  ## Modules
  
+  - Math
+  - PATH
   - Json
   - csv
   - Random
