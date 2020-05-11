@@ -7,6 +7,7 @@
     - Comments
  - DataTypes
  - Type Casting , String Format
+ - Input / f - string
  - Loops & Conditions
  - Functions & Methods
  - Exception Handling
@@ -18,7 +19,6 @@
     - Abstraction
     - Encapsulation
  - File Handling
- - Input / f - string
  - MultiThredding
  - PIP
  
