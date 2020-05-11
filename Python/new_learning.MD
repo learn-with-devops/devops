@@ -164,14 +164,16 @@
 
 
 - Built-in Data Types
+	
+	  Variables can store data of different types, and different types can do different things.
 
-       Text Type:        	str
-       Numeric Types:    	int, float, complex
-       Sequence Types: 	  list, tuple, range
-       Mapping Type: 	    dict
-       Set Types: 	       set, frozenset
-       Boolean Type:     	bool
-       Binary Types: 	    bytes, bytearray, memoryview
+	       Text Type:        -- > str
+	       Numeric Types:    -- > int, float, complex
+	       Sequence Types: 	 -- > list, tuple, range
+	       Mapping Type: 	 -- > dict
+	       Set Types: 	 -- > set, frozenset
+	       Boolean Type:     -- > bool
+	       Binary Types: 	 -- > bytes, bytearray, memoryview
        
        
       ## Note: Frozen Set
