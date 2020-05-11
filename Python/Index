@@ -1,0 +1,35 @@
+## Python Concepts
+
+ - Python OverView
+ - Basic things
+    - Variables
+    - Operators
+    - Comments
+ - DataTypes
+ - Type Casting , String Format
+ - Loops & Conditions
+ - Functions & Methods
+ - Exception Handling
+ - Oops Concepts
+    - Class & Object
+    - Constructors
+    - Inheritence
+    - Polymorphism
+    - Abstraction
+    - Encapsulation
+ - File Handling
+ - Input / f - string
+ - MultiThredding
+ - DataBase Connection
+ 
+ ## Modules
+ 
+  - Json
+  - csv
+  - Random
+  - Date & Time
+  - OS
+  - Request
+  - Flask
+  - DataBase Module ( MySQL / InfluxDB )
+  - Boto3
