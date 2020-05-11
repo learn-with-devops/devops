@@ -4,6 +4,24 @@
 
     Python is an interpreted, high-level, general-purpose programming language. Created by Guido van Rossum and first released in 1991, Python's design philosophy emphasizes code readability with its notable use of significant whitespace.
 
+    Features: 
+    
+    - Simple & Easy to learn
+        - Open Source ( Under GPL Licenced)
+        - Hight-Level Programming Language
+        - InterPreted
+        - Large Community
+    
+    - Portable & Extensible
+        - Supports : Windows , Mac , Linux/Unix
+        - Extensible: we can able to invoke Java,.net components to Python..C/C++ libraries also we can invoke ( cross language operations )
+        
+    - Web Development
+        - Frameworks : Django , Flask , Pylons, Web2py
+        
+    - Artificial Intelligence
+        - Analysing , Decision Making
+    
 ### Basic things
 
 - variable
