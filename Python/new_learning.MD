@@ -108,6 +108,78 @@
 
     
 
+- Python Operations
+
+
+		1. Arithmetic
+		   [ + , - , * , / , % , **(exponenent or square)]
+
+		2. Comparision
+		   [ == , != , > , < , >= , <= ]
+
+		3. Membership
+		   [ in , not in ]
+
+		   3.1 in:
+		    	a = 10
+				list = [10,20,30,40,50]
+				if (a in list):
+				    print ('a in the present list')
+
+
+
+			3.2 not in:
+			 	a = 21
+				list = [10,20,30,40,50]
+				if (a not in list):
+				    print ('a in not in the present list')
+
+		4. Bitwise
+		   [ & , | , ^ , ~ , << , >>]
+
+		5. Logical Operators
+
+			5.1 Logical AND
+
+			    a = 10
+				b = 20
+				c = 0
+				if ( a==10) and (b==a+10):
+				    print ('logical and got passed')
+
+
+			5.2 Logical OR
+
+			    a = 10
+				b = 20
+				c = 0
+				if ( a==10) or (b==a+30):
+				    print ('logical and got passed')
+
+
+			5.3  Logical NOT
+
+				if (not c):
+    			print ('condition true')
+
+
+    c. Condition Statements in Python
+
+    	1. if
+    	2. elif
+    	3. else
+
+    	Ex :
+
+    			a = 20
+				b = 20
+				if (a>b):
+				    print('A is bigger')
+				elif(a<b):
+				    print('B is bigger')
+				else:
+				    print('both are equal')
+
 - Built-in Data Types
 
        Text Type:        	str
