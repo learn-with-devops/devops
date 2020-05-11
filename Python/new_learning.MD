@@ -191,6 +191,18 @@
 				names.reverse() # Reverse a List
 				names.sort() # Sort a List in Assending Order
 				
+				------------------------------
+				
+				names[2] = 'redd' # Update the list value
+				len(names) # Length of list
+				names[::-1] # Reverse a list
+				names[0:2] # Display the particular items in a list
+				li2 = names[:] # Copy a list
+				names*2 # Multiple a List
+				# list1+list2 (Concate a list)
+				names+['shash',80] # Add extra values to list
+				
+				
 	       Text Type:        -- > str
 	       Mapping Type: 	 -- > dict
 	       Set Types: 	 -- > set, frozenset
