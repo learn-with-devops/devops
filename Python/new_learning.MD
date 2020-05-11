@@ -108,7 +108,7 @@
 
     
 
-- Python Operations
+- Python Operatores
 
 
 		1. Arithmetic
@@ -162,23 +162,6 @@
 				if (not c):
     			print ('condition true')
 
-
-    c. Condition Statements in Python
-
-    	1. if
-    	2. elif
-    	3. else
-
-    	Ex :
-
-    			a = 20
-				b = 20
-				if (a>b):
-				    print('A is bigger')
-				elif(a<b):
-				    print('B is bigger')
-				else:
-				    print('both are equal')
 
 - Built-in Data Types
 
