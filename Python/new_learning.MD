@@ -173,7 +173,7 @@
 			
 	       Sequence Types: 	 -- > list, tuple, range
 	       
-	       		- List : 
+	       	- List : 
 			
 			Lists are just like dynamic sized arrays. 
 			Lists need not be homogeneous always which makes it a most powerful tool in Python. 
@@ -210,6 +210,16 @@
 				    for j in range(len(details[i])):
 					print (details[i][j])
 			
+		- Tuple 
+			
+			Tuples are also same like Lists but , these are immutable and declared with open and closed () .
+			
+			Ex :
+				details = ('anand', 'reddy', 100)
+				print (type(details))
+				print (details.index('reddy'))
+				print (details.count(100))
+
 				
 				
 	       Text Type:        -- > str
