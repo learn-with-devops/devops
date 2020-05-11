@@ -202,6 +202,15 @@
 				# list1+list2 (Concate a list)
 				names+['shash',80] # Add extra values to list
 				
+			- Multidimensional List : 
+			
+				details = [['name', 'Anand'], ['age', 26], ['emp', 'software']]
+
+				for i in range(len(details)):
+				    for j in range(len(details[i])):
+					print (details[i][j])
+			
+				
 				
 	       Text Type:        -- > str
 	       Mapping Type: 	 -- > dict
