@@ -4,6 +4,8 @@
 
     Python is an interpreted, high-level, general-purpose programming language. Created by Guido van Rossum and first released in 1991, Python's design philosophy emphasizes code readability with its notable use of significant whitespace.
 
+### Basic things
+
 - variable
  
       Variables are containers for storing data values.
@@ -27,6 +29,19 @@
                    2myvar = "John"
                    my-var = "John"
                    my var = "John"
+
+- Keywords
+
+        - Keywords are the reserved words in Python.
+        - We cannot use a keyword as a variable name, function name or any other identifier. They are used to define the syntax and structure of the Python language.
+        - There are 33 keywords in Python 3.7
+        
+        Example: 
+        
+            for, while , if , else, true, False, and , or, del , def , try, except, else, elseif, import , return , false
+            
+- Identifiers
+
 
 - Indentation
 
