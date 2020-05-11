@@ -167,11 +167,25 @@
 	
 	  Variables can store data of different types, and different types can do different things.
 	  
-	       Numeric Types:    -- > int, float, complex, long
+	       Numeric Types:    -- > int, float, complex, long( 3+ not support )
 	       
 	       		- Type Conversions : int() | float()
 			
 	       Sequence Types: 	 -- > list, tuple, range
+	       
+	       		- List : 
+			
+				names = ['Anand', 'Reddy', 'Reddam', 'Anand']
+				names.count('Anand')  # number of times repeted
+				names.index('Reddam') # Find a position of the value
+				names.append(10) # Add a value at end
+				names.insert(0, 'Srinu') # Insert a value in specific position
+				names.extend([3, 'Hello', 'Anand']) # add multiple values at end
+				names.remove('Anand') # Remove an Element
+				names.pop(2) # default it remove last element. But we can specify the element you want.
+				names.reverse() # Reverse a List
+				names.sort() # Sort a List in Assending Order
+				
 	       Text Type:        -- > str
 	       Mapping Type: 	 -- > dict
 	       Set Types: 	 -- > set, frozenset
