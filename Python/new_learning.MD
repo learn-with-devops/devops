@@ -210,15 +210,26 @@
 				    for j in range(len(details[i])):
 					print (details[i][j])
 			
-		- Tuple 
+			- Tuple 
+
+				Tuples are also same like Lists but , these are immutable and declared with open and closed () .
+
+				Ex :
+					details = ('anand', 'reddy', 100)
+					print (type(details))
+					print (details.index('reddy'))
+					print (details.count(100))
+					
+			- Range
 			
-			Tuples are also same like Lists but , these are immutable and declared with open and closed () .
-			
-			Ex :
-				details = ('anand', 'reddy', 100)
-				print (type(details))
-				print (details.index('reddy'))
-				print (details.count(100))
+				range() returns an immutable sequence of numbers between the given start integer to the stop integer.
+				print(range(1, 10)) # Output: range(1, 10)
+				
+				numbers = range(1, 6)
+
+					  print(list(numbers)) # Output: [1, 2, 3, 4, 5]
+					  print(tuple(numbers)) # Output: (1, 2, 3, 4, 5)
+					  print(set(numbers)) # Output: {1, 2, 3, 4, 5}
 
 				
 				
