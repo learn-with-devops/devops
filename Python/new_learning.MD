@@ -231,11 +231,25 @@
 					  print(tuple(numbers)) # Output: (1, 2, 3, 4, 5)
 					  print(set(numbers)) # Output: {1, 2, 3, 4, 5}
 
+	       - Set Types: 	 -- > set, frozenset
+	       		- Set
+	       			It is unordered collection of uniuqe items .
 				
+	        			s = {'anand', 'reddy', 'reddam', 'reddy'}
+					s1 = {'gaa', 'naa', 'reddam'}
+
+					s.add('hello') # add a value to set
+					s.clear() # clear a set
+					s.update(['shashi','kumar']) # Update a list of values
+					s.remove('hello') # this will return an error if item not exists. So use discard. It will not throw an error.
+					s.discard('hello') s1 = {'gaa', 'naa', 'reddam'}
+					s3 = s.union(s1) # Union of two sets
+					print (s.intersection(s1)) # intersection of two sets		
 				
 	       Text Type:        -- > str
 	       Mapping Type: 	 -- > dict
-	       Set Types: 	 -- > set, frozenset
+	       
+			
 	       Boolean Type:     -- > bool
 	       Binary Types: 	 -- > bytes, bytearray, memoryview
        
