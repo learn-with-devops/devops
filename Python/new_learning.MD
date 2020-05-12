@@ -270,7 +270,46 @@
 				
 				
 	       Text Type:        -- > str
+	       		
+			a = ' hello,  all'
+			print (a.count('l'))
+			print (a.index('a'))
+			print (a.replace('l','z'))
+			print (a.find('o'))
+			print (a.islower()) # Check the string is lower case .if yes return True else False
+			print (a.upper())
+			print (a.lower())
+			print (a.strip()) # Remove the spaces at begining and ending
+			print (a.split(",")) # splits the string into substrings if it finds instances of the separator
+			
 	       Mapping Type: 	 -- > dict
+	       
+	       		thisdict =	{
+				  "brand": "Ford",
+				  "model": "Mustang",
+				  "year": 1966
+				}
+
+				# print (thisdict.get("mode")) # it will return none if the value is not present
+				# # print (thisdict.pop("model")) # Remove an item
+				# print (thisdict)
+
+				# thisdict.popitem() # Removed the last item
+
+				# del thisdict["model"] # Remove an item
+				# thisdict.clear() # Clear the dictonary
+
+				# new  = thisdict.copy() # take a copy
+				# new1 = dict(thisdict)  # This is also for take a copy
+
+				# print (thisdict.values())
+				# print (thisdict.keys())
+
+				print (thisdict.fromkeys(thisdict)) # only get keys
+
+				# m = dict({1:'apple', 2: 'Banana'})
+				# n = dict([(1, 'nn'), (2,'m')])
+				# print (type(n))
 	       
 			
 	       Boolean Type:     -- > bool
