@@ -3,9 +3,10 @@
  - Python OverView
  - Basic things
     - Variables , Identifiers, Keywords
-    - Operators
+    - Indentation
     - Comments
  - DataTypes
+ - Operatores
  - Type Casting , String Format
  - Input / f - string
  - Loops & Conditions
