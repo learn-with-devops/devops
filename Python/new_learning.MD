@@ -261,7 +261,7 @@
 						print (s.intersection(s1)) # intersection of two sets	
 						
 				- FrozenSet
-					Freeze the list, and make it unchangeable:
+					Freeze the list / set, and make it unchangeable:
 					
 						s = ['anand', 'reddy']
 						x = frozenset(s)
