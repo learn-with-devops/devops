@@ -1,6 +1,6 @@
 ## Ec2 Instance type using
 
-### m4.large ( 2 CPU's & 8 GB RAM )
+### m4.xlarge ( 4 CPU's & 16 GB RAM ) ||| m4.large ( 2 CPU's & 8 GB RAM )
 
   1 -> 80 Instances 
   
