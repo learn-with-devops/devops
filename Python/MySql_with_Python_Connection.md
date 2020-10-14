@@ -42,3 +42,7 @@
         # for i in data:
         #     print ("My name is : ",i[0]," and I belong to ", i[1],".My age is", i[2])
 
+
+### Reference 
+        Links1 : https://www.w3schools.com/python/python_mysql_getstarted.asp
+        Links2 :  
