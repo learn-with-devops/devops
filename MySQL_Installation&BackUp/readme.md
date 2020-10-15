@@ -1,4 +1,4 @@
-## MySQL Installation
+## MySQL 8 Installation
 
 - Setup Yum repository
 
