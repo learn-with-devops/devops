@@ -37,3 +37,12 @@
 
         mysql -u root -p Employee < /opt/mysql_backup/Employee_backup.sql 
         
+-----
+
+#### Taking Backup of Multiple Databases.
+
+        sudo mysqldump -u [user] -p [database_1] [database_2] [database_etc] > [filename].sql
+    
+### Taking Backup for entire Database.
+
+        mysqldump -u root -p --all-databases > /opt/mysql_backup/total_backup.sql
