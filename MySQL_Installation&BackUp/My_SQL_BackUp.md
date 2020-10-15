@@ -54,6 +54,14 @@
 
         mysqldump -u root -p database_name | gzip > dump.gz
         
+        - Restore compressed DB like below
+        
+                gunzip < alldb.sql.gz | mysql -u [uname] -p[pass] [dbname]
+                
+        - This is the command I use to backup all databases in MySQL
+                
+                mysqldump -u USERNAME -p --all-databases --events --ignore-table=mysql.event --extended-insert --add-drop-database --disable-keys --flush-privileges --quick --routines --triggers | gzip > "all_databases.gz"
+        
         
 #### If your database is large, you should add this to your mysqldump
 
