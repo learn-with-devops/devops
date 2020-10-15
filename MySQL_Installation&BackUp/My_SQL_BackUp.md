@@ -46,3 +46,16 @@
 ### Taking Backup for entire Database.
 
         mysqldump -u root -p --all-databases > /opt/mysql_backup/total_backup.sql
+        
+-----
+
+#### Compress your Database when you taking backup 
+
+
+        mysqldump -u root -p database_name | gzip > dump.gz
+        
+        
+#### If your database is large, you should add this to your mysqldump
+
+
+        mysqldump -u root --single-transaction --quick --lock-tables=false database_name | gzip > database_name.sql.gz;
