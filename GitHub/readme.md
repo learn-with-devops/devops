@@ -210,3 +210,15 @@
 		Execute the following:
 			
 			git cherry-pick <commit-hash>
+			
+
+## Diff b/w Git and SVN
+
+ 1g. Distributed VCS								 
+ 1s. Centralized VCS
+ 2g. People have account to fork.Due to this, you can have all the information like logs, tags, history etc..  			 
+ 2s. don't have account to fork.
+ 3g. Create unlimited number of branches and very easy to merge .
+ 3s. Dificuly in mainatining of Multiple Number of branches and Meging is more dificult again.
+ 4g. If developer did mistake in Branch then PR cannot approved by Team.
+ 5g. SVN commit changes directly to main branch..So, if mistakes there then entire application will effect with that problem.
