@@ -33,6 +33,16 @@
 
       ## Execute below command for better effect of Bash_Profile
       source ~/.bash_profile
+      
+-------
+## What is the role of setting.xml file in Maven :
+
+      A Maven settings.xml file defines values that configure Maven execution in various ways. 
+      
+      Most commonly:
+            - it is used to define a local repository location
+            - alternate remote repository servers
+            - authentication information for private repositories. 
 
 
 
