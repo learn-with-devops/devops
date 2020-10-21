@@ -134,3 +134,10 @@
       Note : 
             - Gradle used build.gradel file as configuration. Uses groovy code insted of XML.
             - Developed to make|understnd the developers easy of build.gradel file
+            
+## Build Maven Project withOut POM.xml file ?
+
+      One possible workaround would be to:
+
+            -     first get the jar
+            -     then execute it
