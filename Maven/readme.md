@@ -124,3 +124,13 @@
             - authentication information for private repositories. 
             
       Ref : https://devcenter.heroku.com/articles/using-a-custom-maven-settings-xml#:~:text=A%20Maven%20settings.,authentication%20information%20for%20private%20repositories.
+    
+-----
+## Maven Vs ANT
+![image](https://github.com/learn-with-devops/devops/blob/master/Maven/images/ant.PNG)
+![image](https://github.com/learn-with-devops/devops/blob/master/Maven/images/ant_build.PNG)
+![image](https://github.com/learn-with-devops/devops/blob/master/Maven/images/maven_Ant_diff.PNG)
+
+      Note : 
+            - Gradle used build.gradel file as configuration. Uses groovy code insted of XML.
+            - Developed to make|understnd the developers easy of build.gradel file
