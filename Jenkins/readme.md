@@ -258,3 +258,8 @@
 ## Change the default Port number, WorkSpace and default user of jenkins
 
 	Go to /etc/sysconfig/jenkins file and change as you want.
+
+## Forgot the password of jenkins
+	
+	then go to " vi /var/lib/jenkins/users/anand_573465765/config.xml" and find "Passwordhash" section. 
+	Replace that hash code with another password known hash code and restart the jenkins. 
