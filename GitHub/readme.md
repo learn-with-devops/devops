@@ -156,6 +156,17 @@
 
           	- git rebase --abort
           	- git rebase --continue
+		
+	  Draw Backs : 
+	  
+	  	1. Rebasing master into the feature branch is dangerous if someone else working on that feature too. 
+		2. Rebasing feature into master isn't a good solution, cause you can't revert all feature (if needed), you have to revert all commits one-by-one of that feature.
+		3. Git history can be nice and clean if you will merge features into the master with not allowing fast-forwarding and use "first-parent" when looking into log graph. In that case you will get just merge-commits which describes what that feature does and no other commits.
+		4. If you are working with tags, and, for example, track revisions of commits in your feature branch, rebasing will mix all tags into master. 
+		
+	  Ref : https://www.youtube.com/watch?v=f1wnYdLEpgI
+	  	https://www.youtube.com/watch?v=CRlGDDprdOQ
+
 
 
 - Git Diff
