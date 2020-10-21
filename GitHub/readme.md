@@ -222,6 +222,11 @@
 			
 			git cherry-pick <commit-hash>
 			
+	Note :  Suppose you have "a.txt", "b.txt" and "c.txt" file in master branch and in u r feature branch u have only "a.txt" file. 
+		If you want to pick one file "c.txt" from master then you can use "Git Cherry-pick" option here.
+		
+	ref : https://www.youtube.com/watch?v=QtfrpBSVcSA
+			
 
 ## Diff b/w Git and SVN
 
