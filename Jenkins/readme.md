@@ -254,3 +254,7 @@
 				build job: 'test-pipeline-child', quietPeriod: 0
 			}
 		}
+		
+## Change the default Port number, WorkSpace and default user of jenkins
+
+	Go to /etc/sysconfig/jenkins file and change as you want.
