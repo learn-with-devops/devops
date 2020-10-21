@@ -225,7 +225,10 @@
 	Note :  Suppose you have "a.txt", "b.txt" and "c.txt" file in master branch and in u r feature branch u have only "a.txt" file. 
 		If you want to pick one file "c.txt" from master then you can use "Git Cherry-pick" option here.
 		
+		- If you want to pick single commit from multiple numberof commits from feature branch to master branch then use cherry-pick.
+		
 	ref : https://www.youtube.com/watch?v=QtfrpBSVcSA
+	      https://www.youtube.com/watch?v=dKEpjgOx0Vk
 			
 
 ## Diff b/w Git and SVN
