@@ -312,3 +312,12 @@ Write a script to filter the log files and find the maximum number of hits from 
 
 	cat logfile.log | awk '{print $1}'|sort|uniq -c | tail
 	
+
+Count Number of Open files by specific PID
+----------------------------------
+
+	lsof -p <oid> | wc -l
+	
+	- For specific user
+		
+		lsof -u <userName> | wc-l
