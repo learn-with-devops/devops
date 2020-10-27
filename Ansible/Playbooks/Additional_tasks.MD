@@ -54,3 +54,23 @@ Ref : https://www.softwaretestinghelp.com/ansible-playbooks-ansible-vaults/
         command: touch niranjan{{ansible_date_time.date}}.log
     
 ## 
+            Pre and Post tasks
+            ---
+            - name: Pre , Post tasks and Tags example
+              hosts: localhost
+              become: true
+              tags:
+                 - niranjan
+              pre_tasks:
+              - debug: msg="Started task with tag - niranjan.
+              tasks:
+               - name: Going to execute the main task
+                 debug: msg="Currently in the target server"
+              post_tasks:
+              - debug: msg="Completed task with tag - niranjan.
+              - name: Play without tags
+                hosts: localhost
+                become: true
+                tasks:
+                - name: Command to list files
+                  shell: ls -lrt > niranjan.txt
