@@ -1,0 +1,11 @@
+{
+    "company_name": "Cisco", 
+    "contact_email": "puraj@cisco.com", 
+    "contact_name": "Pushp Raj", 
+    "hostname": "95b1c0ba16c642d4b6e64a96c239f0b3", 
+    "instance_count": 10, 
+    "license_date": 2135064992, 
+    "license_key": "6c6b3972a353533544083c41ba95eda5f2aa77bbd5b2ca23268ec801a56d74d6", 
+    "license_type": "basic", 
+    "subscription_name": "Red Hat Ansible Tower, Self-Support (10 Managed Nodes)"
+}
