@@ -82,3 +82,52 @@ $ docker tcp://<manager_ip:manager_port>  ps
 CONTAINER ID        IMAGE               COMMAND             CREATED                  STATUS              PORTS                           NAMES
 f8b693db9cd6        mysql:latest        "mysqld"            Less than a second ago   running             192.168.0.42:49178->3306/tcp    node-1/db
 
+
+------------
+
+## Docker Entrypoint vs CMD: Solving the Dilemma 
+
+        In short, CMD defines default commands and/or parameters for a container. CMD is an instruction that is best to use if you need a default command which users can easily override. If a Dockerfile has multiple CMDs, it only applies the instructions from the last one.
+
+        On the other hand, ENTRYPOINT is preferred when you want to define a container with a specific executable. You cannot override an ENTRYPOINT when starting a container unless you add the --entrypoint flag.
+
+        Combine ENTRYPOINT with CMD if you need a container with a specified executable and a default parameter that can be modified easily. For example, when containerizing an application use ENTRYPOINT and CMD to set environment-specific variables.
+
+## Shell and Exec Form
+
+    Before we begin, it is important to discus the forms of instructions. Docker ENTRYPOINT and CMD can have two forms:
+
+    - Shell form
+    - Exec form
+
+    The syntax for any command in shell form is:
+
+        - Shell form
+        <instruction> <command>
+        The syntax for instructions in exec form is:
+
+        - Exec form
+        <instruction> [“executable”, “parameter”]
+        You can write Docker CMD/ENTRYPOINT instructions in both forms:
+
+        CMD echo “Hello World” (shell form)
+        CMD ["echo", "Hello World"] (exec form)
+        ENTRYPOINT echo "Hello World" (shell form)
+        ENTRYPOINT ["echo", "Hello World"] (exec form)
+        However, try to keep all your instructions in exec form to prevent potential performance issues.
+        
+
+## Exec form
+        Exec form of ENTRYPOINT allows you to set commands and parameters and then use either form of CMD to set additional parameters that are more likely to be changed. ENTRYPOINT arguments are always used, while CMD ones can be overwritten by command line arguments provided when Docker container runs. For example, the following snippet in Dockerfile
+
+            ENTRYPOINT ["/bin/echo", "Hello"]
+            CMD ["world"]
+
+            - when container runs as docker run -it <image> will produce output
+               o/p : Hello world
+
+            - but when container runs as docker run -it <image> John will result in
+               o/p : Hello John
+
+Ref : https://phoenixnap.com/kb/docker-cmd-vs-entrypoint#:~:text=CMD%20is%20an%20instruction%20that,container%20with%20a%20specific%20executable.
+Ref : https://goinbigdata.com/docker-run-vs-cmd-vs-entrypoint/
