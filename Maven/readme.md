@@ -141,3 +141,14 @@
 
             -     first get the jar
             -     then execute it
+
+## Maven Archtype
+
+      It is a Template Engine...if you want to start any application from scratch then better to use this archtype templates.
+      It will provides the skeleton structure.
+      
+      Some Archtypes are : simple (maven-archetype-simple) , webapp (maven-archetype-webapp ) , quickstart(maven-archetype-quickstart)
+      
+      Ref : https://maven.apache.org/guides/introduction/introduction-to-archetypes.html#:~:text=In%20short%2C%20Archetype%20is%20a,means%20of%20generating%20Maven%20projects.
+      
+      
