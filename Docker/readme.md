@@ -19,6 +19,14 @@ Answer :
     unionfs /mnt/d1=RO:/mnt/d2=RW /mnt/joined
     But it is ugly and I hope there is any better option.
     
+Installation :
+
+        Install OKey repository:
+        # yum install http://repo.okay.com.mx/centos/7/x86_64/release/okay-release-1-1.noarch.rpm
+        
+        Install fuse-unionfs rpm package:
+        # yum install fuse-unionfs
+    
     
 Reference Link :
 
