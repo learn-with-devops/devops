@@ -50,6 +50,7 @@ Run Multiple Ansible Tasks under Single condition
 
 Note:  This can Achive be achived by "block" option in Ansible.
 - You can do the Exception Handling also wih the "block", "rescue", "always" modules.
+
   ref : https://docs.ansible.com/ansible/latest/user_guide/playbooks_blocks.html
  
 
@@ -73,3 +74,33 @@ Note:  This can Achive be achived by "block" option in Ansible.
               file: state=absent path={{ jdk_download_path}}/{{ oraclejdk8.jdk_rpm_file }}
 
           when: oraclejdk8_sym.stat.islnk is not defined
+          
+Example 2: 
+
+                - name: Attempt and graceful roll back demo
+                  block:
+                    - name: Print a message
+                      ansible.builtin.debug:
+                        msg: 'I execute normally'
+
+                    - name: Force a failure
+                      ansible.builtin.command: /bin/false
+
+                    - name: Never print this
+                      ansible.builtin.debug:
+                        msg: 'I never execute, due to the above task failing, :-('
+                  rescue:
+                    - name: Print when errors
+                      ansible.builtin.debug:
+                        msg: 'I caught an error'
+
+                    - name: Force a failure in middle of recovery! >:-)
+                      ansible.builtin.command: /bin/false
+
+                    - name: Never print this
+                      ansible.builtin.debug:
+                        msg: 'I also never execute :-('
+                  always:
+                    - name: Always do this
+                      ansible.builtin.debug:
+                        msg: "This always executes"
