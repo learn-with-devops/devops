@@ -43,3 +43,33 @@ Syntax:
     ansible-galaxy [delete|import|info|init|install|list|login|remove|search|setup] {file name}
 
    #### Follow the Ansible Role Example [here](https://github.com/learn-with-devops/Ansible-Role-Apache)
+
+
+Run Multiple Ansible Tasks under Single condition 
+----------------------------------------------------------------
+
+Note:  This can Achive be achived by "block" option in Ansible.
+- You can do the Exception Handling also wih the "block", "rescue", "always" modules.
+  ref : https://docs.ansible.com/ansible/latest/user_guide/playbooks_blocks.html
+ 
+
+        - name: Check if Java 8 is instaled
+          stat: path=~/java/oraclejdk8
+          register: oraclejdk8_sym
+
+        - block:   
+            - name: Download Java 8
+              command: "wget --no-cookies -O {{ jdk_download_path }}/{{ oraclejdk8.jdk_rpm_file }} --no-check-certificate --header 'Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie' {{ oraclejdk8.jdk_rpm_url }}"
+
+            - name: Install Java 8
+              yum: name={{ java_archive }} state=present
+
+            - name: Symlink to ~/java/oraclejdk8
+              file: path=~/java/ state=directory mode=0755
+            - command: "ln -s /usr/java/jdk{{ oraclejdk8.jdk_version  }} ~/java/oraclejdk8"
+
+
+            - name: Clean up
+              file: state=absent path={{ jdk_download_path}}/{{ oraclejdk8.jdk_rpm_file }}
+
+          when: oraclejdk8_sym.stat.islnk is not defined
