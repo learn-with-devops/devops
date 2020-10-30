@@ -139,3 +139,25 @@ f8b693db9cd6        mysql:latest        "mysqld"            Less than a second a
 
 Ref : https://phoenixnap.com/kb/docker-cmd-vs-entrypoint#:~:text=CMD%20is%20an%20instruction%20that,container%20with%20a%20specific%20executable.
 Ref : https://goinbigdata.com/docker-run-vs-cmd-vs-entrypoint/
+
+---------------
+### Print the Running container Names, ID and Statsu.
+
+- Input: 
+ 
+        CONTAINER ID        IMAGE                         COMMAND                  CREATED             STATUS                    PORTS                    NAMES
+
+        56489a32cb8c        83132b61eccf                  "bash"                   41 hours ago        Exited (0) 41 hours ago                            naughty_jang
+        4b4933b40175        83119b65eccf                  "bash"                   41 hours ago        Exited (0) 41 hours ago                            suspicious_mcnulty
+        3149e612f9f8        83119b6143cf                  "sh"                     43 hours ago        Exited (0) 41 hours ago                            thirsty_mestorf
+        
+ Command : 
+ 
+        docker ps --format "{{.Names}}\t{{.ID}}\t{{.Status}}"
+        
+        output : 
+        
+            [root@ip-172-31-6-169 ~]# docker ps --format "{{.Names}}\t{{.ID}}\t{{.Status}}"
+
+            apapche_app.4.s6i2u7xsetr3zx7yezn2azivg a715c247ba9f    Up 18 hours
+            apapche_app.1.tjuie7d5mjjdgy36upxuv5h5u 3a88d2f401c0    Up 18 hours
