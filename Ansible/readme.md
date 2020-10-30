@@ -104,3 +104,14 @@ Example 2:
                     - name: Always do this
                       ansible.builtin.debug:
                         msg: "This always executes"
+                        
+                        
+                        
+ If Else condition with Ansible include
+ ---------------------------------------
+ 
+                - name: Check certs exist
+                  stat: path=/etc/letsencrypt/live/{{ rootDomain }}/fullchain.pem
+                  register: st
+
+                - include: "{{ './_common/check-certs-renewable.yaml' if st.stat.exists else './_common/create-certs.yaml' }}"
