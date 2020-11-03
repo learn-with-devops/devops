@@ -1,6 +1,21 @@
 ## Linux_Insterview Questions Answers
 
+Modify a file located in Remote server:
+-----------------------------------
 
+	ssh -t user1@computer1 'vim /path/laboratory_notebook_1.md'
+
+		-t = force sudo
+		
+Copy files to remote server:
+-----------------------------
+
+	we have lot of ways like scp , sftp , rsync etc
+	
+	scp : 
+	
+		scp -r file/folder user1@computer1:/path/
+		
 Find a Word
 ------------
 - Find a word in a file
