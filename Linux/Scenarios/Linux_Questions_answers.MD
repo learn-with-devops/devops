@@ -327,6 +327,10 @@ Write a script to filter the log files and find the maximum number of hits from 
 
 	cat logfile.log | awk '{print $1}'|sort|uniq -c | tail
 	
+	cat error_log | awk -F ' ' '{print $10}' | awk -F ':' '{print $1}' | sort | uniq -c
+	
+	--> F - for field separater 
+	
 
 xargs
 -----------------------
