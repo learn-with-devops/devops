@@ -1,5 +1,11 @@
 ## MySQL 8 Installation
 
+Note: 
+
+        refer the below document for MySql Installation
+        Ref : https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-centos-7
+        
+        
 - Setup Yum repository
 
         rpm -Uvh https://repo.mysql.com/mysql80-community-release-el7-3.noarch.rpm
