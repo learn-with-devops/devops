@@ -2,10 +2,10 @@ from flask import Flask, escape, request, render_template
 import mysql.connector
 
 mydb = mysql.connector.connect(
-    host='localhost',
-    user='root',
-    passwd='Anand@123',
-    database='gatewaytech'
+    host='10.80.1.5',
+    user='anand',
+    passwd='Anand@839',
+    database='gateway'
 )
 
 app = Flask(__name__)
