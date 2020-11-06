@@ -2,3 +2,44 @@ yum install -y mysql-devel python-devel python-setuptools
 pip install MySQL-python
 pip install flask_mysqldb
 pip install mysql-connector-python
+
+----------------------------------------------------------------------
+
+# PIP installtion
+curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
+python get-pip.py
+
+sudo yum -y install gcc gcc-c++ kernel-devel
+sudo yum -y install python-devel libxslt-devel libffi-devel openssl-devel mysql-devel python-setuptools
+
+pip install MySQL-python
+pip install flask_mysqldb
+pip install mysql-connector-python
+
+## grant permission to the DataBase for accessing
+CREATE USER 'anand'@'%' IDENTIFIED BY 'Anand@839';
+GRANT ALL PRIVILEGES ON *.* TO 'anand'@'%' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+
+
+
+--------------------------------------------------------------------
+GRANT ALL PRIVILEGES ON . TO 'root'@'3.6.88.78' IDENTIFIED BY 'root' WITH GRANT OPTION;
+
+GRANT ALL PRIVILEGES on . to 'root'@'3.6.88.78' IDENTIFIED BY 'Anand@123';
+
+GRANT ALL ON gateway.* TO root@'0.0.0.0' IDENTIFIED BY 'Anand@123';
+
+
+
+CREATE USER 'anand'@'10.80.0.8' IDENTIFIED BY 'Anand@839';
+
+GRANT ALL PRIVILEGES ON *.* TO 'anand'@'10.80.0.8' WITH GRANT OPTION;
+
+
+
+CREATE USER 'anand'@'%' IDENTIFIED BY 'Anand@839';
+
+GRANT ALL PRIVILEGES ON *.* TO 'anand'@'%' WITH GRANT OPTION;
+
+FLUSH PRIVILEGES;
