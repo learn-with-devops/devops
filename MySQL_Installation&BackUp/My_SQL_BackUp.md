@@ -67,3 +67,21 @@
 
 
         mysqldump -u root --single-transaction --quick --lock-tables=false database_name | gzip > database_name.sql.gz;
+        
+        
+#### BackUp database with passing credentials in file
+
+        1> create a file and pass your username and Password like below
+        
+                  - vi ~/.my.cnf
+                  
+                  Details: 
+                  
+                        [mysqldump]
+                        user=root
+                        password="Anand@123"
+                        
+        2> Run Backup command
+        
+                mysqldump --defaults-file=~/.my.cnf gateway | gzip > gateway_2.sql.gz      
+
