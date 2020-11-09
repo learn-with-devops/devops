@@ -1,3 +1,6 @@
+# refered by : https://www.zekelabs.com/blog/how-to-install-kubernetes-cluster-on-aws-ec2-instances/
+
+
 ## Prerequisites:
 
       - You need to have created at least one AWS EC2 instance for acting as Master node and at least one AWS EC2 instance to act as a worker node.
@@ -56,6 +59,64 @@ Hope you are ready with all that is written in the prerequisites.
         systemctl enable kubelet && systemctl start kubelet
         
 ## Only on the Master Node:
+
+- On the master node initialize the cluster.
+
+            sudo kubeadm init --pod-network-cidr=192.168.0.0/16 --ignore-preflight-errors=NumCPU
+            # sudo kubeadm init --pod-network-cidr=192.168.0.0/16 #Do this only if proper CPU cores are available
+            
+            
+- Wait for around 4 minutes. Following commands will appear on the output screen of the master node. Either copy and paste that in the same terminal or copy it from here and apply it on the master’s terminal.
+
+            mkdir -p $HOME/.kube
+            sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+            sudo chown $(id -u):$(id -g) $HOME/.kube/config
+           
+This will also generate a kubeadm join command with some tokens.
+
+## On Worker nodes:
+
+- After initializing the cluster on the master node. copy kubeadm join command from output of kubeadm init on master node. (Switch to the root mode first)
+
+            sudo su
+            <kubeadm join command copies from master node>
+            
+- On the master node as well as the worker node initialize KUBECONFIG so that kubectl commands can be executed.
+
+            export KUBECONFIG=/etc/kubernetes/kubelet.conf
+            
+- Now our cluster is created, you can see these by using the command below:
+
+            kubectl get nodes
+            
+- The output of the command above will show both the nodes in NOTREADY state. That is because Kubernetes needs an “overlay network” so that pod-to-pod communication can happen properly. This overlay network is created by third-party CNI plugins. We are going to use Calico to create that overlay network.
+
+## Create an Overlay network using Calico CNI plugin on Master node
+
+- For calico networking copy-paste these commands and apply on the master node only
+
+            sudo kubectl apply -f https://docs.projectcalico.org/v3.2/getting-started/kubernetes/installation/hosted/etcd.yaml
+            sudo kubectl apply -f https://docs.projectcalico.org/v3.2/getting-started/kubernetes/installation/rbac.yaml
+            sudo kubectl apply -f https://docs.projectcalico.org/v3.2/getting-started/kubernetes/installation/hosted/calico.yaml
+            
+            
+      Note :  Faced an issue here. that is "failed to set up pod "coredns-f9fd979d6-6lzmm_kube-system" 
+      Solution :  ran the below command and it work fine.
+      
+             kubectl apply -f https://docs.projectcalico.org/v3.14/manifests/calico.yaml
+            
+ - Take a pause of 2 minutes and see if the nodes are ready; run it on master node
+ 
+            kubectl get nodes
+            
+ - You should be able to see a lot of pods in the output of above command. If it is not working, try reloading the root profile by running the command below and try hitting the previous command.
+ 
+            sudo su –
+            kubectl get pods --all-namespaces
+            
+            
+            
+            
         
         
         
