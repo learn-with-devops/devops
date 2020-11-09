@@ -1,4 +1,5 @@
-# refered by : https://www.zekelabs.com/blog/how-to-install-kubernetes-cluster-on-aws-ec2-instances/
+## refered by : https://www.zekelabs.com/blog/how-to-install-kubernetes-cluster-on-aws-ec2-instances/
+## Additional reference: https://www.linuxtechi.com/install-kubernetes-1-7-centos7-rhel7/
 
 
 ## Prerequisites:
