@@ -109,7 +109,8 @@ API Version
 ![image](https://github.com/learn-with-devops/devops/blob/master/k8s/kubernetes/images/apiversion.PNG)
 
 Note: 
-	Secrets also come under V1 stable release.
+	 -> Secrets ( v1 stable release) 
+	 -> NameSpace ( v1 apiVersion)
 
 
 
