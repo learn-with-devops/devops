@@ -1,3 +1,10 @@
+### Clone the git repo with UserName and Password
+	
+	git clone https://username:password@github.com/username/repository.git
+
+### Copy the entire git repo to another empty repo with all history , commits and Tags.
+
+
 ## Git Commands to performe the operations
 
 #### Configure the author name and email address to be used with your commits.
