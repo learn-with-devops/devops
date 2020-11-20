@@ -1,6 +1,11 @@
 ### Clone the git repo with UserName and Password
 	
 	git clone https://username:password@github.com/username/repository.git
+	
+	Note:
+		Clone the repo by passing the UserName and Password in Single file.
+		
+		sshpass -p password git clone ssh://username@onboard.com/srv/git/repo
 
 ### Copy the entire git repo to another empty repo with all history , commits and Tags.
 
