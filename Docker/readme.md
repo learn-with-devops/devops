@@ -1,3 +1,13 @@
+
+## Create a Docker Container with Below requirements:
+    - Copy a test.sh file into Docker | it will generate hello.txt file
+    - Get a copy of generated hello.txt file into LocalHost machine with perticular user ( anand user) permission.
+    - All this done while converting an Image to Container.
+    
+  Ans: 
+    docker run -it -v /root/dk/:/opt --name <container Name> b8a416efc2c8 bash -c "sh /opt/test.sh && chown 1001 test.html"
+
+
 ## Docker Union File System
 
     If I have a directory d1/, I know I can mount it at /mountPoint inside a Docker container by doing this:
