@@ -115,3 +115,40 @@ Example 2:
                   register: st
 
                 - include: "{{ './_common/check-certs-renewable.yaml' if st.stat.exists else './_common/create-certs.yaml' }}"
+                
+                
+                
+how-to-run-only-one-task-in-ansible-playbook
+--------------------------------------------
+
+        ---
+        hosts: localhost
+        tasks:
+         - name: Creating s3Bucket
+           s3_bucket:
+                name: ansiblebucket1234567890
+           tags: 
+               - createbucket
+
+         - name: Simple PUT operation
+           aws_s3:
+               bucket: ansiblebucket1234567890
+               object: /my/desired/key.txt
+               src: /etc/ansible/myfile.txt
+               mode: put
+           tags:
+              - putfile
+
+         - name: Create an empty bucket
+           aws_s3:
+               bucket: ansiblebucket12345678901234
+               mode: create
+               permission: private
+           tags:
+               - emptybucket
+               
+  Note : 
+  
+        To ececute a specific task at ansible then use tags like below
+        
+            ansible-playbook creates3bucket.yml --tags "createbucket,putfile"
