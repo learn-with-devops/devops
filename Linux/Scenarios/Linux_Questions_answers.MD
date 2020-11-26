@@ -1,5 +1,10 @@
 ## Linux_Insterview Questions Answers
 
+Check CPU utilization
+--------------------------
+
+   -- > mpstat
+
 Modify a file located in Remote server:
 -----------------------------------
 
