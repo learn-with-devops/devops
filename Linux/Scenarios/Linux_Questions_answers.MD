@@ -3,7 +3,12 @@
 Check CPU utilization
 --------------------------
 
-   -- > mpstat
+   mpstat
+   
+Check Subnet Mask address
+-----------------------------
+
+	netstat -r
 
 Modify a file located in Remote server:
 -----------------------------------
