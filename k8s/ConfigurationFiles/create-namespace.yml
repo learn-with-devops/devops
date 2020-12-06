@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: dev
+
+# Kubectl create -f create-namespace.yml
+# kubectl create namespace prod
+
+# Make Dev as Default name space
+# kubectl config set-context $(kubectl config current-context) --namespace=dev
+
+# Get the data from all the Namespace
+# kubectl get pods --all-namespaces

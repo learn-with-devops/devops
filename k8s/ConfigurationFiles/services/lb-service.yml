@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: anand-service
+  namespace: default
+  labels:
+    env: anand-lb
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      env: anand-lb
+  type: LoadBalancer
+  ports:
+    - targetPort: 80
+      port: 80
+      nodePort: 30098

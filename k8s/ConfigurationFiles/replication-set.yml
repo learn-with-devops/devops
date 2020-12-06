@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: apache-rs
+  labels:
+    env: Prod
+spec:
+  template:
+    metadata:
+      name: apache-pod
+      labels:
+        env: Prod
+    spec:
+      containers:
+        - name: apache-container
+          image: httpd
+  replicas: 3
+  selector:
+    matchLabels:
+      env: Prod
+
+
+# For ScaleUp|Down
+# -> kubectl scale --replicas=3 replicaset apache-rs
+# -> Change in config file under replicas option.
+# -> kubectl scale --replicas=3 -f replica-set.yml
