@@ -2,22 +2,25 @@ import boto3
 from pprint import pprint
 from botocore.exceptions import ClientError
 import logging
+import sys
 
 
 def create_bucket(bucket_name, region=None):
     try:
         if bucket_name in list_of_buckets:
-            print("Bucket already Exits !!")
+            print("Bucket '{}' already Exits !!".format(bucket_name))
         else:
             if region is None:
                 session = boto3.session.Session()
                 s3_cli = session.client('s3')
                 s3_cli.create_bucket(Bucket=bucket_name)
+                print("Bucket '{}' Created Successfully !!".format(bucket_name))
             else:
                 session = boto3.session.Session(region_name=region)
                 s3_cli = session.client('s3')
                 location = {'LocationConstraint': region}
                 s3_cli.create_bucket(Bucket=bucket_name, CreateBucketConfiguration=location)
+                print("Bucket '{}' Created Successfully !!".format(bucket_name))
     except ClientError as e:
         logging.error(e)
         return False
@@ -33,8 +36,8 @@ for bucket in buckets['Buckets']:
     list_of_buckets.append(bucket['Name'])
 
 # Create Bucket
-create_bucket('anandr-839-babu', 'ap-south-1')
-print("List of Exist Buckets are : ", list_of_buckets)
+create_bucket(sys.argv[1], sys.argv[2])
+# print("List of Exist Buckets are : ", list_of_buckets)
 
 
 #
