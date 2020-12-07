@@ -1,4 +1,4 @@
-# import boto3
+import boto3
 
 data = boto3.client('ec2', region_name='us-east-2')
 
