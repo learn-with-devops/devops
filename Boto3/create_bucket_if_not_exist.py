@@ -1,3 +1,11 @@
+"""
+## Run the Program like Below
+## python create_bucket_if_not_exist.py <Bucket_Name> <Region>
+## Ex :
+       python create_bucket_if_not_exist.py anand-839-babu ap-south-1
+"""
+
+
 import boto3
 from pprint import pprint
 from botocore.exceptions import ClientError
