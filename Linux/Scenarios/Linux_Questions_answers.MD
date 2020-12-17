@@ -1,5 +1,27 @@
 ## Linux_Insterview Questions Answers
 
+How to check the remote server port open or not
+-----------------------------------------------
+
+-> netcat
+
+	nc -zvw3 192.168.1.8 22
+		nc: It’s a command.
+		z: zero-I/O mode (used for scanning).
+		v: For verbose.
+		w3: timeout wait seconds
+		192.168.1.8: Destination system IP.
+		22: Port number needs to be verified.
+		
+-> nmap
+	
+	nmap 192.168.1.8 -p 22
+	
+-> telnet
+
+	telnet 192.168.1.9 22
+
+
 How to Identify the Ip addr is a Private or Public
 ---------------------------------------------------
 
