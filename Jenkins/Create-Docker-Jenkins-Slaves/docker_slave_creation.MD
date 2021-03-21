@@ -23,3 +23,29 @@ Step3:
   - Go to the jenkins and do the follow image steps : 
 [!image](https://github.com/learn-with-devops/devops/blob/master/Jenkins/Create-Docker-Jenkins-Slaves/Screenshot%20(16).png)
 [!image](https://github.com/learn-with-devops/devops/blob/master/Jenkins/Create-Docker-Jenkins-Slaves/Screenshot%20(17).png)
+
+Step4: 
+
+    - Go to master node and desable number of executers to 0 from 2.\
+
+step5:
+    
+    - Create a dummy job and execute it to see the dynamic docker slave.
+            pipeline {
+            agent any
+
+            stages {
+                stage('Hello') {
+                    steps {
+                        echo 'Hello World'
+                        sh 'docker --version'
+                        sh 'docker info'
+                        sh 'docker pull httpd'
+                        sh 'docker login --username="anandgit71" --password="anandgit12"'
+                    }
+                }
+            }
+        }
+
+
+Thats it !!
