@@ -2,6 +2,12 @@
 
 ## Create a Docker Jenkins slave with Docker Installed inside of the Jenkins slave.
 
+Initial things : 
+
+    - Install Master jenkins via normal way or as Docker container.
+            docker run -td -p 8081:8080 --name Jenkins-Master jenkins/jenkins
+
+
 Step1  : 
 
     - Install Docker Plugin on Jenkins.
