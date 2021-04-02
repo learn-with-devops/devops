@@ -38,7 +38,9 @@ It supports two kind of configuration files
 Create a IAM user with admin access and configure in Linux/Windows/Mac Server.
 
   - aws configure --profile <profile_name>
-    ex: aws configure --profile terraform_user.  ## terraform_user is created from IAM with Admin access
+    ex: aws configure --profile terraform_user.  
+    
+## terraform_user is created from IAM with Admin access
  
  ## Terraform Commands 
  
