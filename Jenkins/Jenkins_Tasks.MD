@@ -13,4 +13,4 @@ Jenkins Tasks:-
 		- Create a Free Style job for Deployment
 		- Setup a WebWook in GitHub for auto deployment when any devloper pushed the code.
 		
-- Create users and give proper access to them.
+- Create users and give proper access to them based on their roles.
