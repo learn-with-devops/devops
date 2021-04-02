@@ -48,6 +48,10 @@ Create a IAM user with admin access and configure in Linux/Windows/Mac Server.
     
         terraform init.  ( Terraform will download the required plugins based on provider name specified in the configuration file )
         
+  - Validate the Code
+  
+        terraform validate
+        
   - Arrange the terraform configuration file in proper format 
   
         terraform fmt
