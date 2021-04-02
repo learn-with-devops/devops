@@ -5,7 +5,9 @@ Jenkins Tasks:-
 - Automate the static code deployment on Dev Server with GitHub + Jenkins with Apache.
 	Code : https://github.com/learn-with-devops/GateWay-Tech.git
 	
-	Steps : 	
+	Steps :
+	
+	```
 		- Launch centOS 7 server for Dev environment ( Install Apache and Start it )
 		- make an SSH conne ction from Jenkins server to Dev Server
 		- Create a Free Style job for Deployment
