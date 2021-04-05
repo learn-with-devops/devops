@@ -1,3 +1,11 @@
+### Commands
+
+- List out all the server resources
+	 kubectl describe nodes | grep 'Name:\|  cpu\|  memory'
+
+
+
+
 # Architecture types 
 	- Monolithic ( thease are tightly coupled and if any function down entire application down .. ex: WAR/JAR )
 	- MicroService ( Loosly coupled and each service work independently. So , If any function down then other functions of  microservices will run independently)
