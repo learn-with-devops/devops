@@ -1,5 +1,15 @@
 ## Linux_Insterview Questions Answers
 
+How to increse the number of files to open in linux:
+---------------------------------------------------
+- ulimit
+- /var/log/messages
+- mounting the volume
+- soft and hard link
+- Service account in k8s.
+- how to upgrade k8s
+
+
 How to check the remote server port open or not
 -----------------------------------------------
 
