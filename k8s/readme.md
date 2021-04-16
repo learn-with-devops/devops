@@ -2,9 +2,13 @@
 
 - List out all the server resources
 	 kubectl describe nodes | grep 'Name:\|  cpu\|  memory'
-
-
-
+	 
+## Volumes
+	- PV , PVC ( Static )  and Storage Class ( Dynamic )
+Notes: 
+	- PV is created cluster level and pvc belong to namespace level
+	- With Storage class you can automate the PV creation by specifing only pv claim.
+	- If you declare PV then PVC you need to use the same labels, storage type, access modes and resources ( Some times if the avilable resources are more than u requested also fine ).
 
 # Architecture types 
 	- Monolithic ( thease are tightly coupled and if any function down entire application down .. ex: WAR/JAR )
