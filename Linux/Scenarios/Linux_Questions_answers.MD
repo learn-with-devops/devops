@@ -1,8 +1,37 @@
 ## Linux_Insterview Questions Answers
 
+
+
 How to increse the number of files to open in linux:
 ---------------------------------------------------
-- ulimit
+
+to increase open file limit to 500000, you can use the following command as root:
+
+	sysctl -w fs.file-max=500000
+	
+	# cat /proc/sys/fs/file-max
+	
+		Note: With the above command the changes you have made will only remain active until the next reboot. If you wish to apply them permanently, you will have to edit the following file:
+		
+		# vi /etc/sysctl.conf
+		
+		Add this line in file : 
+			fs.file-max=500000
+
+ulimit :
+--------------------------
+
+ulimit is admin access required Linux shell command which is used to see, set, or limit the resource usage of the current user. It is used to return the number of open file descriptors for each process. It is also used to set restrictions on the resources used by a process.
+
+ulimt -u
+
+- showing the maximum file size a user can have.
+	ulimt -f
+	
+- To display maximum users process or for showing maximum user process limit for the logged-in user.
+	ulimit -u
+
+
 - /var/log/messages
 - mounting the volume
 - soft and hard link
