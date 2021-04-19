@@ -32,9 +32,12 @@ ulimt -u
 	ulimit -u
 
 
-- /var/log/messages
-- mounting the volume
-- soft and hard link
+/var/log/messages
+-------------------------
+
+The most important log file in Linux is the /var/log/messages file, which records a variety of events, such as the system error messages, system startups and shutdowns, change in the network configuration, etc.
+	
+
 - Service account in k8s.
 - how to upgrade k8s
 
