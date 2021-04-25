@@ -11,8 +11,9 @@ Notes:
 	- If you declare PV then PVC you need to use the same labels, storage type, access modes and resources ( Some times if the avilable resources are more than u requested also fine ).
 ## Name Spaces
 
-default The default namespace for objects with no other namespace
+we have 4 default namespaces creating by k8s: 
 
+	default The default namespace for objects with no other namespace
 	kube-system The namespace for objects created by the Kubernetes system
 	kube-public This namespace is created automatically and is readable by all users (including those not authenticated). This namespace is mostly reserved for cluster usage, in case that some resources should be visible and readable publicly throughout the whole cluster. The public aspect of this namespace is only a convention, not a requirement.
 	kube-node-lease This namespace for the lease objects associated with each node which improves the performance of the node heartbeats as the cluster scales.
