@@ -9,6 +9,13 @@ Notes:
 	- PV is created cluster level and pvc belong to namespace level
 	- With Storage class you can automate the PV creation by specifing only pv claim.
 	- If you declare PV then PVC you need to use the same labels, storage type, access modes and resources ( Some times if the avilable resources are more than u requested also fine ).
+## Name Spaces
+
+default The default namespace for objects with no other namespace
+
+	kube-system The namespace for objects created by the Kubernetes system
+	kube-public This namespace is created automatically and is readable by all users (including those not authenticated). This namespace is mostly reserved for cluster usage, in case that some resources should be visible and readable publicly throughout the whole cluster. The public aspect of this namespace is only a convention, not a requirement.
+	kube-node-lease This namespace for the lease objects associated with each node which improves the performance of the node heartbeats as the cluster scales.
 
 # Architecture types 
 	- Monolithic ( thease are tightly coupled and if any function down entire application down .. ex: WAR/JAR )
