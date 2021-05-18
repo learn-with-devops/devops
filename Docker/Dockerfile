@@ -1,3 +1,27 @@
+FROM python:3.6.8
+
+RUN groupadd -r app && useradd -r -g app app
+
+WORKDIR /se_pv
+
+COPY requirements.txt /se_pv/requirements.txt
+
+RUN pip install --upgrade pip && \
+    pip install -r requirements.txt && \
+    python -m venv /se_pv/env
+
+RUN echo "source activate /se_pv/env" >> ~/.bashrc
+COPY . /se_pv
+
+RUN python setup.py develop
+RUN chmod +x /se_pv/main_pipeline_script.py
+RUN chown -R app:app /se_pv
+
+EXPOSE 22
+USER app
+ENTRYPOINT [ "python3", "/se_pv/main_pipeline_script.py"]
+-------------------------------------------------------------------------------------------
+
 FROM centos:latest
 
 MAINTAINER Anand Reddy < anand@gmail.com >
