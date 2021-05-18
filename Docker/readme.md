@@ -253,7 +253,7 @@ ENTRYPOINT Vs CMD
 --------------------------------------------------------------------------------------------------------
 ### How to copy Docker images from one host to another without using a repository
 
-
+Ref  : https://medium.com/@BeNitinAgarwal/understanding-the-docker-internals-7ccb052ce9fe
 
 You will need to save the Docker image as a tar file:
 
@@ -281,5 +281,52 @@ docker save -o c:/myfile.tar centos:16
         docker save <image> | bzip2 | pv | \
              ssh user@host 'bunzip2 | docker load'
 
-
+-------------------------------------------------------------------------------------
             
+### Understanding the Docker Internals        
+            
+   ![image](https://user-images.githubusercontent.com/51190838/118591709-455a0d00-b7c2-11eb-8d44-ad168bb52f1b.png)
+            
+Docker takes advantage of several features of the Linux kernel to deliver its functionality.
+            
+Namespaces 👎
+        Docker makes use of kernel namespaces to provide the isolated workspace called the container. When you run a container, Docker creates a set of namespaces for that container. These namespaces provide a layer of isolation. Each aspect of a container runs in a separate namespace and its access is limited to that namespace.
+
+                    Docker Engine uses the following namespaces on Linux:
+
+            PID namespace for process isolation.
+            NET namespace for managing network interfaces.
+            IPC namespace for managing access to IPC resources.
+            MNT namespace for managing filesystem mount points.
+            UTS namespace for isolating kernel and version identifiers.
+            
+Cgroups 👎
+
+        Docker also makes use of kernel control groups for resource allocation and isolation. A cgroup limits an application to a specific set of resources. Control groups allow Docker Engine to share available hardware resources to containers and optionally enforce limits and constraints.
+
+        Docker Engine uses the following cgroups:
+
+            Memory cgroup for managing accounting, limits and notifications.
+            HugeTBL cgroup for accounting usage of huge pages by process group.
+            CPU group for managing user / system CPU time and usage.
+            CPUSet cgroup for binding a group to specific CPU. Useful for real time applications and NUMA systems with localized memory per CPU.
+            BlkIO cgroup for measuring & limiting amount of blckIO by group.
+            net_cls and net_prio cgroup for tagging the traffic control.
+            Devices cgroup for reading / writing access devices.
+            Freezer cgroup for freezing a group. Useful for cluster batch scheduling, process migration and debugging without affecting prtrace.
+
+Union File Systems 👎
+
+    Union file systems operate by creating layers, making them very lightweight and fast. Docker Engine uses UnionFS to provide the building blocks for containers. Docker Engine can use multiple UnionFS variants, including AUFS, btrfs, vfs, and devicemapper.
+
+Container Format 👎
+
+    Docker Engine combines the namespaces, control groups and UnionFS into a wrapper called a container format. The default container format is libcontainer.
+
+Security 👎
+
+    Docker Engine makes use of AppArmor, Seccomp, Capabilities kernel features for security purposes.
+
+        AppArmor :  allows to restrict programs capabilities with per-program profiles.
+        Seccomp : used for filtering syscalls issued by a program.
+        Capabilties : for performing permission checks.
