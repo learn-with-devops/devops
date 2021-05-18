@@ -243,3 +243,9 @@ ENTRYPOINT Vs CMD
     The ENTRYPOINT is the program that will be run, and the value passed to the container will be appended to it.
 
     The ENTRYPOINT can be overridden by specifying an --entrypoint flag, followed by the new entry point you want to use.
+
+------------------------------------------------------------------------------------------------------
+
+### From inside of a Docker container, how do I connect to the localhost of the machine?
+
+    Use --network="host" in your docker run command, then 127.0.0.1 in your docker container will point to your docker host.
