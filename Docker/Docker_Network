@@ -17,6 +17,7 @@ docker run -itd --name=alpine11 --network=bridge alpine:latest
  1019  docker inspect bridge
  1020  docker attach alpine11
 
+Link : https://www.edureka.co/blog/docker-networking/
 
 
 
