@@ -38,4 +38,7 @@
     
         docker image prune
 	
+    - Create a Image Out of container
+
+    	docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]
  
