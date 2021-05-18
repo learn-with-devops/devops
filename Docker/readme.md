@@ -249,3 +249,37 @@ ENTRYPOINT Vs CMD
 ### From inside of a Docker container, how do I connect to the localhost of the machine?
 
     Use --network="host" in your docker run command, then 127.0.0.1 in your docker container will point to your docker host.
+
+--------------------------------------------------------------------------------------------------------
+### How to copy Docker images from one host to another without using a repository
+
+
+
+You will need to save the Docker image as a tar file:
+
+    docker save -o <path for generated tar file> <image name>
+
+Then copy your image to a new system with regular file transfer tools such as cp, scp or rsync(preferred for big files). After that you will have to load the image into Docker:
+
+    docker load -i <path to image tar file>
+
+PS: You may need to sudo all commands.
+
+EDIT: You should add filename (not just directory) with -o, for example:
+
+docker save -o c:/myfile.tar centos:16
+
+
+    Commands 👎
+        Transferring a Docker image via SSH, bzipping the content on the fly:
+
+        docker save <image> | bzip2 | \
+             ssh user@host 'bunzip2 | docker load'
+
+        It's also a good idea to put pv in the middle of the pipe to see how the transfer is going:
+
+        docker save <image> | bzip2 | pv | \
+             ssh user@host 'bunzip2 | docker load'
+
+
+            
