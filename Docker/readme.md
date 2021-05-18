@@ -171,3 +171,31 @@ Ref : https://goinbigdata.com/docker-run-vs-cmd-vs-entrypoint/
 
             apapche_app.4.s6i2u7xsetr3zx7yezn2azivg a715c247ba9f    Up 18 hours
             apapche_app.1.tjuie7d5mjjdgy36upxuv5h5u 3a88d2f401c0    Up 18 hours
+            
+---------------------------------------------------------------
+                        
+## COPY and ADD differences
+            
+Difference-1 👎           
+
+If you want to add a xx.tar.gz to a /usr/local in container, unzip it, and then remove the useless compressed package.
+
+For COPY:
+
+        COPY resources/jdk-7u79-linux-x64.tar.gz /tmp/
+        RUN tar -zxvf /tmp/jdk-7u79-linux-x64.tar.gz -C /usr/local
+        RUN rm /tmp/jdk-7u79-linux-x64.tar.gz
+
+For ADD:
+
+        ADD resources/jdk-7u79-linux-x64.tar.gz /usr/local/
+
+ADD supports local-only tar extraction. Besides it, COPY will use three layers, but ADD only uses one layer.
+
+            
+            
+Difference-2 👎
+
+- COPY copies a file/directory from your host to your image.
+
+- ADD copies a file/directory from your host to your image, but can also fetch remote URLs, extract TAR files, etc... 
