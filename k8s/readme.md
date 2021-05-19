@@ -1,8 +1,18 @@
 ### Commands
 
 - List out all the server resources
+
 	 kubectl describe nodes | grep 'Name:\|  cpu\|  memory'
 	 
+### Taints and Tolarations 
+
+	spec:
+           tolerations:
+           - effect: NoSchedule
+             key: key
+             operator: Equal
+             value: epam
+
 ## Volumes
 	- PV , PVC ( Static )  and Storage Class ( Dynamic )
 Notes: 
