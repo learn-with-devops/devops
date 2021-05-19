@@ -286,3 +286,8 @@
 
 ![image](https://user-images.githubusercontent.com/51190838/118755196-1311e380-b886-11eb-87cb-b2c24250b38c.png)
 
+## Ansible playbook Invoking in JenkinsFile
+
+withCredentials([file(credentialsId: 'ansible_vault_keyfile', variable: 'ansibleVaultKeyFile')]) {
+        ansiblePlaybook playbook: 'running-colour.yml', inventory: 'ec2.py', extras: "-e env_name=$environment --vault-password-file ${ansibleVaultKeyFile}"
+        }
