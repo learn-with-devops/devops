@@ -288,6 +288,23 @@
 
 ## Ansible playbook Invoking in JenkinsFile
 
-withCredentials([file(credentialsId: 'ansible_vault_keyfile', variable: 'ansibleVaultKeyFile')]) {
-        ansiblePlaybook playbook: 'running-colour.yml', inventory: 'ec2.py', extras: "-e env_name=$environment --vault-password-file ${ansibleVaultKeyFile}"
-        }
+	withCredentials([file(credentialsId: 'ansible_vault_keyfile', variable: 'ansibleVaultKeyFile')]) {
+		ansiblePlaybook playbook: 'running-colour.yml', inventory: 'ec2.py', extras: "-e env_name=$environment --vault-password-file ${ansibleVaultKeyFile}"
+		}
+
+## Invoke Docker with Jenkins file
+
+	stage('Publish Docker Images to DockerHub')
+			{
+				steps
+				{
+					echo "Pushing Docker image to Registory"
+					script
+					{
+						dockerImageTag="$dockerImageRepo"+":"+"$BUILD_NUMBER"
+						dockerImage = docker.build "${dockerImageTag}"
+						sh 'docker login --username="anandgit71" --password="anandgit12" ${dockerRegistry}'
+						dockerImage.push()
+					}
+				}
+			}
