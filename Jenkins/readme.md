@@ -280,3 +280,9 @@
 	
 	then go to " vi /var/lib/jenkins/users/anand_573465765/config.xml" and find "Passwordhash" section. 
 	Replace that hash code with another password known hash code and restart the jenkins. 
+
+
+## Shared Library
+
+![image](https://user-images.githubusercontent.com/51190838/118755196-1311e380-b886-11eb-87cb-b2c24250b38c.png)
+
