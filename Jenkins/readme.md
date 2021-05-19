@@ -78,6 +78,15 @@
     
                 #!groovy
                 branch = env.BRANCH_NAME
+		def configmap_env() {
+		    if (params.PUSH_DATA_TO == 'KAAS_TO_INT'){
+			return [config_env:'se-second-mongo-kaas-to-int-config']
+		    }else if (params.PUSH_DATA_TO == 'INT_TO_PREPROD'){
+			return [config_env:'se-second-mongo-int-to-preprod-config']
+		    }else if (params.PUSH_DATA_TO == 'STAGE_TO_PROD'){
+			return [config_env:'se-second-mongo-stage-to-prod-config']
+		    }
+		}
 
                 pipeline
                 {
