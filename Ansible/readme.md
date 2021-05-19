@@ -154,9 +154,9 @@ how-to-run-only-one-task-in-ansible-playbook
             ansible-playbook creates3bucket.yml --tags "createbucket,putfile"
             
             
-            ![image](https://user-images.githubusercontent.com/51190838/118757547-f0ce9480-b88a-11eb-9db6-9c9cc22094c1.png)
+![image](https://user-images.githubusercontent.com/51190838/118757547-f0ce9480-b88a-11eb-9db6-9c9cc22094c1.png)
 
 ### Limit the Servers or groups
 
-    ![image](https://user-images.githubusercontent.com/51190838/118757604-0b087280-b88b-11eb-9211-04e3feed42ca.png)
+![image](https://user-images.githubusercontent.com/51190838/118757604-0b087280-b88b-11eb-9211-04e3feed42ca.png)
     
