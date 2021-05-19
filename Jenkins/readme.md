@@ -1,3 +1,19 @@
+
+## Jenkins Issue after ( yum update )
+
+- Once I updated the packages then Jenkins stopped working and showing below error.	
+
+Solution : 
+
+ - yum history  --> check when update got happened recentley and note that number
+
+![image](https://user-images.githubusercontent.com/51190838/118772924-e966b580-b8a1-11eb-981e-3480cbf1a806.png)
+
+- Filter the history with number and grep only jenkins and downgarde with old version.
+
+![image](https://user-images.githubusercontent.com/51190838/118773161-2a5eca00-b8a2-11eb-8f7c-917c3925e1b4.png)
+
+
 ## Questions: 
 
 	- Jenkins Workflow Library
