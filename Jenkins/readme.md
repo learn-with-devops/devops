@@ -256,6 +256,10 @@
 		{
 			steps {
 				build job: 'test-pipeline-child', quietPeriod: 0
+				
+				or
+				
+				build job: 'Push-data-from-thread', parameters: [string(name: 'IMAGE_ID', value: "${IMAGE_ID}"), string(name: 'PARENT_BUILD_NUMBER', value: "${BUILD_NUMBER}")]
 			}
 		}
 		
