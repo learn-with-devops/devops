@@ -7,6 +7,20 @@
   Ans: 
     docker run -it -v /root/dk/:/opt --name <container Name> b8a416efc2c8 bash -c "sh /opt/test.sh && chown 1001 test.html"
 
+## Multi Staged docker container
+    
+    # syntax=docker/dockerfile:1
+    FROM golang:1.16 AS builder
+    WORKDIR /go/src/github.com/alexellis/href-counter/
+    RUN go get -d -v golang.org/x/net/html  
+    COPY app.go    .
+    RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o app .
+
+    FROM alpine:latest  
+    RUN apk --no-cache add ca-certificates
+    WORKDIR /root/
+    COPY --from=builder /go/src/github.com/alexellis/href-counter/app .
+    CMD ["./app"]  
 
 ## Docker Union File System
 
