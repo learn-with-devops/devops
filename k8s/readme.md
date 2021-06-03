@@ -230,3 +230,5 @@ OtherInformation
 		kubectl apply --validate=true --dry-run=true --filename=nginx-run.yaml
 	
 	
+### HPA and VPA
+Ref : https://medium.com/nerd-for-tech/autoscaling-in-kubernetes-hpa-vpa-ab61a2177950#:~:text=Unlike%20Horizontal%20Pod%20Autoscaler%20(%20HPA,suitable%20CPU%20and%20Memory%20attributes.
