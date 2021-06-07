@@ -270,3 +270,28 @@ There are two default groups: all and ungrouped. The all group contains every ho
     
 ## CMD vs Shell
 ![image](https://user-images.githubusercontent.com/51190838/120961332-4526af00-c77b-11eb-9fc4-546ba4c9e757.png)
+
+## Encrypt the values with Ansible.
+
+#####  Ansible Valut is useful here
+
+![image](https://user-images.githubusercontent.com/51190838/121057069-81d6c280-c7dc-11eb-996c-bc96c7e5fc80.png)
+![image](https://user-images.githubusercontent.com/51190838/121057124-92873880-c7dc-11eb-8567-a5122e30c038.png)
+![image](https://user-images.githubusercontent.com/51190838/121057217-ac288000-c7dc-11eb-9dd2-d268ceb30ad4.png)
+![image](https://user-images.githubusercontent.com/51190838/121057356-d0845c80-c7dc-11eb-9ee3-2ae5ef7e61ae.png)
+
+Use the password in a file like this : 
+
+-> ansible --ask-vault-pass
+-> echo 'my_vault_password' > .vault_pass
+-> ansible --vault-password-file=.vault_pass -bK -m copy -a 'src=secret_key dest=/tmp/secret_key mode=0600 owner=root group=root' localhost
+-> ansible.cfg
+
+        [defaults]
+        . . .
+        vault_password_file = ./.vault_pass
+
+
+
+
+
