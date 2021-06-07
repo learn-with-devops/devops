@@ -250,6 +250,23 @@ There are two default groups: all and ungrouped. The all group contains every ho
              register: PLAY2_RESULTS
 
            - debug: msg="{{PLAY2_RESULTS.stdout}}"
+
+    Example 2 :
+    
+        - hosts: localhost
+          tasks:
+
+            - command: /bin/echo "this is a test"
+              register: foo
+
+
+        - hosts: anotherhost
+          tasks:
+            - debug: var=foo
+              when: foo is defined
+
+            - debug: var=hostvars['localhost']['foo']
+              when: hostvars['localhost']['foo'] is defined
     
 ## CMD vs Shell
 ![image](https://user-images.githubusercontent.com/51190838/120961332-4526af00-c77b-11eb-9fc4-546ba4c9e757.png)
