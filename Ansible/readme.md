@@ -159,4 +159,7 @@ how-to-run-only-one-task-in-ansible-playbook
 ### Limit the Servers or groups
 
 ![image](https://user-images.githubusercontent.com/51190838/118757604-0b087280-b88b-11eb-9211-04e3feed42ca.png)
+
+### Default Groups ( all | ungrouped )
+There are two default groups: all and ungrouped. The all group contains every host. The ungrouped group contains all hosts that don’t have another group aside from all.
     
