@@ -162,4 +162,57 @@ how-to-run-only-one-task-in-ansible-playbook
 
 ### Default Groups ( all | ungrouped )
 There are two default groups: all and ungrouped. The all group contains every host. The ungrouped group contains all hosts that don’t have another group aside from all.
-    
+
+- Inventory Aliases : 
+
+        jumper ansible_port=5555 ansible_host=192.0.2.50
+
+- Assign variables
+
+        [atlanta]
+        host1 http_port=80 maxRequestsPerChild=808
+        host2 http_port=303 maxRequestsPerChild=909
+        
+        Another Example 👎
+        [ group ]
+        some_host         ansible_port=2222     ansible_user=manager
+        aws_host          ansible_ssh_private_key_file=/home/example/.ssh/aws.pem
+        freebsd_host      ansible_python_interpreter=/usr/local/bin/python
+        ruby_module_host  ansible_ruby_interpreter=/usr/bin/ruby.1.9.3
+
+- Assign variables in group level
+
+  If all hosts in a group share a variable value, you can apply that variable to an entire group at once. 
+
+        [atlanta]
+        host1
+        host2
+
+        [atlanta:vars]
+        ntp_server=ntp.atlanta.example.com
+        proxy=proxy.atlanta.example.com
+
+- Inherits the groups and values
+
+        [atlanta]
+        host1
+        host2
+
+        [raleigh]
+        host2
+        host3
+
+        [southeast:children]
+        atlanta
+        raleigh
+
+        [southeast:vars]
+        some_server=foo.southeast.example.com
+        halon_system_timeout=30
+        self_destruct_countdown=60
+        escape_pods=2
+
+- Uning multiple inventory sources 
+
+        ansible-playbook get_logs.yml -i staging -i production
+
