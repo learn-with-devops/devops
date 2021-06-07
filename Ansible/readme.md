@@ -282,10 +282,10 @@ There are two default groups: all and ungrouped. The all group contains every ho
 
 Use the password in a file like this : 
 
--> ansible --ask-vault-pass
--> echo 'my_vault_password' > .vault_pass
--> ansible --vault-password-file=.vault_pass -bK -m copy -a 'src=secret_key dest=/tmp/secret_key mode=0600 owner=root group=root' localhost
--> ansible.cfg
+    -> ansible --ask-vault-pass
+    -> echo 'my_vault_password' > .vault_pass
+    -> ansible --vault-password-file=.vault_pass -bK -m copy -a 'src=secret_key dest=/tmp/secret_key mode=0600 owner=root group=root' localhost
+    -> ansible.cfg
 
         [defaults]
         . . .
