@@ -216,3 +216,38 @@ There are two default groups: all and ungrouped. The all group contains every ho
 
         ansible-playbook get_logs.yml -i staging -i production
 
+- Use one playbook output to another variable
+
+    We can achive this by "Registring dummy host ahd hostvars variable". See the below example.
+
+    Playbook 1:-
+
+        ---
+        - hosts: localhost
+          gather_facts: false
+
+          tasks:
+           - name: Register a new value
+             shell: echo "/etc/resolv.conf"
+             register: PLAY1VAR
+
+           - debug: msg="{{PLAY1VAR.stdout}}"
+
+           - name: Register dummy host with variable
+             add_host:
+               name: "DUMMY_HOST"
+               PLAY1VAR_NEW: " {{ PLAY1VAR.stdout }}"
+
+    Playbook 2: -
+
+        ---
+        - hosts: 192.168.3.151
+          gather_facts: false
+
+          tasks:
+           - name: Echo the output - PLAY1 variable vaule
+             shell: cat {{ hostvars['DUMMY_HOST']['PLAY1VAR_NEW'] }} |tail -1
+             register: PLAY2_RESULTS
+
+           - debug: msg="{{PLAY2_RESULTS.stdout}}"
+    
