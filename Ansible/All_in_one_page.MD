@@ -93,15 +93,17 @@ tasks:
        register: PLAY2_RESULTS
 
 
-# Readme.MD
-# Meta
-# files
-# templates
-# vars
-# tests
-# handlers
-# tasks
+Roles skeleton structure: 
 
-# ---
-#  - include: hello.yml
-#    when: ansible_distribution == "Ubuntu"
+        # Readme.MD
+        # Meta
+        # files
+        # templates
+        # vars
+        # tests
+        # handlers
+        # tasks
+
+        # ---
+        #  - include: hello.yml
+        #    when: ansible_distribution == "Ubuntu"
