@@ -321,6 +321,9 @@ Umask
   
 - Default Umask value for Folder
   777-022 = 755
+
+- Change the Umask value permanently
+  vi /etc/bashrc --> chnage in that file
   
 ls -ltr && ls -la && ll 
 -------
