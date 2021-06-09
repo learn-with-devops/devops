@@ -24,12 +24,19 @@ ulimit :
 ulimit is admin access required Linux shell command which is used to see, set, or limit the resource usage of the current user. It is used to return the number of open file descriptors for each process. It is also used to set restrictions on the resources used by a process.
 
 ulimt -u
+ulimit -a   -> for all
 
 - showing the maximum file size a user can have.
 	ulimt -f
 	
 - To display maximum users process or for showing maximum user process limit for the logged-in user.
 	ulimit -u
+	
+- Set Ulimit temporarley
+	ulimit -u 12345
+
+- Set Ulimit permanentley 
+	vim /etc/security/limits.conf
 
 
 /var/log/messages
