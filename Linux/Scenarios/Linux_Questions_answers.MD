@@ -216,7 +216,7 @@ Find a Logs
 
 - tail -fn 100 filename
 
-- head -n 10 filename 
+- head -n 10 filename  or pr -10 filename
 
 
 
