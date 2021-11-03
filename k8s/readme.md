@@ -12,6 +12,34 @@
              key: key
              operator: Equal
              value: epam
+	     
+### Pod Eviction | Removing worker Node
+
+When administering your Kubernetes cluster, you will likely run into a situation where you need to delete pods from one of your nodes. You may need to debug issues with the node itself, upgrade the node, or simply scale down your cluster.
+
+Deleting pods from a node is not very difficult, however there are specific steps you should take to minimize disruption for your application. Be sure to fully read and understand each step before executing any commands to ensure no mistakes happen that could lead to downtime.
+
+Remove Node from cluster :-
+
+	1.  Perform drain operation in that node to kill the pods in present folder and start it in different nodes.
+
+	    kubectl cordon <nodeName>
+
+	Note : When you darin the node, you need to ignore the daemon sets and remove local storage like below : 
+
+	> kubectl drain <node-name> --ignore-daemonsets --delete-local-data --force
+
+	2. If you want to add the node back to cluster then uncordon that.
+
+	> kubectl uncordon <nodeName>
+
+
+	3. Remove workernode from clusre
+
+	> kubectl delete node <node name>
+
+
+
 
 ## Volumes
 	- PV , PVC ( Static )  and Storage Class ( Dynamic )
