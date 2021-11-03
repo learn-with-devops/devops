@@ -28,6 +28,46 @@ we have 4 default namespaces creating by k8s:
 	kube-public This namespace is created automatically and is readable by all users (including those not authenticated). This namespace is mostly reserved for cluster usage, in case that some resources should be visible and readable publicly throughout the whole cluster. The public aspect of this namespace is only a convention, not a requirement.
 	kube-node-lease This namespace for the lease objects associated with each node which improves the performance of the node heartbeats as the cluster scales.
 
+## StatefulSets ( It will store the app information permanentley ) : 
+
+	StatefulSet is a Kubernetes resource used to manage stateful applications. It manages the deployment and scaling of a set of Pods, and provides guarantee about the ordering and uniqueness of these Pods.
+	
+	Note: 
+		Every replica of a stateful set will have its own state, and each of the pods will be creating its own PVC(Persistent Volume Claim). So a statefulset with 3 replicas will create 3 pods, each having its own Volume, so total 3 PVCs.
+
+	Ex: 
+			apiVersion: apps/v1
+			kind: StatefulSet
+			metadata:
+			  name: counter
+			spec:
+			  serviceName: "counter-app"
+			  selector:
+			    matchLabels:
+			      app: counter
+			  replicas: 1 
+			  template:
+			    metadata:
+			      labels:
+				app: counter
+			    spec:      
+			      containers:
+			      - name: counter
+				image: "kahootali/counter:1.1"  
+				volumeMounts:
+				- name: counter
+				  mountPath: /app/      
+			  volumeClaimTemplates:
+			  - metadata:
+			      name: counter
+			    spec:
+			      accessModes: [ "ReadWriteMany" ]
+			      storageClassName: efs
+			      resources:
+				requests:
+				  storage: 50Mi
+
+
 # Architecture types 
 	- Monolithic ( thease are tightly coupled and if any function down entire application down .. ex: WAR/JAR )
 	- MicroService ( Loosly coupled and each service work independently. So , If any function down then other functions of  microservices will run independently)
