@@ -28,6 +28,27 @@ we have 4 default namespaces creating by k8s:
 	kube-public This namespace is created automatically and is readable by all users (including those not authenticated). This namespace is mostly reserved for cluster usage, in case that some resources should be visible and readable publicly throughout the whole cluster. The public aspect of this namespace is only a convention, not a requirement.
 	kube-node-lease This namespace for the lease objects associated with each node which improves the performance of the node heartbeats as the cluster scales.
 
+## Liveness |Readiness |startup probes
+
+	the *liveness probe* will restart a container when it becomes unresponsive *and* the *readiness probe* is used to decide when a container is *ready* to start *or* stop accepting traffic
+
+## Startup probe:
+
+	Legacy applications take time to start and kubectl will kill the pod and start new one. So, to avoid this use startup probe
+	The startup probe is only called during startup and is used to determine when the container is ready to accept requests. If a startup probe is configured, the liveness and readiness checks are disabled until the startup probe succeeds. If a startup probe exceeds the configured failureThreshold without succeeding, the container is killed and restarted, subject to the pod's restartPolicy, a behaviour analogous to the liveness probe.
+
+
+
+## Adopter Container :  ( like Side cart container )
+
+
+	The *Adapter container* is a simple express node server that reads from the location /var/log/file.log and produces JSON format. Let's implement a simple project to understand this pattern. The *Adapter container* is a simple express API that serves these logs as a JSON response.
+
+
+## Headless pod ( with no load balancer, only cluster IP )
+
+	A *headless* service is a service with a service IP but instead of load-balancing it will return the IPs of our associated *Pods*. This allows us to interact directly with the *Pods* instead of a proxy. It's as simple as specifying None for .
+
 ## StatefulSets ( It will store the app information permanentley ) : 
 
 	StatefulSet is a Kubernetes resource used to manage stateful applications. It manages the deployment and scaling of a set of Pods, and provides guarantee about the ordering and uniqueness of these Pods.
