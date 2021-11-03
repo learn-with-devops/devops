@@ -4,6 +4,10 @@
 
 	 kubectl describe nodes | grep 'Name:\|  cpu\|  memory'
 	 
+### Pod creation restriction
+	Restrict pod creation to specific node with NodeSelector ( we can use constraints and nodeName as well)
+	https://quip.com/2DLOANcntXHO/Restrict-Pod-creation
+	 
 ### Taints and Tolarations 
 
 	spec:
