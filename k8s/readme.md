@@ -28,6 +28,8 @@ Remove Node from cluster :-
 	1.  Perform drain operation in that node to kill the pods in present folder and start it in different nodes.
 
 	    kubectl cordon <nodeName>
+	    
+	    cordon :  Means, It will mark as un-scheduled
 
 	Note : When you darin the node, you need to ignore the daemon sets and remove local storage like below : 
 
@@ -36,12 +38,12 @@ Remove Node from cluster :-
 	2. If you want to add the node back to cluster then uncordon that.
 
 	> kubectl uncordon <nodeName>
+	
+	    uncordon : Means, It will mark as schduled
 
-
-	3. Remove workernode from clusre
+	3. Remove workernode from cluster
 
 	> kubectl delete node <node name>
-
 
 
 
@@ -51,6 +53,7 @@ Notes:
 	- PV is created cluster level and pvc belong to namespace level
 	- With Storage class you can automate the PV creation by specifing only pv claim.
 	- If you declare PV then PVC you need to use the same labels, storage type, access modes and resources ( Some times if the avilable resources are more than u requested also fine ).
+	
 ## Name Spaces
 
 we have 4 default namespaces creating by k8s: 
