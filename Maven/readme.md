@@ -11,6 +11,12 @@
       install - install the package into the local repository, for use as a dependency in other projects locally
       deploy - done in the build environment, copies the final package to the remote repository for sharing with other developers and projects.
 
+## How to debug a one of maven life cycle command.
+
+      from the command line, run maven goal with "mvnDebug" instead of mvn. 
+      
+      E.g. mvnDebug clean
+      
 # Maven Installation
 
       ##  Pre requsites Installation
