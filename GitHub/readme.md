@@ -1,3 +1,7 @@
+### Change the commit message ( It not pushed to remote repo )
+
+	git commit --amend -m "New commit message"
+
 ### Clone the git repo with UserName and Password
 	
 	git clone https://username:password@github.com/username/repository.git
