@@ -40,4 +40,9 @@ Day-2 ( 30/03/2020 )
  - flourishing  => Developing / Vruddi
  - bullock carts => EdduBandlu
  - vain => worthless/ Palinchaledu
- - 
+ 
+
+Day-3 (16/12/21)
+
+- Ransome ( a sum of money demanded or paid for the release of a captive. / pay-off, payment, price )
+- Pursue ( Hunt , Chase / Konasaginchu , Vetadu 
