@@ -1,6 +1,25 @@
-### Commands
+### Declare the sidecar containers in a Pod.
 
-- List out all the server resources
+A sidecar is just a container that runs on the same Pod as the application container, because it shares the same volume and network as the main container, it can “help” or enhance how the application operates. Common examples of sidecar containers are log shippers, log watchers, monitoring agents among others.
+
+		apiVersion: v1
+		kind: Pod
+		metadata:
+		  name: bookings-v1-b54bc7c9c-v42f6
+		  labels:
+		    app: demoapp
+		spec:
+		  containers:
+		  - name: bookings
+		    image: banzaicloud/allspark:0.1.1
+		    ...
+		  - name: istio-proxy
+		    image: docker.io/istio/proxyv2:1.4.3
+		    lifecycle:
+		      type: Sidecar
+
+### Commands
+ List out all the server resources
 
 	 kubectl describe nodes | grep 'Name:\|  cpu\|  memory'
 	 
