@@ -73,6 +73,41 @@ Notes:
 	- With Storage class you can automate the PV creation by specifing only pv claim.
 	- If you declare PV then PVC you need to use the same labels, storage type, access modes and resources ( Some times if the avilable resources are more than u requested also fine ).
 	
+		---
+		## Create a PV with your NFS shared folder.
+		apiVersion: v1
+		kind: PersistentVolume
+		metadata:
+		  name: nfs-pv-hpcc
+		spec:
+		  capacity:
+		    storage: 65Gi
+		  volumeMode: Filesystem
+		  accessModes:
+		    - ReadWriteMany
+		  persistentVolumeReclaimPolicy: Recycle
+		  storageClassName: nfs-sc-hpcc
+		  mountOptions:
+		    - hard
+		    - nfsvers=4.1
+		  nfs:
+		    path: /data            ## Shared folder of NFS server
+		    server: 52.118.191.60  ## Name of the NFS server.
+
+		---
+		## Create a PVC from PV.
+		apiVersion: v1
+		kind: PersistentVolumeClaim
+		metadata:
+		  name: nfs-pvc-hpcc
+		spec:
+		  accessModes:
+		    - ReadWriteMany
+		  storageClassName: nfs-sc-hpcc
+		  resources:
+		    requests:
+		      storage: 65Gi
+	
 ## Name Spaces
 
 we have 4 default namespaces creating by k8s: 
