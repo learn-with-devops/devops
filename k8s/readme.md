@@ -382,3 +382,16 @@ OtherInformation
 	
 ### HPA and VPA
 Ref : https://medium.com/nerd-for-tech/autoscaling-in-kubernetes-hpa-vpa-ab61a2177950#:~:text=Unlike%20Horizontal%20Pod%20Autoscaler%20(%20HPA,suitable%20CPU%20and%20Memory%20attributes.
+
+	apiVersion: autoscaling/v1
+	kind: HorizontalPodAutoscaler
+	metadata:
+	  name: k8s-autoscaler
+	spec:
+	  maxReplicas: 10
+	  minReplicas: 2
+	  scaleTargetRef:
+	    apiVersion: apps/v1
+	    kind: Deployment
+	    name: k8s-autoscaler
+	  targetCPUUtilizationPercentage: 50
