@@ -1,3 +1,17 @@
+### Deployments vs StatefulSets vs DaemonSets.
+
+	Deployment - You specify a PersistentVolumeClaim that is shared by all pod replicas. In other words, shared volume.
+
+			The backing storage obviously must have ReadWriteMany or ReadOnlyMany accessMode if you have more than one replica pod.
+
+	StatefulSet - You specify a volumeClaimTemplates so that each replica pod gets a unique PersistentVolumeClaim associated with it. In other words, no shared volume.
+
+			Here, the backing storage can have ReadWriteOnce accessMode.
+
+			StatefulSet is useful for running things in cluster e.g Hadoop cluster, MySQL cluster, where each node has its own storage.
+
+	DaemonSets - DaemonSet is a controller similar to ReplicaSet that ensures that the pod runs on all the nodes of the cluster. If a node is added/removed from a cluster, DaemonSet automatically adds/deletes the pod.
+
 ### Declare the sidecar containers in a Pod.
 
 A sidecar is just a container that runs on the same Pod as the application container, because it shares the same volume and network as the main container, it can “help” or enhance how the application operates. Common examples of sidecar containers are log shippers, log watchers, monitoring agents among others.
