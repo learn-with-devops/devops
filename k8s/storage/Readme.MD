@@ -7,6 +7,10 @@ Key Points:
 - With Storage class you can automate the PV creation by specifing only pv claim. 
 - If you declare PV then PVC you need to use the same labels, storage type, access modes and resources ( Some times if the avilable resources are more than u requested also fine ).
 
+IBM Cloud Points:
+-----------------
+
+
 Persistent Volumes:
 --------------------
 
@@ -89,7 +93,16 @@ This provisioning is based on StorageClasses, the PVC must request a storage cla
 Volume implementations are configured through StorageClass resources.
 If you set up a Kubernetes cluster on GCP, AWS, Azure, or any other cloud platform, a default StorageClass creates for you which uses the standard persistent disk type.
 
-Note: If you create a PVC, automatically PV and Volume will create in backend.
+Note: 
+
+- If you create a PVC, automatically PV and Volume will create in backend.For that you need to follow below :
+- List out avilable storage classes in IBM cloud
+
+      oc get storageclasses
+      
+- Pick one of the storage class which one suitable for you and specify that in PVC config file like below
+
+      Ex storage class : ibmc-vpc-block-5iops-tier
 
           ---
           apiVersion: v1
@@ -106,9 +119,9 @@ Note: If you create a PVC, automatically PV and Volume will create in backend.
             resources:
               requests:
                 storage: 132Gi
-            storageClassName: ibmc-vpc-block-5iops-tier
+            storageClassName: ibmc-vpc-block-5iops-tier # Get this from provider by typing 'oc get storageclasses'
             
-            
+      
 
 Creating a PV from awsElasticBlockStore :
 -----------------------------------------
