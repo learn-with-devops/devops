@@ -7,10 +7,6 @@ Key Points:
 - With Storage class you can automate the PV creation by specifing only pv claim. 
 - If you declare PV then PVC you need to use the same labels, storage type, access modes and resources ( Some times if the avilable resources are more than u requested also fine ).
 
-IBM Cloud Points:
------------------
-
-
 Persistent Volumes:
 --------------------
 
