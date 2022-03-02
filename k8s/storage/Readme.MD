@@ -135,3 +135,21 @@ Usase :
         capacity: 
           storage: 100Gi
         storageClassName: ebs-disk
+        
+Create a PV with Local path:
+----------------------------
+
+      apiVersion: v1
+      kind: PersistentVolume
+      metadata:
+        name: task-pv-volume
+        labels:
+          type: local
+      spec:
+        storageClassName: manual
+        capacity:
+          storage: 10Gi
+        accessModes:
+          - ReadWriteOnce
+        hostPath:
+          path: "/mnt/data"
