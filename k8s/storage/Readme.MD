@@ -107,3 +107,31 @@ Note: If you create a PVC, automatically PV and Volume will create in backend.
               requests:
                 storage: 132Gi
             storageClassName: ibmc-vpc-block-5iops-tier
+            
+            
+
+Creating a PV from awsElasticBlockStore :
+-----------------------------------------
+
+Before you can use an EBS volume with a Pod, you need to create it.
+
+      aws ec2 create-volume \
+      --availability-zone=eu-west-1a \
+      --size=100 \
+      --volume-type=gp2
+
+Usase :
+
+      apiVersion: v1
+      kind: PersistentVolume
+      metadata: 
+        name: test-volume
+      spec: 
+        accessModes: 
+          - ReadWriteOnce
+        awsElasticBlockStore: 
+          fsType: ext4
+          volumeID: ~
+        capacity: 
+          storage: 100Gi
+        storageClassName: ebs-disk
