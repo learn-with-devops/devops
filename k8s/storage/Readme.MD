@@ -8,6 +8,7 @@ Key Points:
 - PV is created cluster level and pvc belong to namespace level. 
 - With Storage class you can automate the PV creation by specifing only pv claim. 
 - If you declare PV then PVC you need to use the same labels, storage type, access modes and resources ( Some times if the avilable resources are more than u requested also fine ).
+- persistentVolumeReclaimPolicy: Retain ## It won't delete the PV data even though PV got deleted. when you recrete same PV the data will be still persist"
 
 Persistent Volumes:
 --------------------
@@ -26,7 +27,7 @@ A PersistentVolume (PV) is a storage resource in the cluster that has been provi
         volumeMode: Filesystem
         accessModes:
           - ReadWriteMany
-        persistentVolumeReclaimPolicy: Recycle
+        persistentVolumeReclaimPolicy: Retain  # Possible values  : Retain, Recycle
         storageClassName: nfs-sc-hpcc
         mountOptions:
           - hard
