@@ -1,5 +1,7 @@
 PV, PVC and Storage Classes :-
 ------------------------------
+Screenshot 2022-03-03 at 6.40.36 AM<img width="775" alt="image" src="https://user-images.githubusercontent.com/51190838/156476906-19a0aeae-4746-4be9-b552-1624654208de.png">
+
 
 Key Points:
 -----------
@@ -162,3 +164,8 @@ Create a PV with Local path:
           - ReadWriteOnce
         hostPath:
           path: "/mnt/data"
+
+
+Links:
+-------
+- IBM OpenShift storage : https://cloud.ibm.com/docs/openshift?topic=openshift-kube_concepts
