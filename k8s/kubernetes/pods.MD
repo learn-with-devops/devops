@@ -68,3 +68,35 @@
           containers:
              - name: nginx-container
                image: nginx
+               
+ - MultiPod 
+ 
+            apiVersion: v1
+            kind: Pod
+            metadata:
+              name: mc1
+            spec:
+              volumes:
+              - name: html
+                emptyDir: {}
+              containers:
+              - name: 1st
+                image: nginx
+                volumeMounts:
+                - name: html
+                  mountPath: /usr/share/nginx/html
+              - name: 2nd
+                image: debian
+                volumeMounts:
+                - name: html
+                  mountPath: /html
+                command: ["/bin/sh", "-c"]
+                args:
+                  - while true; do
+                      date >> /html/index.html;
+                      sleep 1;
+                    done
+                    
+    Commands to login :
+    - kubectl exec -it mc1 -c 1st bash
+    - kubectl exec -it mc1 -c 2nd bash
