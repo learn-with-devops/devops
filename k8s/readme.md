@@ -1,3 +1,10 @@
+### Statefulset
+
+A StatefulSet is the Kubernetes controller used to run the stateful application as containers (Pods) in the Kubernetes cluster. StatefulSets assign a sticky identity—an ordinal number starting from zero—to each Pod instead of assigning random IDs for each replica Pod. A new Pod is created by cloning the previous Pod’s data. If the previous Pod is in the pending state, then the new Pod will not be created. If you delete a Pod, it will delete the Pod in reverse order, not in random order. For example, if you had four replicas and you scaled down to three, it will delete the Pod numbered 3.
+
+Ref Link: https://loft.sh/blog/kubernetes-statefulset-examples-and-best-practices/
+Ref Link: https://github.com/MithilShah/kubernetes-course/tree/master/kubernetes_statefulsets
+
 ### Deployments vs StatefulSets vs DaemonSets.
 
 	Deployment - You specify a PersistentVolumeClaim that is shared by all pod replicas. In other words, shared volume.
