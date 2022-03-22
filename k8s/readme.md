@@ -312,6 +312,7 @@ API Version
 Note: 
 	 -> Secrets ( v1 stable release) 
 	 -> NameSpace ( v1 apiVersion)
+	 -> configMaps ( v1 apiVersion )
 
 
 
