@@ -1,8 +1,12 @@
 ## Linux_Insterview Questions Answers
 
 
+## How to close vi file which alredy opened and forgot to close.
 
-How to increse the number of files to open in linux:
+   option 1 : Kill the vi process
+   Option 2:  remove the .swp file 
+
+## How to increse the number of files to open in linux:
 ---------------------------------------------------
 
 to increase open file limit to 500000, you can use the following command as root:
