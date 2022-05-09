@@ -1,6 +1,10 @@
 ## Linux_Insterview Questions Answers
 
 
+## Upgrading the Package 
+  
+   Link : https://www.prado.lt/5-minute-upgrade-nginx-1-12-to-1-17-on-centos-7-rhel-7
+
 ## How to close vi file which alredy opened and forgot to close.
 
    option 1 : Kill the vi process
