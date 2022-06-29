@@ -48,5 +48,5 @@
     $ sudo systemctl status mongod
     
   
-## In the compass pass the details like below 
+## Access the MongoDB from Compass 
 <img width="780" alt="Screenshot 2022-06-29 at 11 47 25 PM" src="https://user-images.githubusercontent.com/51190838/176507682-436fe577-a317-4186-91e0-93b988f06c1f.png">
