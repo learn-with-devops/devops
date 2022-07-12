@@ -22,4 +22,9 @@
       sudo cp -pr /opt/shashikumar04433/WOLKUS-TECHNOLOGY-ASSIGNMENT-LPU/* /usr/share/nginx/html/
       sudo service nginx start
       
+  ### Author Details :
+  
+      Name : Shashi Kumar Reddy
+      College : LPU
+      
      
