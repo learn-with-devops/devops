@@ -1,8 +1,6 @@
 ## WOLKUS-TECHNOLOGY-ASSIGNMENT-LPU
 -------------------------------------
-This is a Movie site which will show the available and Upcoming movies details and their ratings.
-  
-  ### I have developed this project using Html,Css and Java Script.
+### This is a Movie site which will show the available and Upcoming movies details and their ratings. I have developed this project using Html,Css and Java Script.
   
   ### Pre-requirements :
 
