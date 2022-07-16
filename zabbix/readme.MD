@@ -96,3 +96,6 @@ Agent Installation :
 4. Restart Zabbix agent
 
     systemctl restart zabbix-agent
+    
+<img width="1152" alt="Screenshot 2022-07-16 at 11 53 33 PM" src="https://user-images.githubusercontent.com/51190838/179367531-a484eb10-361d-4fa9-883e-a93d67050a8b.png">
+
