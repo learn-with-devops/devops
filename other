@@ -1,0 +1,39 @@
+About PacClient : 
+
+Access the IBM Spectrum LSF Application Center and IBM Spectrum LSF through Python Based Pac Clinet  : 
+
+Pre-Requirements:
+
+    Python > 3.0 
+    pip3 install httplib2 configparser urllib3
+
+Code : 
+
+git clone https://github.com/IBMSpectrumComputing/lsf-integrations
+
+cd lsf-integrations/Spectrum LSF Application Center/pacclient
+
+./pacclient.py help
+
+./pacclient.py ping -l https://52.118.82.2:8443/
+
+./pacclient.py logon -l https://52.118.82.2:8443/ -u lsfadmin -p xxxxxxx
+
+./pacclient.py job
+
+./pacclient.py submit -a "generic" -c '' -p "sleep 10"
+
+./pacclient.py usercmd -c "bstop 45439"
+
+
+Internal API calls : 
+----------------------
+curl -k -X POST -H 'Accept: application/json' https://localhost:8443/platform/ws/ping
+
+
+Rest API's : 
+-------------
+curl -k -X POST -H 'Accept: application/json' https://localhost:8443/platform/ws/ping
+
+curl -k -X POST -H 'Accept: application/json' -H 'Content-Type: application/xml' -d '<User><name>lsfadmin</name><pass>Anand@123</pass></User>' https://localhost:8443/platform/ws/logon
+
