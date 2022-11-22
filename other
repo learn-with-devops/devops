@@ -37,3 +37,101 @@ curl -k -X POST -H 'Accept: application/json' https://localhost:8443/platform/ws
 
 curl -k -X POST -H 'Accept: application/json' -H 'Content-Type: application/xml' -d '<User><name>lsfadmin</name><pass>Anand@123</pass></User>' https://localhost:8443/platform/ws/logon
 
+
+
+
+
+Install Application center 
+--------------------------
+
+1. enable_appl == true , false
+2. How to know Application center Installed or not
+	- Inside master node ( rpm -qa | grep "lsf-appcenter" )
+	- MAC Terminal (ssh -L 8443:localhost:8443 -J root@52.118.100.179 lsfadmin@10.240.128.37. UI : https://localhost:8443/)
+
+3. Database
+	- connect to the DB from master node as root user 
+	  $ sudo -i
+	  $ mysql -u root -p < Enter the pssword in the prompt>
+
+	- Run the sample query to validate.
+
+4. Rest API ( Mac Terminal)
+
+		1. CURL
+		2. Pyclient 
+
+	4.1 : CURL
+
+		1. Setup the SSH command locally to access the Dashboard.
+			ssh -L 8443:localhost:8443 -J root@52.118.100.179 lsfadmin@10.240.128.37
+
+		2. Try to call the cluster from your MAC.
+			curl -k -X POST -H "Accept: application/json" https://localhost:8443/platform/ws/ping
+
+		3. Login to the cluster.
+			curl -k -X POST -H "Accept: application/json" -H "Content-Type: application/xml" -d "<User><name>lsfadmin</name> <pass>Anand@123</pass> </User>" https://localhost:8443/platform/ws/logon
+
+		4. Once you got the token then replace \" with #quote# and add "platform_token=" as token prefix. Finally assign this entire value to one variable in your local MAC.
+
+		Example : 
+
+		MYTOKEN=platform_token=lsfadmin#quote#2022-11-03T16:23:42Z#quote#5OqZCVB33wpdD5V+0vmKTXGwjpPCkLCDv58NmIjn46bC4TN+vFPsRDWlYcdqdpTgLxATumqgcSN1SX8pTbynfNy/8IszcjSVNcCOFKCRGwyRtdaD1k3MsIr7r9QgLpVT#quote#mBQ4Bf8qJ0zWg9pZ4yKVNg==
+
+		5. Get the cluster info.
+			curl -k -X GET -H 'Content-Type: application/xml' -H "Cookie: $MYTOKEN" -H 'Accept:text/plain,application/xml,text/xml,multipart/mixed' -H 'Accept-Language:en-us'  https://localhost:8443/platform/ws/clusters/local
+
+		6. Get the job's information of current user.
+			curl -k -X GET -H 'Content-Type: application/xml' -H "Cookie: $MYTOKEN" -H 'Accept:text/plain,application/xml,text/xml,multipart/mixed' -H 'Accept-Language:en-us'   https://localhost:8443/platform/ws/pacclient/jobs
+
+	4.2 Pyclient ( MAC terminal)
+
+		Pre-requirements:
+			- Python > 3.0
+			- pip3 install httplib2 configparser urllib3
+
+		1. clone this git repo 
+			git clone https://github.com/IBMSpectrumComputing/lsf-integrations
+			cd lsf-integrations/Spectrum LSF Application Center/pacclient/
+
+		2. Commands
+
+			1. Help
+
+				./pacclient.py help
+
+			2. Login to the cluster
+
+			    ./pacclient.py logon -l https://localhost:8443 -u lsfadmin -p Anand@123
+
+			3. List out the jobs
+
+				./pacclient.py job
+
+			4. Create a Job
+
+				./pacclient.py submit -a generic -p "COMMANDTORUN=sleep 2"
+
+
+
+
+# Steps to accessing the Application Center GUI/Dashboard.
+
+* Open a new command line terminal.
+* Run the following command to access the Controller node:
+
+```buildoutcfg
+#ssh -L 8443:localhost:8443 -J root@{FLOATING_IP_ADDRESS} root@{CONTROLLER_NODE_IP_ADDRESS}
+```
+* where CONTROLLER_NODE_IP_ADDRESS needs to be replaced with the controller node IP address associated with hpc-pc-controller-0, which you gathered earlier, and FLOATING_IP_ADDRESS needs to be replaced with the floating IP address that you identified.
+
+* Open a browser on the local machine, and run https://localhost:8443. You will get an SSL self-assigned certificate warning with your browser the first time that you access this URL.
+* Enter your login credentials that you set up when you created your workspace to access the Application Center GUI.
+
+
+
+
+
+
+
+
