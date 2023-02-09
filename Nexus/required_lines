@@ -1,0 +1,43 @@
+1. POM.XML
+---------------------
+
+  <distributionManagement>
+  <repository>
+    <id>central</id>
+    <name>maven-releases</name>
+    <url>http://52.118.103.137:8081/repository/libs-release-local</url>
+  </repository>
+
+  <snapshotRepository>
+    <id>nexus</id>
+    <name>maven-snapshots</name>
+    <url>http://52.118.103.137:8081/repository/maven-snapshots/</url>
+  </snapshotRepository>
+  </distributionManagement>
+  
+
+2. settings.xml
+---------------------
+
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
+                  http://maven.apache.org/xsd/settings-1.0.0.xsd">
+  <servers>
+    <server>
+        <id>nexus</id>
+        <username>admin</username>
+        <password>anand</password>
+    </server>
+  </servers>
+
+  <mirrors>
+    <mirror>
+      <id>central</id>
+      <name>central</name>
+      <url>http://52.118.103.137:8081/repository/maven-public/</url>
+      <mirrorOf>*</mirrorOf>
+    </mirror>
+  </mirrors>               
+</settings>
