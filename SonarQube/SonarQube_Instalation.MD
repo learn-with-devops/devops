@@ -71,5 +71,9 @@ SonarQube application uses port 9000. access SonarQube from browser
   Default Username and Password :  admin & admin
 ```
 
+To Understand the SonarQube UI and Project analysis, watch this video : 
 
+video : https://www.youtube.com/watch?v=-5YKWZhkf6g&ab_channel=ValaxyTechnologies
 Reference URL : https://www.decodingdevops.com/sonarqube-installation-on-centos-rhel/
+
+
