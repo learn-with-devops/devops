@@ -2,8 +2,10 @@
 
 ### Prerequisites
 1. Update the OS and Install pre-required softwares
+```sh
    yum update -y
    yum install java-1.8.0-openjdk unzip wget –y
+```
 
 ### Installation
 
