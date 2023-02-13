@@ -1,4 +1,4 @@
-# SonarQube Installation
+# SonarQube Installation on RedHat 8.6 Server
 
 ### Prerequisites
 
