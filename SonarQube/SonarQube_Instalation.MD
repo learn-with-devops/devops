@@ -1,77 +1,73 @@
 # SonarQube Installation
 
 ### Prerequisites
-1. EC2 instance with Java installed
-1. MySQL Database Server or MyQL RDS instance.
+1. Update the OS and Install pre-required softwares
+   yum update -y
+   yum install java-1.8.0-openjdk unzip wget –y
 
 ### Installation
 
-Install MySQL client version 
+Install MySQL 
 
  ```sh
-  # yum install mysql
+  sudo yum install wget unzip -y
+  wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
+  sudo rpm -ivh mysql-community-release-el7-5.noarch.rpm
+  yum update -y
+  sudo yum install mysql-server
+  sudo systemctl start mysqld
  ```
-Download stable SonarQube version from below website. 
-- Website: https://www.sonarqube.org/downloads/
-- Note: This Article written for SonarQube6.0  
 
-Download & unzip SonarQube 6.0
+Create db and user for Sonarqube:
 ```sh
-# cd /opt
-# wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-6.0.zip  (https://binaries.sonarsource.com/Distribution/sonarqube/ )
-# unzip sonarqube-6.0.zip
-# mv /opt/sonarqube-6.0 /opt/sonar
+  mysql -u root
+  CREATE DATABASE sonarqube_db;
+  CREATE USER 'sonarqube_user'@'localhost' IDENTIFIED BY 'password';
+  GRANT ALL PRIVILEGES ON sonarqube_db.* TO 'sonarqube_user'@'localhost' IDENTIFIED BY 'password';
+  FLUSH PRIVILEGES;
+  exit
 ```
-Allow RDS instance security group to access SonarQube server 
-
-Connect to RDS instance with database credentials
-```sh 
-mysql -h <RDS_Instance_endpoint>:3306 -u <DB_USER_NAME> -p <DB_PASSWORD> 
-```
-Create a new sonar database
+Download & unzip SonarQube 6.0:
 ```sh
-CREATE DATABASE sonar CHARACTER SET utf8 COLLATE utf8_general_ci;
+  wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-6.7.6.zip
+  unzip sonarqube-6.7.6.zip
+  mv sonarqube-6.7.6 /opt/sonarqube
 ```
 
-Create a local and a remote user
-```sh
-CREATE USER sonar@localhost IDENTIFIED BY 'sonar';
-CREATE USER sonar@'%' IDENTIFIED BY 'sonar';
+Create a user for SonarQube:
+```
+ useradd sonarqube
+ passwd sonarqube
+ chown -R sonarqube:sonarqube /opt/sonarqube
 ```
 
-Grant database access permissions to users 
+Add Sonar Qube user details in below file: 
 ```sh
-GRANT ALL ON sonar.* TO sonar@localhost;
-GRANT ALL ON sonar.* TO sonar@'%';
+  vi /opt/sonarqube/bin/linux-x86-64/sonar.sh
+  #add below line
+  RUN_AS_USER=sonarqube
 ```
 
-check users and databases 
+Configure sonarqube with MySQL database:
 ```sh
-use mysql
-show databases;
-SELECT User FROM mysql.user;
-FLUSH PRIVILEGES;
-QUIT
+  vi /opt/sonarqube/conf/sonar.properties
+  #add below lines
+  sonar.jdbc.username=sonarqube_user
+  sonar.jdbc.password=password
+  sonar.jdbc.url=jdbc:mysql://localhost:3306/sonarqube_db?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true&useConfigs=maxPerformance
 ```
-So for you have configured required database information on RDS. Let’s Jump back to your EC2 instance and enable SonarQube properties file to connect his Database.
 
-### ON EC2 Instance
-Edit sonar properties file to uncomment and provide required information for below properties. 
-
-- File Name: /opt/sonar/conf/sonar.properties
-  - sonar.jdbc.username=`sonar`
-  - sonar.jdbc.password=`sonar`
-  - sonar.jdbc.url=jdbc:mysql://`<RDS_DATABAE_ENDPOINT>:3306`/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true&useConfigs=maxPerformance&useSSL=false
-  - sonar.web.host=`0.0.0.0`
-  - sonar.web.context=`/sonar`
-
-Start SonarQube service 
+Start SonarQube:
 ```sh
-# cd /opt/sonar/bin/linux-x86-64/
-# ./sonar.sh start
+/opt/sonarqube/bin/linux-x86-64/sonar.sh start
 ```
 
 SonarQube application uses port 9000. access SonarQube from browser
 ```sh
-  http://<EC2_PUBLIC_IP>:9000/sonar
+  http://<EC2_PUBLIC_IP>:9000
+  
+  Default Username and Password :  admin & admin
+```
 
+
+Reference URL : https://www.decodingdevops.com/sonarqube-installation-on-centos-rhel/
