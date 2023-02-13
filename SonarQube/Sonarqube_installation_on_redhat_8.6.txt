@@ -5,7 +5,7 @@
 1. Update the OS and Install pre-required softwares
 ```sh
    sudo yum update -y
-   sudo yum install vim wget curl git java-11-openjdk-devel -y
+   sudo yum install vim wget curl unzip git java-11-openjdk-devel -y
 ```
 
 2. Configure SELinux as Permissive
@@ -36,78 +36,116 @@ localpkg_gpgcheck=0
 4. Create a user for SonarQube
 
 ```sh
-useradd sonarqube
-passwd sonarqube
+useradd sonar
+passwd sonar
 ```
 
 
-### Installation
+### PostGress DB Installation
 
-Install MySQL 
+Install Postgres 
 
  ```sh
-  sudo yum install wget unzip -y
-  wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
-  sudo rpm -ivh mysql-community-release-el7-5.noarch.rpm
-  yum update -y
-  sudo yum install mysql-server
-  sudo systemctl start mysqld
+      sudo dnf -y update
+      sudo dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+      sudo dnf -qy module disable postgresql
+      sudo dnf -y install postgresql13 postgresql13-server
+      sudo /usr/pgsql-13/bin/postgresql-13-setup initdb
+      sudo systemctl enable --now postgresql-13
+      systemctl status postgresql-13
  ```
 
 Create db and user for Sonarqube:
 ```sh
-  mysql -u root
-  CREATE DATABASE sonarqube_db;
-  CREATE USER 'sonarqube_user'@'localhost' IDENTIFIED BY 'password';
-  GRANT ALL PRIVILEGES ON sonarqube_db.* TO 'sonarqube_user'@'localhost' IDENTIFIED BY 'password';
-  FLUSH PRIVILEGES;
-  exit
-```
-Download & unzip SonarQube 6.0:
-```sh
-  wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-6.7.6.zip
-  unzip sonarqube-6.7.6.zip
-  mv sonarqube-6.7.6 /opt/sonarqube
+     sudo su - postgres 
+     psql
+
+     Run Below: 
+     
+     create user sonar;
+     create database sonar_db owner sonar;
+     grant all privileges on database sonar_db to sonar;
+     ALTER USER sonar WITH ENCRYPTED password 'sonar';
+     exit
+     exit
 ```
 
-Create a user for SonarQube:
-```
- useradd sonarqube
- passwd sonarqube
- chown -R sonarqube:sonarqube /opt/sonarqube
+SonarQube 9.0 Installation :
+
+```sh
+   cd /opt/
+   sudo wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-9.1.0.47736.zip
+   unzip sonarqube-9.1.0.47736.zip
+   mv sonarqube-9.1.0.47736 sonarqube
+   sudo chown -R sonar:sonar /opt/sonarqube
 ```
 
-Add Sonar Qube user details in below file: 
-```sh
-  vi /opt/sonarqube/bin/linux-x86-64/sonar.sh
-  #add below line
-  RUN_AS_USER=sonarqube
+
+configuration changes on "vim /opt/sonarqube/conf/sonar.properties" file : 
+
+```
+##Database details
+sonar.jdbc.username=sonar
+sonar.jdbc.password=StrongPassword
+sonar.jdbc.url=jdbc:postgresql://localhost/sonar_db
+
+##How you will access SonarQube Web UI
+sonar.web.host=0.0.0.0
+sonar.web.port=9000
+
+##Java options
+sonar.web.javaOpts=-Xmx512m -Xms128m -XX:+HeapDumpOnOutOfMemoryError
+sonar.search.javaOpts=-Xmx512m -Xms512m -XX:MaxDirectMemorySize=256m -XX:+HeapDumpOnOutOfMemoryError
+
+##Also uncomment the following Elasticsearch storage paths
+sonar.path.data=data
+sonar.path.temp=temp
 ```
 
-Configure sonarqube with MySQL database:
-```sh
-  vi /opt/sonarqube/conf/sonar.properties
-  #add below lines
-  sonar.jdbc.username=sonarqube_user
-  sonar.jdbc.password=password
-  sonar.jdbc.url=jdbc:mysql://localhost:3306/sonarqube_db?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true&useConfigs=maxPerformance
+
+Add SonarQube SystemD service file "vim /etc/systemd/system/sonarqube.service"
+
+```
+[Unit]
+Description=SonarQube service
+After=syslog.target network.target
+
+[Service]
+Type=forking
+ExecStart=/opt/sonarqube/bin/linux-x86-64/sonar.sh start
+ExecStop=/opt/sonarqube/bin/linux-x86-64/sonar.sh stop
+LimitNOFILE=65536
+LimitNPROC=4096
+User=sonar
+Group=sonar
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
 ```
 
-Start SonarQube:
-```sh
-/opt/sonarqube/bin/linux-x86-64/sonar.sh start
+Enable and Start the SonarQube Service
+
+```
+sudo systemctl daemon-reload
+sudo systemctl start sonarqube.service
+sudo systemctl enable sonarqube.service
+sudo systemctl status sonarqube.service
 ```
 
 SonarQube application uses port 9000. access SonarQube from browser
 ```sh
-  http://<EC2_PUBLIC_IP>:9000
+  http://<PUBLIC_IP>:9000
   
   Default Username and Password :  admin & admin
 ```
 
-To Understand the SonarQube UI and Project analysis, watch this video : 
+references: 
+----------
 
-video : https://www.youtube.com/watch?v=-5YKWZhkf6g&ab_channel=ValaxyTechnologies
-Reference URL : https://www.decodingdevops.com/sonarqube-installation-on-centos-rhel/
+- Application setup on SonarQube : https://www.youtube.com/watch?v=-5YKWZhkf6g&ab_channel=ValaxyTechnologies
+- Reference Link : https://www.fosstechnix.com/how-to-install-sonarqube-on-centos-8/
+
+
 
 
