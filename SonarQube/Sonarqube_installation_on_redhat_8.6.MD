@@ -9,8 +9,10 @@
 ```
 
 2. Configure SELinux as Permissive
+```sh
 sudo setenforce 0
 sudo sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
+```
 
 3. Set File limit, add below content in  "/etc/sysctl.conf"
 
