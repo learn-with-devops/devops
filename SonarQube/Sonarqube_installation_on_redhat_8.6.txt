@@ -1,11 +1,29 @@
 # SonarQube Installation
 
 ### Prerequisites
+
 1. Update the OS and Install pre-required softwares
 ```sh
-   yum update -y
-   yum install java-1.8.0-openjdk unzip wget –y
+   sudo yum update -y
+   sudo yum install vim wget curl git java-11-openjdk-devel -y
 ```
+
+2. Configure SELinux as Permissive
+sudo setenforce 0
+sudo sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
+
+3. Set File limit, add below content in  "/etc/sysctl.conf"
+
+- sudo vim /etc/sysctl.conf 
+```sh
+vm.max_map_count=262144
+fs.file-max=65536
+```
+- Then reload sysctl configuration as follows:
+```
+   sudo sysctl --system
+```
+
 
 ### Installation
 
