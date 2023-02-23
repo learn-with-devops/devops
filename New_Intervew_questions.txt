@@ -1,0 +1,11 @@
+1. Dockr RUN vs ARG diff ??
+2. AWS Load Balancer Sticky session ?
+3. Terraform provisoners types and it's draw back ??
+4. How to take multiple commits from another branch in git ??
+5. Git Webwooks types ??
+6. Jenkins Shared libraries ?? 
+7. Docker volume types ?? 
+8. Terraform Backend ?? and state lock ??
+9. Linux Booting process ?
+10. How to start the application automatically after every reoot. ex: python application
+11. What is  2>&1 in linux ?
