@@ -88,7 +88,7 @@ kubeadm join 10.240.128.12:6443 --token 1bf2t6.mhk1fqvjg7kuxoa7 \
 kubectl get nodes
 
 
-### Add calico plugin
+### Add calico plugin on Master node
 kubectl apply -f https://docs.projectcalico.org/v3.9/manifests/calico.yaml
 
 
