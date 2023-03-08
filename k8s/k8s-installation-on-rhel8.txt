@@ -63,6 +63,9 @@ repo_gpgcheck=1
 gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
 EOF
 
+# Install Kubernetes (kubeadm, kubelet and kubectl) 
+dnf install -y kubeadm-1.17.0 kubelet-1.17.0 kubectl-1.17.0
+
 # Start the Kubelet
 systemctl enable kubelet
 echo 'KUBELET_EXTRA_ARGS="--fail-swap-on=false"' > /etc/sysconfig/kubelet
