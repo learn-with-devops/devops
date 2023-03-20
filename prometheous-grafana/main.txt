@@ -1,0 +1,43 @@
+# Prometheus INstallation
+
+Pre-requirements:
+-----------------
+
+- Create a Linux server ( RAM > 2 GB, 4 core CPU )
+
+Prometeous Page : https://prometheus.io/download/
+
+Grafana page : https://grafana.com/grafana/download
+
+Commands:
+--------
+
+Prometheus INstallation
+-----------------------
+yum install wget -y
+cd /opt
+wget https://github.com/prometheus/prometheus/releases/download/v2.43.0-rc.1/prometheus-2.43.0-rc.1.linux-amd64.tar.gz
+tar -xvf prometheus-2.43.0-rc.1.linux-amd64.tar.gz
+mv prometheus-2.43.0-rc.1.linux-amd64 prometheus
+nohup /opt/prometheus/prometheus &
+
+Grafana Installation:
+---------------------
+cd /opt
+wget https://dl.grafana.com/enterprise/release/grafana-enterprise-9.4.3.linux-amd64.tar.gz
+tar -zxvf grafana-enterprise-9.4.3.linux-amd64.tar.gz
+mv grafana-enterprise-9.4.3.linux-amd64 grafana
+nohup /opt/grafana/bin/grafana-server &
+
+
+Open Grafana Dasgboard :
+------------------------
+1. http://IP:3000
+
+Username : admin
+Password: admin
+
+Confugure prometheus DB on Grafana
+----------------------------------
+
+configure > data source > prometheus
