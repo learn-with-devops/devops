@@ -295,5 +295,9 @@ Use the password in a file like this :
 ### Ansible variable precedence
 <img width="442" alt="Screenshot 2023-04-19 at 5 17 38 PM" src="https://user-images.githubusercontent.com/51190838/233065747-9cd3db76-94c0-44e7-a4a5-965994681170.png">
 
+### what is Ansible Set_Fact ??
 
+Ansible set_fact is a module, which is going to be used like vars, vars_file etc. But, this set_facts has the high precedence than others except extra variables.
+
+Also, this set_fact module will be load once and the same value will be there across for all calls.
 
