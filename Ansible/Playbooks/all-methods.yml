@@ -1,0 +1,49 @@
+---
+ - name: Install required packages
+   hosts: scale
+   become: True
+   vars:
+   - softwares: 
+   gather_facts: True
+
+   tasks:
+   - block:
+     - name: Install pre-required softwares
+       yum: name={{ item }} state=latest 
+       with_items:
+       - wget
+       - tree
+       - zip
+       - unzip
+       - nginx
+       - python3
+
+     - name: list out installed zip version
+       shell: zip --version
+       register: zip_version
+
+     - debug: msg="{{zip_version}}"
+
+     - name: create a user
+       user: 
+         name: anand
+         state: present 
+         shell: /bin/bash
+
+     - name: force user to change the password
+       command: chage -d 100 anand
+     when: ansible_distribution == "RedHat"
+
+   - name: Copy the file
+     copy: src=index.html dest=/usr/share/nginx/html/
+     notify:
+     - restart nginx
+
+   - name: create a file
+     shell: touch /tmp/anand.txt
+     tags:
+     - create_file
+
+   handlers:
+   - name: restart nginx
+     service: name=nginx state=restarted
