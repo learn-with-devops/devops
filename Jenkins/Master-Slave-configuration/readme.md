@@ -18,11 +18,11 @@ yum install java-1.8*
 ## Setup Jenkins Slave
 ```sh
 # Create user and add the user to wheel group
-useradd bujji
+useradd anand
 # Create SSH Keys
-sudo su - bujji
-ssh-keygen -t rsa -N "" -f /home/bujji/.ssh/id_rsa
-# The private and public keys will be created at these locations `/home/bujji/.ssh/id_rsa` and `/home/bujji/.ssh/id_rsa.pub`
+sudo su - anand
+ssh-keygen -t rsa -N "" -f /home/anand/.ssh/id_rsa
+# The private and public keys will be created at these locations `/home/anand/.ssh/id_rsa` and `/home/anand/.ssh/id_rsa.pub`
 cd .ssh
 cat id_rsa.pub > authorized_keys
 chmod 700 authorized_keys
