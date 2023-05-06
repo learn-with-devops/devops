@@ -160,3 +160,6 @@ sudo kubeadm join 10.128.15.228:6443 --token cqb8vy.iicmmqrb1m8u9cob --discovery
 kubectl get nodes
 ```
 
+Ref : https://www.linuxtechi.com/how-to-install-kubernetes-cluster-rhel/
+
+
