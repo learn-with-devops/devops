@@ -1,123 +1,162 @@
-## refered by : https://www.zekelabs.com/blog/how-to-install-kubernetes-cluster-on-aws-ec2-instances/
-## Additional reference: https://www.linuxtechi.com/install-kubernetes-1-7-centos7-rhel7/
+K8s Installation
+----------------
+
+Pre-requirements :
+
+- Amazon Linux 
+- All ports open in both Master and worker nodes
+- Run all comands as root 
 
 
-## Prerequisites:
+1. Disable Swap
 
-      - You need to have created at least one AWS EC2 instance for acting as Master node and at least one AWS EC2 instance to act as a worker node.
-      - In this tutorial, I have used Amazon Linux 2 AMI when I lunched EC2 instances, which is based on centos Linux. This AMI also has some pre-installed libraries that AWS does for you. However, you can use any centos-based system such as RHEL as well. In that case, most of the commands remain the same.
-      - While launching AWS ec2 instances, make sure that you open all the ports in the related security groups.
-      - Both the AWS EC2 instances need to be on the same VPC and preferably same availability zone.
-      - Needless to say, you need to have putty/terminal to connect to your EC2 instances.
+```
+sudo swapoff -a
+```
 
-      Connect to both the ec2 instances using two putty terminals. Decide which EC2 instance would be the master/manager and which would be worker/slave. Henceforward we will call them master and worker nodes. There are a few commands that we need to run on the master as well as the worker node.
+2. Disable SELinux
 
-Hope you are ready with all that is written in the prerequisites.
+```
+ vi /etc/selinux/config
+```
 
-## On both the master and worker nodes:
+ Change the SELINUX value from enforcing to permissive.
 
-- Be a root user. Install Docker and start Docker service. Also, enable the docker service so that the docker service starts on system restarts.
+```
+ SELINUX=permissive
+```
 
-        sudo su
-        yum install docker -y 
-        systemctl enable docker && systemctl start docker
-        
-- Create proper yum repo files so that we can use yum commands to install the components of Kubernetes.
+3. ( Optional ) :  Stop your firewall service if it is running
 
-        cat <<EOF > /etc/yum.repos.d/kubernetes.repo
-        [kubernetes]
+```
+service firewalld stop
+```
 
-        name=Kubernetes
+4. Install CRI-O container runtime
 
-        baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
+First, create a modules configuration file for Kubernetes.
 
-        enabled=1
+$ sudo vi /etc/modules-load.d/k8s.conf
+Add these lines and save the changes
 
-        gpgcheck=1
+```
+overlay
+br_netfilter
+```
 
-        repo_gpgcheck=0
+Then load both modules using the modprobe command.
 
-        gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+```
+$ sudo modprobe overlay
+$ sudo modprobe br_netfilter
+```
 
-        exclude=kube*
+Next, configure the required sysctl parameters as follows
 
-        EOF
-        
-- sysctl command is used to modify kernel parameters at runtime. Kubernetes needs to have access to kernel’s IP6 table and so we need to do some more modifications. This includes disabling secure Linux.
+$ sudo vi /etc/sysctl.d/k8s.conf
+Add the following lines:
 
-        cat <<EOF >  /etc/sysctl.d/k8s.conf
-        net.bridge.bridge-nf-call-ip6tables = 1
-        net.bridge.bridge-nf-call-iptables = 1
-        EOF
+```
+net.bridge.bridge-nf-call-iptables  = 1
+net.ipv4.ip_forward                 = 1
+net.bridge.bridge-nf-call-ip6tables = 1
+```
 
-        sysctl --system
-        setenforce 0
-        
-        
-- Install kubelet, kubeadm and kubectl; start kubelet daemon
+Save the changes and exit. To confirm the changes have been applied, run the command:
+```
+sudo sysctl --system
+```
 
-        yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
-        systemctl enable kubelet && systemctl start kubelet
-        
-## Only on the Master Node:
+Export Kuberneties version 
 
-- On the master node initialize the cluster.
+```
+export VERSION=1.26
 
-            sudo kubeadm init --pod-network-cidr=192.168.0.0/16 --ignore-preflight-errors=NumCPU
-            # sudo kubeadm init --pod-network-cidr=192.168.0.0/16 #Do this only if proper CPU cores are available
-            
-            
-- Wait for around 4 minutes. Following commands will appear on the output screen of the master node. Either copy and paste that in the same terminal or copy it from here and apply it on the master’s terminal.
+sudo curl -L -o /etc/yum.repos.d/devel:kubic:libcontainers:stable.repo https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/CentOS_8/devel:kubic:libcontainers:stable.repo
 
-            mkdir -p $HOME/.kube
-            sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
-            sudo chown $(id -u):$(id -g) $HOME/.kube/config
-           
-This will also generate a kubeadm join command with some tokens.
+sudo curl -L -o /etc/yum.repos.d/devel:kubic:libcontainers:stable:cri-o:$VERSION.repo https://download.opensuse.org/repositories/devel:kubic:libcontainers:stable:cri-o:$VERSION/CentOS_8/devel:kubic:libcontainers:stable:cri-o:$VERSION.repo
 
-## On Worker nodes:
+```
 
-- After initializing the cluster on the master node. copy kubeadm join command from output of kubeadm init on master node. (Switch to the root mode first)
+Install CRI-O
 
-            sudo su
-            <kubeadm join command copies from master node>
-            
-- On the master node as well as the worker node initialize KUBECONFIG so that kubectl commands can be executed.
+```
+dnf install cri-o
+```
 
-            export KUBECONFIG=/etc/kubernetes/kubelet.conf
-            
-- Now our cluster is created, you can see these by using the command below:
+Enable and Start the CRI-O
+```
+sudo systemctl enable crio
+sudo systemctl start crio
+```
 
-            kubectl get nodes
-            
-- The output of the command above will show both the nodes in NOTREADY state. That is because Kubernetes needs an “overlay network” so that pod-to-pod communication can happen properly. This overlay network is created by third-party CNI plugins. We are going to use Calico to create that overlay network.
+6. Install Kubernetes Packages
 
-## Create an Overlay network using Calico CNI plugin on Master node
+sudo vi /etc/yum.repos.d/kubernetes.repo
 
-- For calico networking copy-paste these commands and apply on the master node only
+And add the following lines.
 
-            sudo kubectl apply -f https://docs.projectcalico.org/v3.2/getting-started/kubernetes/installation/hosted/etcd.yaml
-            sudo kubectl apply -f https://docs.projectcalico.org/v3.2/getting-started/kubernetes/installation/rbac.yaml
-            sudo kubectl apply -f https://docs.projectcalico.org/v3.2/getting-started/kubernetes/installation/hosted/calico.yaml
-            
-            
-      Note :  Faced an issue here. that is "failed to set up pod "coredns-f9fd979d6-6lzmm_kube-system" 
-      Solution :  ran the below command and it work fine.
-      
-             kubectl apply -f https://docs.projectcalico.org/v3.14/manifests/calico.yaml
-            
- - Take a pause of 2 minutes and see if the nodes are ready; run it on master node
- 
-            kubectl get nodes
-            
- - You should be able to see a lot of pods in the output of above command. If it is not working, try reloading the root profile by running the command below and try hitting the previous command.
- 
-            sudo su –
-            kubectl get pods --all-namespaces
-            
-            
-            
-            
-        
-        
-        
+```
+[kubernetes] 
+name=Kubernetes
+baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
+enabled=1
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+exclude=kubelet kubeadm kubectl
+```
+
+- Install the Kubectl, Kubelet, kubeadm
+
+```
+sudo dnf install -y kubelet-1.26.1 kubeadm-1.26.1 kubectl-1.26.1 --disableexcludes=kubernetes
+```
+
+- Start the Kubelet
+```
+sudo systemctl enable kubelet
+sudo systemctl start kubelet
+```
+
+7. Create a Kubernetes cluster
+
+Initialize the Cluster
+```
+sudo kubeadm init --pod-network-cidr=192.168.10.0/16
+```
+
+Run the Below Commands
+```
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+```
+
+8. Install Calico Pod Network Add-on
+
+kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.25.0/manifests/calico.yaml
+
+kubectl get pods -n kube-system
+
+
+- Check the status of Kubernetes cluster
+
+```
+kubectl get nodes
+```
+
+9. Adding worker node to the cluster
+
+To add the worker node to the Kubernetes cluster, follow step 1 up until Step 7.  Once you are done, run the command generated by the master node for joining a worker node to the cluster. In our case, this will be:
+
+``` < your master generated token here >
+sudo kubeadm join 10.128.15.228:6443 --token cqb8vy.iicmmqrb1m8u9cob --discovery-token-ca-cert-hash sha256:79748a56f603e6cc57f67bf90b7db5aebe090107d540d6cc8a8f65b785de7543
+```
+
+10. Run the below on Master to validate the cluster status
+
+```
+kubectl get nodes
+```
+
