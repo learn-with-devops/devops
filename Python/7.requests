@@ -34,3 +34,18 @@
 
         with open('image.png', 'wb') as img:
             img.write(im.content)
+            
+### Example
+
+        import json
+        import requests
+
+        data = requests.get('https://api.github.com/users/hadley/orgs')
+        new_data = data.json()
+
+
+        for details in new_data:
+            del details['description']
+
+        with open('anand.json', 'r+') as wf:
+            json.dump(new_data, wf, indent=2)
