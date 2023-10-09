@@ -65,3 +65,8 @@ Day-4 (26-SEP-2023)
           In a magical world...
 
 - devastated (emotional distress) Ex: She was devastated by the news of her friend's sudden passing, unable to stop her tears
+
+
+Day-5 (9-Oct-2023)
+-------------------
+- Piles of Coins ( Arranging the coins on top of each other ) (Dreaming of seeing lots of coins represents wealth and excellent financial stability in the future)
