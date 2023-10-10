@@ -5,3 +5,4 @@
 3. 10 Coins Puzzle
 4. Puzzle | Mislabeled Jars (https://www.youtube.com/watch?v=yIYYl2ErDT0)
 5. Minimum cut Puzzle
+6. 100 Doors
