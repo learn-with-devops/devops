@@ -74,3 +74,4 @@ Day-5 (9-Oct-2023)
 Day -6 (10th-Oct-23)
 ---------------------
 - Toggle the Door (If it is open, you close it; if it is closed, you open it.)
+- scoffed (వెక్కిరించాడు ) (to laugh and talk about a person or idea in a way that shows that you think they are stupid or silly)
