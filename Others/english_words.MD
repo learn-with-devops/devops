@@ -70,3 +70,7 @@ Day-4 (26-SEP-2023)
 Day-5 (9-Oct-2023)
 -------------------
 - Piles of Coins ( Arranging the coins on top of each other ) (Dreaming of seeing lots of coins represents wealth and excellent financial stability in the future)
+
+Day -6 (10th-Oct-23)
+---------------------
+- Toggle the Door (If it is open, you close it; if it is closed, you open it.)
